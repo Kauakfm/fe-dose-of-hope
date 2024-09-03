@@ -1,0 +1,107 @@
+.footer{
+    border-top: 1px solid;
+    border-color: #ffffff1a;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    padding: 4% 5%;
+}
+.footer main{
+    display: flex;
+    justify-content: space-between;
+}
+.footer main div{
+    width: 33%;
+}
+.footer section{
+    display: flex;
+}
+
+.footer .ondeEstamos {
+    margin-left: 10%;
+}
+
+p {
+    font-size: 15px;
+}
+
+.footer .contato {
+    margin-left: -15px;
+}
+
+.footer section p {
+    font-size: 14px;
+    margin-top: 5%;
+}
+
+.footer h1{
+    font-size: 25px;
+}
+
+.contato img {
+    color: white;
+    position: absolute;
+}
+
+.contato p {
+    margin-left: 10%;
+}
+
+@media (max-width: 1080px)
+ {
+    .footer .title {
+        margin-bottom: 0.95rem;
+        margin-right: -220px;
+        margin-left: 7%;
+    }
+
+    .footer .paragrafo {
+        flex-direction: column;
+        margin-right: -220px;
+        margin-left: 7%;
+
+    }
+
+ 
+    .footer main {
+        display: flex;
+        flex-direction: column;
+        padding: 1.456rem 0px;
+        margin: 0px;
+
+    }
+
+    .footer {
+        margin-right: 50px;
+    }
+
+    .ondeEstamos h1 {
+        margin-left: -24px;
+        position: absolute;
+        margin-top: 3%;
+    }
+
+    .ondeEstamos p {
+        margin-top: 42%;
+        margin-left: -24px;
+        margin-bottom: 15%;
+    }
+
+    .contato h1 {
+        margin-left: 24px;
+        margin-top: 8%;
+    }
+
+    .contato img {
+        margin-left: 24px;
+
+    }
+
+    .contato p {
+        margin-left: 60px;
+    }
+
+    .footer section p {
+        margin-left: 15%;
+    }
+}

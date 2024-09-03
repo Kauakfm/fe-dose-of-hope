@@ -1,0 +1,22 @@
+.layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-container {
+    width: 65%;
+    height: 90%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: -2.5%;
+}
+
+.chat-body {
+    overflow-y: auto;
+    padding-right: 10px;
+    max-height: calc(100vh - 200px);
+
+}

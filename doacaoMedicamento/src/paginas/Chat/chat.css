@@ -1,0 +1,322 @@
+/* chat.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.dashboard-rede {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+
+.div-chat {
+  width: 30%;
+  padding: 20px;
+  background-color: var(--div-chat-color);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 2%;
+}
+
+.div-chat h1 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.div-chat p {
+  margin-bottom: 0%;
+}
+
+.div-chat .botaoDoacao {
+  background-color: var(--purple-color);
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 40%;
+  display: flex;
+  margin-left: 60%;
+  margin-top: -8%;
+  font-weight: bold;
+  margin-bottom: 3%;
+}
+
+
+.rede {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  transition: 0.3s ease-in;
+
+}
+
+.rede:hover {
+  transform: translateX(3px);
+  background-color: #323131;
+  cursor: pointer;
+}
+
+.rede img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.botaoMsg {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  text-align: left;
+  padding: 0;
+}
+
+.info-container {
+  flex: 1;
+}
+
+.chat-container {
+  width: 65%;
+  height: 90%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: -2.5%;
+}
+
+.chat-body {
+  overflow-y: auto;
+  padding-right: 10px;
+  max-height: calc(100vh - 200px);
+
+}
+
+.message-container {
+  display: flex;
+  margin-bottom: 8px;
+
+}
+
+.message-text {
+  padding: 8px 8px;
+  background-color: #008069;
+  border-radius: 10px;
+  max-width: 70%;
+  margin-left: 60%;
+  color: white;
+  font-weight: 500;
+  align-self: flex-end; 
+  margin-left: auto;
+}
+
+.message-text-destinatario {
+  color: white;
+  background-color: #6d6d6d;
+  font-weight: 500;
+  border-radius: 10px;
+  max-width: 40%;
+  padding: 8px 8px;
+  align-self: flex-start; 
+  margin-right: auto;
+}
+
+.msg-horaMinuto {
+  display: inline;
+  font-size: 10px;
+  color: var(--4-gray-color);
+  vertical-align: middle;  
+  margin-left: 5px;
+}
+
+
+.chat-footer {
+  display: flex;
+  margin-top: 20px;
+}
+
+.chat-footer input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-top: 26%;
+}
+
+.chat-footer button {
+  padding: 10px 20px;
+  background-color: #128c7e;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-top: 18%;
+  cursor: pointer;
+}
+
+.layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.layout-text {
+  position: absolute;
+  margin-left: 30%;
+  top: 30%;
+}
+
+.layout-text h1 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.layout-text p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 50%;
+}
+
+.layout2 {
+  margin-top: 135px;
+}
+
+/* Icon styles */
+.layout-text svg {
+  color: #128c7e;
+  margin-bottom: 10px;
+
+}
+
+.layout2 p {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: -25%;
+}
+
+
+.botaoMsg {
+  background-color: purple;
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 40%;
+  display: flex;
+  font-weight: bold;
+}
+
+
+
+/* chat.css */
+
+.chat-container {
+  background-color: #1d1d1d;
+  border-radius: 5px;
+  position: fixed;
+  top: 20%;
+  left: 33%;
+}
+
+.chat-body {
+  overflow-y: auto;
+  max-height: calc(100vh - 200px);
+}
+
+.message-container {
+  border-radius: 5px;
+  margin-bottom: 0px;
+  padding: 10px;
+  color: black;
+}
+
+.message-text {
+  word-break: break-word;
+}
+
+.chat-footer {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 65%;
+  margin-top: 10px;
+}
+
+.chat-footer input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-top: 1%;
+  border: none;
+  background-color: #242424;
+  color: white;
+}
+
+.chat-footer button {
+  padding: 8px 20px;
+  background-color: purple;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: -0.5%;
+
+}
+
+.chat-footer input::placeholder {
+  color: gray;
+  border: none;
+
+}
+
+.layout-text {
+  text-align: center;
+
+}
+
+.layout-text h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.layout-text p {
+  font-size: 14px;
+}
+
+.layout2 p {
+  font-size: 12px;
+  color: #666;
+}
+
+/* css do modal*/
+
+.modal-body h1 {
+  font-size: 23px;
+}
+
+.modal-body h3 {
+  font-size: 18px;
+}
+
+.modal-body {
+  border-radius: 8px;
+  margin-top: 50%;
+}

@@ -1,0 +1,326 @@
+.modal-body {
+    background-color: rgb(25, 25, 25);
+}
+
+.body-cadastro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15vh;
+}
+
+.body-cadastro h3 {
+    font-size: 35px;
+    margin-top: 1%;
+    margin-bottom: 3%;
+}
+
+.body-cadastro .paragrafo2 {
+    font-size: 18px;
+    margin-left: 30%;
+    margin-right: 28%;
+    margin-bottom: 3%;
+}
+
+.body-cadastro h3 b {
+    color: purple;
+}
+
+.body-cadastro label {
+    font-weight: 500;
+}
+
+.body-cadastro input {
+    background-color: transparent;
+    border: 1px solid #fff;
+    width: 40vw;
+    color: var(--white-color);
+    outline: none;
+}
+
+.body-cadastro input::cadastro {
+    color: #8b8b8b;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.box-cadastro section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box-cadastro section input,
+.box-cadastro section select {
+    width: 20.2vw;
+}
+
+.box-cadastro section input {
+    width: 18.7vw;
+}
+
+.box-cadastro p {
+    width: 40vw;
+    font-size: 15px !important;
+}
+
+.body-cadastro .confirmar {
+    background-color: var(--purple-color);
+    border-radius: 10px;
+    font-size: 17px;
+    text-align: center;
+    padding: 9px 30px !important;
+    border: none;
+    color: #fff;
+    transition: 0.4s ease-in;
+    cursor: pointer;
+    margin-top: 2.5%;
+    font-weight: 600;
+}
+
+.body-cadastro .confirmar:hover {
+    color: var(--white-color);
+    background-color: #920092;
+
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: "Poppins", Arial, Helvetica, sans-serif !important;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: -bs-font-sans-serif system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 18px;
+}
+
+
+.botaoLogin {
+    background-color: purple;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+.botaoLogin:hover {
+    background-color: rgb(105, 4, 105);
+}
+
+.box-campos section {
+    display: flex;
+    justify-content: space-between;
+    width: 89%;
+}
+
+.box-campos section input,
+.box-campos section select {
+    width: 146%;
+}
+
+.box-campos section input {
+    width: 130%;
+    color: gray;
+}
+
+.body-cadastro .presencial-input {
+    width: 292px;
+}
+
+.body-cadastro select {
+    background-color: transparent;
+    border: 1px solid #fff;
+    width: 100%;
+    color: var(--white-color);
+    outline: none;
+    border-radius: 4px;
+    height: 6.7vh;
+    padding-left: 1%;
+    color: #8b8b8b;
+    margin-bottom: 3%;
+    font-size: 15px;
+}
+
+input::placeholder {
+    font-family: -bs-font-sans-serif system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.check2 {
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.check2 input {
+    width: 5vw;
+    height: 2.5vh;
+}
+
+select::option {
+    color: white;
+}
+
+.divDate {
+    width: 40%;
+}
+
+@media (max-width: 1080px) {
+
+
+    .body-cadastro h3 {
+        margin-top: 5%;
+        margin-bottom: 10%;
+    }
+
+    .body-cadastro .paragrafo2 {
+        margin-left: 29px;
+        margin-right: 2%;
+        margin-bottom: 5%;
+    }
+
+    .body-cadastro .p {
+        font-size: 15px;
+        margin-bottom: 5%;
+        text-align: center;
+    }
+
+    .body-cadastro input {
+        width: 90%;
+        margin-left: 20px;
+
+    }
+
+    .body-cadastro label {
+        margin-left: 20px;
+
+    }
+
+    .box-campos section {
+        display: flex;
+        flex-direction: column;
+        /* Coloca os itens um abaixo do outro */
+    }
+
+    
+    
+
+    .box-campos section select,
+    .box-campos section select {
+        width: 101%;
+        margin-left: 20px;
+
+
+    }
+
+    .body-cadastro .presencial-input {
+        width: 101%;
+    }
+
+    .botaoLogin {
+        width: 80%;
+        margin-left: 9%;
+    }
+
+    .check2 {
+        width: 83%;
+        margin-bottom: 5%;
+        margin-right: 10px;
+       
+    }
+}
+
+@media (min-width: 1700px) {
+    .body-cadastro h3 {
+        font-size: 39px;
+    }
+
+    .body-cadastro p {
+        width: 40vw;
+        font-size: 20px !important;
+    }
+
+    .body-cadastro label {
+        font-weight: 500;
+        font-size: 19px;
+    }
+
+    .body-cadastro input::placeholder {
+        font-size: 19px;
+    }
+
+    .body-cadastro input {
+        background-color: transparent;
+        border: 1px solid #fff;
+        width: 40vw;
+        color: var(--white-color);
+        outline: none;
+        font-size: 23px;
+    }
+
+    .botaoLogin {
+        font-size: 20px;
+        margin-bottom: 15%;
+        margin-top: 10px;
+    }
+
+
+}
+
+.modal-parabens .botao-cadastro {
+    width: 100%;
+    height: 63%;
+    margin-right: 40px;
+    color: var(--white-color);
+}
+
+.modal-parabens .modal-content {
+    border-radius: 30px;
+}
+
+.modal-parabens .modal-body {
+    background-color: var(--5-gray-color);
+    border-radius: 8px;
+    padding: 12% 7%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal-parabens .modal-body img {
+    width: 20%;
+    margin-bottom: 4%;
+}
+
+.modal-parabens .modal-body h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.modal-parabens .modal-body h6 {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.modal-parabens .modal-body p {
+    padding-top: 5%;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.modal-parabens .modal-body p a {
+    text-decoration: underline;
+    color: var(--light-blue-color);
+}

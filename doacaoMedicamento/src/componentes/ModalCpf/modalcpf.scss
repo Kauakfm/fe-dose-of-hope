@@ -1,0 +1,145 @@
+.modal-avatars {
+    color: var(--white);
+    background-color: #0b0b0b;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 10%;
+    height: 100%;
+    width: 34vw;
+    gap: 3vh;
+    overflow: hidden;
+    position: relative;
+
+    h2 {
+        width: 100%;
+    }
+
+    .close {
+        position: absolute;
+        top: 6%;
+        right: 4%;
+        font-size: 26px;
+        cursor: pointer;
+    }
+
+    .button {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+
+        button {
+            background-color: var(--purple-color);
+            color: var(--white);
+            height: 5vh;
+            border-radius: 4px;
+            transition: 0.3s ease-in-out;
+            padding: 0 5%;
+            cursor: pointer;
+
+            &:hover {
+                background-color: var(--color-purple-hover);
+            }
+        }
+    }
+
+    .spinner-button {
+        align-items: center;
+    }
+}
+
+.form {
+
+    input {
+        color: var(--white);
+        padding: 3%;
+        background-color: transparent;
+        border: 1px solid #FFF;
+        font-size: 1rem;
+        outline: none;
+        width: 100%;
+
+        &::placeholder {
+
+            opacity: 0.7;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+
+    }
+    
+    p {
+        width: 100%;
+        font-size: 13px;
+        margin-bottom: 5%;
+        margin-top: 5%;
+    }
+
+    span {}
+
+
+    
+}
+
+
+// -- responsiveness for cell phones --
+@media only screen and (max-width: 480px) {
+    .modal-avatars {
+        width: 90vw;
+
+        h2 {
+            font-size: 1.2rem;
+        }
+
+        .close {
+            top: 3%;
+            right: 4%;
+            font-size: 30px;
+        }
+
+        .avatars {
+            gap: 1.5vh;
+            justify-content: center;
+
+            img {
+                width: 55px;
+            }
+        }
+
+        .button {
+            button {
+                padding: 0 7%;
+            }
+        }
+    }
+}
+
+
+// -- tablet responsiveness --
+@media only screen and (min-width: 481px) and (max-width: 1023px) {
+    .modal-avatars {
+        width: 70vw;
+
+        .close {
+            top: 5%;
+            right: 4%;
+            font-size: 36px;
+        }
+
+        .avatars {
+            gap: 1vh;
+            justify-content: center;
+
+            img {
+                width: 70px;
+            }
+        }
+
+        .button {
+            button {
+                height: 4vh;
+            }
+        }
+    }
+}

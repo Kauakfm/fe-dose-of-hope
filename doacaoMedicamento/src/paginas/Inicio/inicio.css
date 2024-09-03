@@ -1,0 +1,244 @@
+ .obg {
+    color: white;
+    font-size: 42px;
+    text-align: center;
+    padding-top: 10%;
+    font-family: 'Poppins', 'Courier New', Courier, monospace;
+    font-weight: bold;
+    margin-bottom: 2%;
+    margin-bottom: 8%;
+}
+
+.obg b{
+    color: purple;
+}
+
+.backgroundImage2 {
+    position: absolute;
+    top: 35%;
+    right: 10%;
+    bottom: 0;
+    left: 10%;
+    background-image: url(../../imagens/background2.jpg);
+    background-size: cover;
+    opacity: 0.2;
+    z-index: -1;
+    border-radius: 10%;
+    filter: blur(3px);
+
+}
+
+.divInicio .comoAjuda {
+    text-align: center;
+    margin-top: 10%;
+    font-weight: 500;
+}
+
+.divInicio .comoAjuda b {
+    color: purple;
+}
+
+
+
+.divInicio img {
+    margin: 0;
+   margin-left: 8.5%;
+   margin-top: 3%;
+}
+
+
+.divInicio .acolhimento {
+    margin-left: 16%;
+    margin-top: -6%;
+}
+
+
+.divInicio .itemImg {
+    margin-left: 6%;
+}
+
+.divInicio .saudeImg {
+    margin-left: 4.5%;
+}
+
+
+.divInicio .pessoaImg {
+    margin-left: 11.5%;
+}
+
+.divInicio .atendimento {
+    margin-left: 43%;
+    margin-top: -13.5%;
+}
+
+.divInicio .tratamento {
+    margin-left: 70%;
+    margin-top: -11.4%;
+}
+
+.divInicio .pAcolhimento {
+    font-size: 1.3rem;
+    margin-left: 12%;
+    margin-right: 66%;
+    margin-top: 2%;
+    text-align: center;
+}
+
+.divInicio .pAtendimento {
+    font-size: 1.3rem;
+    margin-left: 35%;
+    margin-right: 36%;
+    margin-top: 2%;
+    text-align: center;
+}
+
+.divInicio .pMedicamentos {
+    font-size: 1.3rem;
+    margin-left: 65%;
+    margin-right: 11%;
+    margin-top: 2%;
+    text-align: center;
+}
+
+
+@media (max-width: 1080px) {
+    .backgroundImage2 {
+        display: none;
+    }
+    .divInicio .comoAjuda {
+        margin-top: 30%;
+        display: block;
+        width: 70%;
+        text-align: initial;
+        font-size: 1.625rem;
+        margin-left: 10%;
+    }
+
+    .divInicio .pessoaImg {
+        order: 1;
+        width: 50%;
+        height: 50%;
+        margin-left: -10%;
+    }
+
+    .divInicio .acolhimento {
+        display: none;
+    }
+
+    .divInicio .pAcolhimento {
+        font-size: 1rem;
+        margin-left: 66%;
+        display: flex;
+        margin-left: 28%;
+        margin-top: -122%;
+        margin-right: 7%;
+        text-align: left;
+    }
+
+    .divInicio .saudeImg {
+        width: 50%;
+        height: 50%;
+        margin-left: -10%;
+        margin-top: -9%;
+    }
+
+    .divInicio .pAtendimento {
+        font-size: 1rem;
+        margin-left: 66%;
+        display: flex;
+        margin-left: 3%;
+        margin-top: 17%;
+        margin-right: 37.5%;
+        text-align: left;
+    }
+
+    .divInicio .pMedicamentos {
+        font-size: 1rem;
+        margin-left: 66%;
+        display: flex;
+        margin-left: 33%;
+        margin-top: 16%;
+        margin-right: 5%;
+        text-align: left;
+    }
+
+    
+
+    .divInicio .atendimento {
+        display: none;
+    }
+
+    .divInicio .tratamento {
+        display: none;
+    }
+
+    .divInicio .itemImg {
+        margin-top: -13%;
+        width: 50%;
+        height: 50%;
+        margin-left: 50%;
+    }
+
+    .obg {
+        font-size: 1.125rem;
+        text-align: left;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 15%;
+    }
+
+}
+
+@media (min-width: 1700px) {
+    .divInicio .comoAjuda {
+        font-size: 40px;
+    }
+
+    .divInicio .pessoaImg {
+        margin-left: 13%;
+        margin-top: 8%;
+    }
+
+    .divInicio .acolhimento {
+        margin-left: 17%;
+    }
+    
+    .divInicio .pAcolhimento {
+        margin-top: 1%;
+        margin-left: 11%;
+    }
+
+    .divInicio .itemImg {
+        margin-top: 5%;
+        margin-left: 11%;
+    }
+
+    .divInicio .atendimento {
+        margin-top: -9%;
+        margin-left: 45%;
+    }
+
+    .divInicio .pAtendimento {
+        margin-left: 38%;
+        margin-top: 1.5%;
+    }
+
+    .divInicio .saudeImg {
+        margin-top: 4%;
+        margin-left: 10%;
+    }
+
+    .divInicio .tratamento {
+        margin-top: -9%;
+        margin-left: 73%;
+    }
+
+    .divInicio .pMedicamentos {
+        margin-left: 68%;
+        margin-top: 1%;
+    }
+
+    .obg {
+        margin-top: 5%;
+    }
+}

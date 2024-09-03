@@ -1,0 +1,293 @@
+.body-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15vh;
+  margin-top: 100px;
+}
+
+.voltar{
+  margin-top: -10vh !important;
+}
+.redirecionar{
+  font-size: 15px;
+}
+.redirecionar span{
+  color: var(--2-purple-color);
+  font-weight: 600;
+}
+
+.body-login h1 {
+  font-size: 45px;
+  margin-bottom: 4px;
+}
+
+.body-login h1 span {
+  color: var(--purple-color);
+}
+
+.body-login p,
+.body-login div p {
+  font-size: 15px;
+  
+}
+
+.body-login h3 {
+  font-size: 23px;
+  font-weight: bold;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.body-formulario h6 {
+  color: rgb(146, 146, 146);
+  font-size: 16px;
+  margin-bottom: 0;
+  margin-top: 4%;
+}
+
+.body-login label {
+  font-weight: 500;
+}
+
+.body-login input {
+  background-color: transparent;
+  border: 1px solid #fff;
+  width: 40vw;
+  color: var(--white-color);
+  outline: none;
+}
+
+.body-login input::login {
+  color: #8b8b8b;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.box-label section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.box-label section input,
+.box-label section select {
+  width: 20.2vw;
+}
+
+.box-label section input {
+  width: 18.7vw;
+}
+
+.box-label p {
+  width: 40vw;
+  font-size: 15px !important;
+}
+
+.body-login .confirmar {
+  background-color: var(--purple-color);
+  border-radius: 10px;
+  font-size: 17px;
+  text-align: center;
+  padding: 9px 30px !important;
+  border: none;
+  color: #fff;
+  transition: 0.4s ease-in;
+  cursor: pointer;
+  margin-top: 2.5%;
+  font-weight: 600;
+}
+
+.body-login .confirmar:hover {
+  color: var(--white-color);
+  background-color: var(--2-purple-color);
+}
+
+
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-family: "Poppins", Arial, Helvetica, sans-serif !important;
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: -bs-font-sans-serif system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 18px;
+}
+
+input::placeholder {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.botaoLogin {
+  background-color: var(--purple-color);
+  color: var(--white-color);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  font-weight: bold;
+}
+
+.botaoLogin:hover {
+  background-color: var(--color-purple-hover);
+}
+.componente-redefinir-senha .p-redefinir{
+  text-align: center;
+}
+
+.body-login span {
+  cursor: pointer;
+}
+
+
+.modal-redefinir-senha .modal-content{
+  border-radius: 30px;
+}
+
+.modal-redefinir-senha .modal-body{
+  background-color: var(--5-gray-color);
+  border-radius: 8px;
+  padding: 12% 10%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-redefinir-senha .modal-body h6{
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.modal-redefinir-senha .modal-body p{
+  padding-top: 5%;
+  font-size: 1rem;
+  text-align: center;
+}
+
+
+
+
+
+.body-redefinir-senha{
+  background-color: var(--background-color);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--white-color);
+}
+.box-redefinir-senha{
+  background-color: var(--2-gray-color);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 28vw;
+  height: 65vh;
+  padding: 0 2%;
+  border: 1px solid var(--border-gray-color);
+  border-radius: 7px;
+}
+.box-redefinir-senha img{
+  width: 22%;
+  margin-bottom: 4%;
+  margin-top: 10%;
+}
+.body-redefinir-senha section{
+  width: 90%;
+}
+.body-redefinir-senha h1{
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 8%;
+}
+.body-redefinir-senha button{
+  background-color: var(--green-color);
+  color: var(--white-color);
+  border: none;
+  padding: 1.7% 10%;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 2px 2px 10px var(--black-color);
+  transition: 0.4s ease-in-out;
+}
+.body-redefinir-senha .container-input{
+  width: 100%;
+  margin: 0 0 10% 0; 
+}
+
+
+@media (max-width: 1080px) {
+  
+
+  .body-login h3 {
+    margin-top: 5%;
+    margin-bottom: 10%;
+  }
+
+  .body-login input {
+      width: 90%;
+      margin-left: 5%;
+  }
+
+  .body-login label {
+    margin-left: 5%;
+
+  }
+
+  .redirecionar {
+    margin-left: 5%;
+  }
+
+  .voltar {
+    margin-left: 13%;
+  }
+
+}
+
+@media (min-width: 1700px) {
+  .body-login h3 {
+    font-size: 28px;
+}
+
+.body-login p {
+    width: 40vw;
+    font-size: 20px !important;
+}
+
+.body-login label {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.body-login input {
+    background-color: transparent;
+    border: 1px solid #fff;
+    width: 40vw;
+    color: var(--white-color);
+    outline: none;
+    font-size: 25px;
+}
+.botaoLogin {
+    font-size: 20px;
+    margin-bottom: 15%;
+    margin-top: 10px;
+}
+
+.body-login input::placeholder {
+  font-size: 19px;
+}
+}

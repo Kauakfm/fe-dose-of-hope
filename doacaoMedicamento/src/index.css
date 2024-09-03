@@ -1,0 +1,49 @@
+/* global */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  font-family: 'Poppins', 'Courier New', Courier, monospace;
+}
+
+:root {
+  --white-color: #fff;
+  --background-color: #202020;
+  --purple-color: #800080;
+  --2-purple-color: #920092;
+  --purple-h1-home: rgb(171, 2, 171);
+  --gray-color: #dfdfdf;
+  --1-gray-color: #7a7a7a;
+  --2-gray-color: #393a41;
+  --3-gray-color: #2f3037;
+  --4-gray-color: #26262c;
+  --5-gray-color: #1e1e21;
+  --border-color: #ffffff1a;
+  --div-chat-color: #1d1d1d;
+  --color-purple-hover: rgb(105, 4, 105);
+}
+
+a{
+  text-decoration: none;
+  color: var(--white-color);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--white-color);
+  font-family: 'Poppins', BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(32, 32, 32);
+}
+
+::-webkit-scrollbar{
+  width: 7px;
+  background-color: var(--5-gray-color);
+  border: none;
+}
+::-webkit-scrollbar-thumb{
+  background-color: var(--white-color);
+  border-radius: 50px;
+  height: 10vh;
+}
