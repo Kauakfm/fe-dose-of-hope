@@ -20,16 +20,19 @@ import Unauthorized from '../componentes/Unauthorized';
 import Header from '../componentes/Header';
 import { Outlet } from 'react-router-dom';
 import { UserProvider } from '../hooks/Context/UserContext';
+import HeaderMobile from '../componentes/HeaderMobile';
+import LayoutWithHeader from './layoutWithHeader';
 
 export default function RoutesApp() {
-    function LayoutWithHeader() {
-        return (
-            <>
-                <Header />
-                <Outlet />
-            </>
-        );
-    }
+    // function LayoutWithHeader() {
+    //     return (
+    //         <>
+    //             <Header />
+    //             <HeaderMobile />
+    //             <Outlet />
+    //         </>
+    //     );
+    // }
     function RoutesUser() {
         return (
             <>

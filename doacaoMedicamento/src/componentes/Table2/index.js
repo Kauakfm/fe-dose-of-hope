@@ -47,14 +47,14 @@ export default function Tabela2({ botoesDeAcao = [], dados = [], colunasVisiveis
                     <tr>
                         {colunas.map((coluna, index) => (
                             <th key={index}>
+                                {coluna.title}
+                                <br />
                                 <input
                                     type="text"
                                     placeholder={`Filtrar ${coluna.title}`}
                                     value={filtros[coluna.header] || ""}
                                     onChange={(e) => handleAlterarFiltro(e, coluna.header)}
                                 />
-                                <br />
-                                {coluna.title}
                             </th>
                         ))}
                         {botoesDeAcao.length > 0 && <th>Ações</th>}
@@ -82,14 +82,14 @@ export default function Tabela2({ botoesDeAcao = [], dados = [], colunasVisiveis
                         </tr>
                     ))}
                 </tbody>
+                <div className="paginacao">
+                    {Array.from({ length: totalPaginas }, (_, index) => (
+                        <button key={index + 1} onClick={() => handleAlterarPagina(index + 1)} className={paginaAtual === index + 1 ? "ativo" : ""} >
+                            {index + 1}
+                        </button>
+                    ))}
+                </div>
             </table>
-            <div className="paginacao">
-                {Array.from({ length: totalPaginas }, (_, index) => (
-                    <button key={index + 1} onClick={() => handleAlterarPagina(index + 1)} className={paginaAtual === index + 1 ? "ativo" : ""} >
-                        {index + 1}
-                    </button>
-                ))}
-            </div>
         </div>
     );
 }

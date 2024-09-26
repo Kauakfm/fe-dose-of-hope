@@ -4,70 +4,53 @@ import React, { useState, useEffect, useRef } from 'react';
 import { FiMenu } from 'react-icons/fi';
 import { RiCloseLine } from 'react-icons/ri';
 
-export default function HeaderMobile() {
+export default function HeaderMobile() {  
+    const location = useLocation();  
+    const [dropdownOpen, setDropdownOpen] = useState(false);  
+    const dropdownRef = useRef(null);  
 
-    const location = useLocation();
-    const [currentScreen, setCurrentScreen] = useState('');
-    const handleScreenChange = (screenName) => {
-        setCurrentScreen(screenName);
-    };
-    const [niveisacesso, setNiveisacesso] = useState(["", "", ""])
-    const tipoUser = window.localStorage.getItem('usr_tipo')
+    useEffect(() => {  
+        function handleClickOutside(event) {  
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {  
+                setDropdownOpen(false);  
+            }  
+        }  
 
-    const [dropdownOpen, setDropdownOpen] = useState(false);
-    const dropdownRef = useRef(null);
+        document.addEventListener("mousedown", handleClickOutside);  
+        return () => {  
+            document.removeEventListener("mousedown", handleClickOutside);  
+        };  
+    }, []);  
 
-    useEffect(() => {
-        function handleClickOutside(event) {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-                setDropdownOpen(false);
-            }
-        }
+    const toggleDropdown = () => {  
+        setDropdownOpen(!dropdownOpen);  
+    };  
 
-        document.addEventListener("mousedown", handleClickOutside);
+    const closeDropdown = () => {  
+        setDropdownOpen(false);  
+    };  
 
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, []);
-
-    const toggleDropdown = () => {
-        setDropdownOpen(!dropdownOpen);
-    };
-    const closeDropdown = () => {
-        setDropdownOpen(false);
-    };
-    const handlenotawait = () => {
-        setNiveisacesso(tipoUser == 1 ? ["ativo", "ativo", "ativo", "ativo", "ativo"]
-            : tipoUser == 2 ? ["ativo", "ativo", "ativo", "", "ativo"]
-                : ["", "", ""])
-    }
-    useEffect(() => {
-        handlenotawait()
-    }, [])
-
-    return (
-        <div>
-            < FiMenu id='header-mobile' onClick={toggleDropdown} fontSize={25} />
-            <div ref={dropdownRef} className={`dropdown-overlay ${dropdownOpen ? 'open slide-in' : ''}`}>
-                <div><RiCloseLine onClick={closeDropdown} /></div>
-                {niveisacesso[0] == "ativo" ? <Link to={`/inicio`}>Início</Link> : ""}
-                {niveisacesso[1] == "ativo" ? <Link to={`/contribuir`}>Contribuir</Link> : ""}
-                {niveisacesso[2] == "ativo" ? <Link to={`/doacao`}>Doações</Link> : ""}
-                {niveisacesso[3] === 'ativo' ?
-                    <div className="btn-adm dropdown">
-                        <button className="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Administrativo
-                        </button>
-                        <ul className="dropdown-menu">
-                            <li><Link to={`/administrativo/aprovar`} className="dropdown-item">Aprovar medicamento</Link></li>
-                            <li><Link to={`/administrativo/usuarios`} className="dropdown-item">Usuarios</Link></li>
-                        </ul>
-                    </div>
-                    : ""}
-                <Link className="btn-sair" to={`/login`}>Sair</Link>
-            </div>
-        </div >
-
-    )
-}
+    return (  
+        <div>  
+            <FiMenu id='header-mobile' onClick={toggleDropdown} fontSize={25} />  
+            <div ref={dropdownRef} className={`dropdown-overlay ${dropdownOpen ? 'open slide-in' : ''}`}>  
+                <div><RiCloseLine onClick={closeDropdown} /></div>  
+                <Link to={`/inicio`}>Início</Link>  
+                <Link to={`/contribuir`}>Contribuir</Link>  
+                <Link to={`/doacao`}>Doações</Link>  
+                <Link to={`/chat`}>Chat</Link> 
+                <Link to='/conta'>Minha Conta</Link>
+                <div className="btn-adm dropdown">  
+                    {/* <button className="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">  
+                        Administrativo  
+                    </button>   */}
+                    <ul className="dropdown-menu">  
+                        <li><Link to={`/administrativo/aprovar`} className="dropdown-item">Aprovar medicamento</Link></li>  
+                        <li><Link to={`/administrativo/usuarios`} className="dropdown-item">Usuários</Link></li>  
+                    </ul>  
+                </div>  
+                <Link className="btn-doar" to={`/login`}>Sair</Link>  
+            </div>  
+        </div>  
+    );  
+}  

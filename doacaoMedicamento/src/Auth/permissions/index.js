@@ -17,5 +17,5 @@ export const permissions = {
 
 export const RotasSignalR = {
     1: "https://localhost:7277/chat",
-    2: ""
+    2: "https://www.webapiesperanca.online/webApiNet8/chat"
 }

@@ -124,7 +124,7 @@ export default function Cadastro() {
             </div>
             <div className='divDate'>
               <label>Data de nascimento*</label>
-              <input type="date" value={dataNascimento} onChange={(e) => setDataNascimento(e.target.value)} /> <br />
+              <input type="date" value={dataNascimento} onChange={(e) => setDataNascimento(e.target.value)} className='input'/> <br />
               {errors.dataNascimento && <span style={{ color: 'red' }}>{errors.dataNascimento}</span>}
             </div>
           </section>

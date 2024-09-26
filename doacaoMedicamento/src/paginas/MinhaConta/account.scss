@@ -88,8 +88,8 @@
             text-align: center;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            width: 15%;
             font-weight: bold;
+            margin-top: 2%;
         }
 
         .buttonn {
@@ -190,111 +190,99 @@
     gap: 5%;
 }
 
-
-
-
-
-// -- responsiveness for cell phones --
 @media only screen and (max-width: 480px) {
     .account {
-        padding: 5vh 0 8vh 0;
+        padding: 3vh 2vw; // Reduzir padding para celular
 
         form {
-            width: 80%;
-            border-radius: 8px;
-            padding: 2vh 6vw;
+            width: 90%; // Preencher a maior parte da tela
+            padding: 2vh 2vw; // Ajustar o padding
+
+            .div-form {
+                flex-direction: column; // Colocar inputs um abaixo do outro
+                gap: 2vh; // Espaço entre os inputs
+
+                div {
+                    width: 100%; // Largura total para cada input
+                }
+            }
 
             label {
-                font-size: 0.9rem;
+                font-size: 1rem; // Aumentar um pouco o tamanho da fonte
             }
 
-            select {
-                width: 50%;
-                margin-left: -1.5%;
-            }
-
-            div {
-                img {
-                    width: 80px;
-                }
-
-                input {
-                    font-size: 1.1rem;
-                }
+            input {
+                font-size: 1rem; // Tamanho da fonte nos campos de entrada
+                padding: 10px; // Aumentar padding para conforto
             }
 
             button {
-                width: 100%;
-                font-size: 0.9rem;
+                font-size: 1rem; // Aumentar a fonte para botões
+                width: 100%; // Botões ocupam toda a largura
+                padding: 10px; // Aumentar padding dos botões
+                
+            }
+
+            img {
+                width: 80px; // Ajustar imagem para melhor ajuste
             }
         }
 
         section {
-            width: 80%;
-            border-radius: 8px;
-            padding: 2vh 6vw;
+            width: 100%; // Mantenha a mesma proporção
+            padding: 2vh 2vw; // Ajustar padding
 
             button {
-                gap: 2vw;
-                font-size: 0.9rem;
-
-                svg {
-                    width: 24px;
-                }
+                gap: 2vw; // Aumentar espaçamento para ícones
+                font-size: 1rem; // Tamanho da fonte no botão
             }
         }
     }
 }
 
 
-// -- tablet responsiveness --
-@media only screen and (min-width: 481px) and (max-width: 1023px) {
-    .account {
-        padding: 5vh 0 8vh 0;
+// Responsividade para tablet  
+@media only screen and (min-width: 481px) and (max-width: 1023px) {  
+    .account {  
+        padding: 4vh 3vw; // Ajuste o padding para maior conforto  
 
-        form {
-            width: 50%;
-            border-radius: 10px;
-            padding: 2vh 4vw;
+        form {  
+            width: 90%; // Ajuste mais amplo para tablet  
+            border-radius: 10px;  
+            padding: 3vh 5vw;  
 
-            label {
-                font-size: 0.9rem;
-            }
+            label {  
+                font-size: 0.85rem; // Um pouco menor  
+            }  
 
-            select {
-                width: 45%;
-                margin-left: -1.5%;
-            }
+            select {  
+                width: 80%; // Aproveitar espaço total  
+            }  
 
-            div {
-                img {
-                    width: 85px;
-                }
+            div {  
+                img {  
+                    width: 70px; // Ajustar dimensão da imagem  
+                }  
 
-                input {
-                    font-size: 1.1rem;
-                }
-            }
+                input {  
+                    font-size: 1rem; // Tamanho da fonte para entradas  
+                }  
+            }  
 
-            button {
-                width: 100%;
-                font-size: 1rem;
-            }
-        }
+            button {  
+                width: 100%;  
+                font-size: 1rem; // Melhorar legibilidade  
+            }  
+        }  
 
-        section {
-            width: 50%;
-            border-radius: 10px;
-            padding: 2vh 4vw;
+        section {  
+            width: 90%;  
+            padding: 2vh 4vw;  
 
-            button {
-                gap: 1.5vw;
-                font-size: 0.9rem;
-
-                svg {
-                    width: 24px;
-                }
-            }
-        }
-    }
-}
+            button {  
+                gap: 1.5vw;  
+                font-size: 0.9rem;  
+            }  
+        }  
+    }  
+}  

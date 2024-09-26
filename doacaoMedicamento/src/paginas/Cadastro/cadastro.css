@@ -202,6 +202,14 @@ select::option {
 
     }
 
+    .body-cadastro .input {
+        width: 250%;
+    }
+
+    .divDate label {
+        width: 250%;
+    }
+
     .body-cadastro label {
         margin-left: 20px;
 
@@ -234,7 +242,7 @@ select::option {
     }
 
     .check2 {
-        width: 83%;
+        width: 90%;
         margin-bottom: 5%;
         margin-right: 10px;
        

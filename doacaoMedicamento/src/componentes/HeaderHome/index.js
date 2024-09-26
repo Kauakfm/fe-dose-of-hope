@@ -1,63 +1,55 @@
-import './headerhome.css'
-import { Link, useLocation } from 'react-router-dom';
-import React, { useState, useEffect, useRef } from 'react';
-import { FiMenu } from 'react-icons/fi';
-import { RiCloseLine } from 'react-icons/ri';
+import './headerhome.css'  
+import { Link, useLocation } from 'react-router-dom';  
+import React, { useState, useEffect, useRef } from 'react';  
+import { FiMenu } from 'react-icons/fi';  
+import { RiCloseLine } from 'react-icons/ri';  
 
-export default function Header() {
-    const location = useLocation();
-    const [currentScreen, setCurrentScreen] = useState('');
-    const handleScreenChange = (screenName) => {
-        setCurrentScreen(screenName);
-    };
+export default function Header() {  
+    const location = useLocation();  
+    const [currentScreen, setCurrentScreen] = useState('');  
+    const [dropdownOpen, setDropdownOpen] = useState(false);  
+    const dropdownRef = useRef(null);  
 
+    useEffect(() => {  
+        function handleClickOutside(event) {  
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {  
+                setDropdownOpen(false);  
+            }  
+        }  
 
-    const [dropdownOpen, setDropdownOpen] = useState(false);
-    const dropdownRef = useRef(null);
+        document.addEventListener("mousedown", handleClickOutside);  
+        return () => {  
+            document.removeEventListener("mousedown", handleClickOutside);  
+        };  
+    }, []);  
 
-    useEffect(() => {
-        function handleClickOutside(event) {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-                setDropdownOpen(false);
-            }
-        }
+    const toggleDropdown = () => {  
+        setDropdownOpen(!dropdownOpen);  
+    };  
 
-        document.addEventListener("mousedown", handleClickOutside);
-
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, []);
-
-    const toggleDropdown = () => {
-        setDropdownOpen(!dropdownOpen);
-    };
-    const closeDropdown = () => {
-        setDropdownOpen(false);
-    };
-
-    return (
-        <div className='headerHome'>
-            <Link to={`/inicio`}><h1>Dose de Esperança</h1></Link>
-            <div id='header-web' className='container-header'>
-                <a href='#inicio'>Início</a>
-                <a href='#quem-somos'>Quem Somos</a>
-                <a href='#nosso-proposito'>Nosso Proposito</a>
-                </div>
-                <div className='div-btn'>
-                    <Link className="btn-doar" to={`/login`}>Entrar</Link>
-                    <Link className="btn-doar2" to={`/cadastro`}>Cadastrar-se</Link>
-                </div>
-            
-            <FiMenu id='header-mobile' onClick={toggleDropdown} fontSize={25} />
-            <div ref={dropdownRef} className={`dropdown-overlay ${dropdownOpen ? 'open slide-in' : ''}`}>
-                <div><RiCloseLine onClick={closeDropdown} /></div>
-                <Link to={`/inicio`}>Início</Link>
-                <a href='#quem-somos'>Quem Somos</a>
-                <a href='#nosso-proposito'>Nosso Proposito</a>
-                <Link className="btn-doar" to={`/login`}>Entrar</Link>
-                <Link className="btn-doar" to={`/cadastro`}>Cadastrar-se</Link>
-            </div>
-        </div>
-    )
+    return (  
+        <div className='headerHome'>  
+            <Link to={`/inicio`}><h1>Dose de Esperança</h1></Link>  
+            <div id='header-web' className='container-header'>  
+                <a href='#inicio'>Início</a>  
+                <a href='#quem-somos'>Quem Somos</a>  
+                <a href='#nosso-proposito'>Nosso Proposito</a>  
+            </div>  
+            <div id='header-mobile' onClick={toggleDropdown}>  
+                <FiMenu fontSize={25} />  
+            </div>  
+            <div className='div-btn'>  
+                <Link className="btn-doar" to={`/login`}>Entrar</Link>  
+                <Link className="btn-doar2" to={`/cadastro`}>Cadastrar-se</Link>  
+            </div>  
+            <div ref={dropdownRef} className={`dropdown-overlay ${dropdownOpen ? 'open' : ''}`}>  
+                <div><RiCloseLine onClick={toggleDropdown} /></div>  
+                <Link to={`/inicio`}>Início</Link>  
+                <a href='#quem-somos'>Quem Somos</a>  
+                <a href='#nosso-proposito'>Nosso Proposito</a>  
+                <Link className="btn-doar" to={`/login`}>Entrar</Link>  
+                <Link className="btn-doar" to={`/cadastro`}>Cadastrar-se</Link>  
+            </div>  
+        </div>  
+    );
 }

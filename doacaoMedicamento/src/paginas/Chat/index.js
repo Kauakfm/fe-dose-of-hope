@@ -6,6 +6,7 @@ import { formatarNome, decrypt } from '../../utils/utils';
 import './chat.css';
 import { UserContext } from '../../hooks/Context/UserContext';
 import Spinner from '../../componentes/Spinner';
+import { LiaSearchSolid } from "react-icons/lia";
 
 export default function HomeChat() {
   const [object, setObject] = useState([]);
@@ -14,15 +15,16 @@ export default function HomeChat() {
   const [messageList, setMessageList] = useState([]);
   const [codDestinatario, setCodigoDestinatario] = useState(0);
   const [loading, setLoading] = useState(false);
-  const { user } = useContext(UserContext)
-  const codigoUsuarioLogado = decrypt(user.codigo)
+  const { user } = useContext(UserContext);
+  const codigoUsuarioLogado = decrypt(user.codigo);
+  const [searchText, setSearchText] = useState('');
+  const [usuarioChatAtivo, setusuarioChatAtivo] = useState('');
 
   useEffect(() => {
     const handleObterDoacoes = async () => {
       try {
         const response = await api.get('BatePapo');
         const responseData = response.data;
-        console.log(responseData)
         const objetosMapeados = responseData.map(objeto => ({
           ...objeto,
           nome: formatarNome(objeto.nome)
@@ -36,6 +38,10 @@ export default function HomeChat() {
   }, []);
 
   const handleUserSelection = (codigoDestinatario) => {
+    const destinatarioSelecionado = object.find(e => e.codigo === codigoDestinatario);
+    if (destinatarioSelecionado) {
+      setusuarioChatAtivo(destinatarioSelecionado.nome);
+    }
     handleCriaConversaEBuscaConversa(codigoDestinatario);
   };
 
@@ -43,15 +49,22 @@ export default function HomeChat() {
     try {
       setLoading(true);
       setCodigoDestinatario(codigoDestinatario);
-      api.get(`BatePapo/${codigoUsuarioLogado}/${codigoDestinatario}`).then((response) => {
-        setMessageList(response.data.lstConversas);
-        setConversaCodigo(response.data.codigoConversa);
-        setIsVisible(true);
-        setLoading(false);
-      })
+      const response = await api.get(`BatePapo/${codigoUsuarioLogado}/${codigoDestinatario}`);
+      setMessageList(response.data.lstConversas);
+      setConversaCodigo(response.data.codigoConversa);
+      setIsVisible(true);
+      setLoading(false);
     } catch (error) {
       console.error("Erro ao criar ou buscar conversa:", error);
     }
+  };
+
+  const filteredObject = object.filter(e =>
+    e.nome.toLowerCase().includes(searchText.toLowerCase())
+  );
+
+  const handleSearchChange = (e) => {
+    setSearchText(e.target.value);
   };
 
   return (
@@ -59,15 +72,19 @@ export default function HomeChat() {
       <div className='dashboard-rede blocos-dashboard'>
         <div className='div-chat'>
           <h1>Lista de doadores</h1>
-          {object.map(e => (
+          <div className='search-container'>
+            <LiaSearchSolid className='search-icon' />
+            <input type='search' placeholder='Pesquisar ou começar uma nova conversa' className='search' value={searchText} onChange={handleSearchChange} />
+          </div>
+          {filteredObject.map(e => (
             <div className='rede' key={e.codigo}>
               <img src={e.avatar} alt='avatar' />
               <div className='info-container' onClick={() => handleUserSelection(e.codigo)}>
                 <p>{e.nome}</p>
-                <button className='botaoDoacao' data-bs-toggle="modal" data-bs-target={`#modal${e.codigo}`}>
-                  Ver doações
-                </button>
               </div>
+              <button className='botaoDoacao' data-bs-toggle="modal" data-bs-target={`#modal${e.codigo}`}>
+                Ver doações
+              </button>
             </div>
           ))}
         </div>
@@ -83,6 +100,7 @@ export default function HomeChat() {
               MessageList={messageList}
               CodConversa={conversaCodigo}
               destinatarioCodigo={codDestinatario}
+              usuarioChatAtivo={usuarioChatAtivo}
             />
           ) : (
             <NewChat Visible={isVisible} />

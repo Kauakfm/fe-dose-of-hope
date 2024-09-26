@@ -6,21 +6,20 @@ import { RotasSignalR } from '../../Auth/permissions';
 import { UserContext } from '../../hooks/Context/UserContext';
 import { decrypt } from '../../utils/utils';
 
-
-export default function NewChat({ Visible, MessageList, CodConversa, destinatarioCodigo }) {
+export default function NewChat({ Visible, MessageList, CodConversa, destinatarioCodigo, usuarioChatAtivo }) {
     const [visible, setVisible] = useState(Visible);
     const [message, setMessage] = useState('');
     const [messageLst, setMessageLst] = useState([]);
     const [connectionFora, setConnectionFora] = useState(null);
-    const { user } = useContext(UserContext)
-    const codigoUsuarioLogado = decrypt(user.codigo)
+    const { user } = useContext(UserContext);
+    const codigoUsuarioLogado = decrypt(user.codigo);
 
     const bottomRef = useRef();
     const messageRef = useRef();
 
     const handleSendMessage = () => {
         if (!message.trim()) return;
-        
+
         if (connectionFora) {
             connectionFora.invoke("SendMessage", parseInt(CodConversa), parseInt(codigoUsuarioLogado), parseInt(destinatarioCodigo), message)
                 .then(() => {
@@ -38,13 +37,13 @@ export default function NewChat({ Visible, MessageList, CodConversa, destinatari
     };
 
     useEffect(() => {
-        setMessageLst(MessageList)
+        setMessageLst(MessageList);
     }, [MessageList]);
 
     useEffect(() => {
         if (visible) {
             const connection = new signalR.HubConnectionBuilder()
-                .withUrl(RotasSignalR[1])
+                .withUrl(RotasSignalR[2])
                 .build();
 
             connection.start()
@@ -80,6 +79,12 @@ export default function NewChat({ Visible, MessageList, CodConversa, destinatari
             {visible && (
                 <div className='layout'>
                     <div className='chat-container'>
+                        <div className='chat-header'>
+                            <h2>{user.destinatarioNome}</h2>
+                        </div>
+                        <div className='chat-header'>
+                            <h2>{usuarioChatAtivo}</h2>
+                        </div>
                         <div className='chat-body'>
                             {messageLst.map((msg, index) => (
                                 <div className='message-container' key={index}>

@@ -159,9 +159,9 @@ export default function EditarUsuario() {
                             </div>
                         </div>
                         <div className="col-md-3">
-                            <label>Cpf:</label>
+                            <label>CPF:</label>
                             <div className='presencial-input'>
-                                <input type="text" placeholder='Senha' value={cpf} onChange={handleCpf} />
+                                <input type="text" placeholder='CPF' value={cpf} onChange={handleCpf} />
                             </div>
                         </div>
 
@@ -178,7 +178,7 @@ export default function EditarUsuario() {
                             </div>
                         </div>
                         <div className="col-md-3">
-                            <label>Tipo</label>
+                            <label>Tipo de usuário</label>
                             <div className='presencial-input'>
                                 <select className='presencial-input' value={tipo} onChange={handleTipo}>
                                     <option value="0">Selecione</option>
@@ -190,7 +190,7 @@ export default function EditarUsuario() {
                         <div className="col-md-3">
                             <label>Telefone:</label>
                             <div className='presencial-input'>
-                                <input type="text" placeholder='Senha' maxLength={12} value={telefone} onChange={handleTelefone} />
+                                <input type="text" placeholder='Telefone' maxLength={12} value={telefone} onChange={handleTelefone} />
                             </div>
                         </div>
 

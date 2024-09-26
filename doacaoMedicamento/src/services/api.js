@@ -2,9 +2,9 @@ import axios from 'axios';
 
 const api = axios.create({
     //baseURL: 'https://api.varsolutions.com.br/webApiEsperanca/'
-    //baseURL: 'https://www.webapiesperanca.online/webApi/'
+      baseURL: 'https://www.webapiesperanca.online/webApiNet8/api/'
     //baseURL: 'http://localhost:5026/'
-    baseURL: 'https://localhost:7277/api/'
+    //baseURL: 'https://localhost:7277/api/'
 });
 
 

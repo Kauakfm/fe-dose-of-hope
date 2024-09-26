@@ -4,6 +4,7 @@ import Footer from '../../componentes/Footer';
 import Pessoa from '../../imagens/pessoa.png';
 import Item from '../../imagens/item.png';
 import Saude from '../../imagens/upup.png';
+import HeaderMobile from '../../componentes/HeaderMobile';
 
 
 export default function Inicio() {
@@ -26,6 +27,7 @@ export default function Inicio() {
       </div>
       <h1 className='obg'>Obrigado por acreditar em nós.<b><br /> Juntos faremos a diferença!</b></h1>
       <Footer />
+      <HeaderMobile />
     </div>
   )
 }

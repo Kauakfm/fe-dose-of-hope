@@ -4,10 +4,11 @@ import api from "../../../services/api";
 import Header from "../../../componentes/Header";
 import { formatarData } from "../../../utils/utils";
 import Columns from "../../../componentes/Table2/Columns";
+import './aprovar.css'
 
 export default function Aprovar() {
     const [data, setData] = useState([]);
-    const [visibleColumns, setVisibleColumns] = useState(["nomeUsuario","tipoProdutoDescricao", "nome", "validade"]);
+    const [visibleColumns, setVisibleColumns] = useState(["nomeUsuario", "tipoProdutoDescricao", "nome", "validade"]);
 
     useEffect(() => {
         const handleObterDoacoes = async () => {
@@ -45,12 +46,14 @@ export default function Aprovar() {
     return (
         <div className="body-administrativo">
             <main>
-                <Table2 botoesDeAcao={actionButtons} dados={data} colunasVisiveis={visibleColumns} numeroDePagina={20} >
-                    <Columns header={"nomeUsuario"} title={"Nome usuário"}/> 
-                    <Columns header={"tipoProdutoDescricao"} title={"Tipo produto descrição"}/> 
-                    <Columns header={"nome"} title={"Nome remédio"}/> 
-                    <Columns header={"validade"} title={"Validade"}/> 
-                </Table2>
+                <div className="table-container">
+                    <Table2 botoesDeAcao={actionButtons} dados={data} colunasVisiveis={visibleColumns} numeroDePagina={20} >
+                        <Columns header={"nomeUsuario"} title={"Nome usuário"} />
+                        <Columns header={"tipoProdutoDescricao"} title={"Tipo produto descrição"} />
+                        <Columns header={"nome"} title={"Nome remédio"} />
+                        <Columns header={"validade"} title={"Validade"} />
+                    </Table2>
+                </div>
             </main>
         </div>
     );
