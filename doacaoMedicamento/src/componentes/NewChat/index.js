@@ -63,6 +63,12 @@ export default function NewChat({ Visible, MessageList, CodConversa, destinatari
         }
     }, [CodConversa]);
 
+    useEffect(() => {
+        if (bottomRef.current) {
+            bottomRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [messageLst]);
+
     return (
         <>
             {!visible && (
@@ -70,8 +76,8 @@ export default function NewChat({ Visible, MessageList, CodConversa, destinatari
                     <MdOutlineMessage style={{ fontSize: "40px" }} />
                     <h1>Chat ao vivo</h1>
                     <p>Conectando Corações Generosos: Onde Doadores Dialogam, Inspiram e Transformam Vidas!</p>
-                    <IoLockClosedOutline style={{ fontSize: "15px", marginLeft: "-49%" }} />
                     <div className='layout2'>
+                        <IoLockClosedOutline style={{ fontSize: "15px" }} />
                         <p>Protegido com criptografia de ponta a ponta</p>
                     </div>
                 </div>

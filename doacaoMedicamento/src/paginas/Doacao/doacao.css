@@ -50,8 +50,7 @@
 
 .qualRemedioH1 {
     margin-top: 170px;
-    position: absolute;
-    margin-left: 120px;
+    margin-left: 70px;
     font-size: 40px;
     font-weight: bold;
 }
@@ -62,15 +61,21 @@
 }
 
 .paragrafoRemedio {
-    margin-top: 270px;
+    /* margin-top: 270px; */
     font-weight: 400;
     font-size: 22px;
-    margin-left: 120px;
-    margin-right: 710px;
+    margin-left: 70px;
+    /* margin-right: 710px; */
 }
 
 
+.qualidade-de-vida-conteuto-texto{
+    display: flex;
+}
 
+.qualidade-de-vida-doacao-texto{
+    width: 60vw;
+}
 
 .containerAnimado {
     display: flex;
@@ -78,23 +83,22 @@
     height: 100vh;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    /* position: absolute;
     top: 440px;
-    margin-left: 640px;
+    margin-left: 640px; */
 }
-
 
 .box {
     position: relative;
-    width: 450px;
-    height: 300px;
+    width: 400px;
+    height: 250px;
     background-color: rgb(32, 32, 32);
     border-radius: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    left: 80px;
+    left: 130px;
     top: -80px;
 }
 
@@ -105,12 +109,6 @@
     height: 300%;
     background: linear-gradient(180deg, var(--purple-color), rgb(165, 27, 165));
     animation: animate 9s linear infinite;
-}
-
-@keyframes animate {
-    100%{
-        transform: rotate(360deg);
-    }
 }
 
 .box::after {
@@ -129,6 +127,11 @@
     border-radius: 30px;
 }
 
+@keyframes animate {
+    100%{
+        transform: rotate(360deg);
+    }
+}
 
 .uele {
     list-style-type: none;
@@ -198,8 +201,6 @@
 
 .containerAnimado3{
     display: flex;
-    width: 100vh;
-    height: 100vh;
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -210,8 +211,8 @@
 
 .box3 {
     position: relative;
-    width: 450px;
-    height: 500px;
+    width: 250px;
+    height: 300px;
     background-color: rgb(32, 32, 32);
     border-radius: 30px;
     display: flex;
@@ -249,7 +250,6 @@
     position: relative;
     z-index: 1;
     width: 97%;
-    /* margin-left: 7%; */
     height: 97%;
     border-radius: 30px;
 }
@@ -327,8 +327,8 @@
    }
 
    .box {
-    width: 40%;
-    height: 30%;
+    width: 250px;
+    height: 300%;
    }
 
    .divOk .title {

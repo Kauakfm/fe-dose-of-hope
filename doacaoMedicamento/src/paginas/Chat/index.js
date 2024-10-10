@@ -68,14 +68,14 @@ export default function HomeChat() {
   };
 
   return (
-    <div>
-      <div className='dashboard-rede blocos-dashboard'>
-        <div className='div-chat'>
-          <h1>Lista de doadores</h1>
-          <div className='search-container'>
-            <LiaSearchSolid className='search-icon' />
-            <input type='search' placeholder='Pesquisar ou começar uma nova conversa' className='search' value={searchText} onChange={handleSearchChange} />
-          </div>
+    <div className='dashboard-chat-primeirobloco'>
+      <div className='div-chat'>
+        <h1>Lista de doadores</h1>
+        <div className='search-container'>
+          <LiaSearchSolid className='search-icon' />
+          <input type='search' placeholder='Pesquisar ou começar uma nova conversa' className='search' value={searchText} onChange={handleSearchChange} />
+        </div>
+        <div className='dashboard-rede-flatList'>
           {filteredObject.map(e => (
             <div className='rede' key={e.codigo}>
               <img src={e.avatar} alt='avatar' />

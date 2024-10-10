@@ -15,24 +15,24 @@ import TesteWebSocket from '../paginas/TesteWebSocket/'
 //import NewChat from '../paginas/Chat/NewChat';
 import MinhaConta from '../paginas/MinhaConta';
 import AprovarCpf from '../paginas/Administrativo/AprovarCpf';
+import UploadMedicamento from '../paginas/UploadMedicamento/';
+import DetalhesDoacao from '../paginas/DetalhesDoacao/';
+import ListaDoacoes from '../paginas/ListaDoacoes/';
 import ProtectedRoute from '../Auth/ProtectedRoutes';
 import Unauthorized from '../componentes/Unauthorized';
-import Header from '../componentes/Header';
 import { Outlet } from 'react-router-dom';
 import { UserProvider } from '../hooks/Context/UserContext';
-import HeaderMobile from '../componentes/HeaderMobile';
 import LayoutWithHeader from './layoutWithHeader';
+import HeaderDeitado from '../componentes/HeaderDeitado';
 
 export default function RoutesApp() {
     // function LayoutWithHeader() {
     //     return (
     //         <>
-    //             <Header />
-    //             <HeaderMobile />
-    //             <Outlet />
     //         </>
     //     );
     // }
+
     function RoutesUser() {
         return (
             <>
@@ -73,6 +73,21 @@ export default function RoutesApp() {
                                 <Formulario />
                             </ProtectedRoute>} />
 
+                        <Route path="/doe-medicamentos/formulario/uploadMedicamento" element={
+                            <ProtectedRoute requiredPermissions={['VIEW_DOACAO']}>
+                                <UploadMedicamento />
+                            </ProtectedRoute>} />
+
+                        <Route path="/doe-medicamentos/formulario/detalhesDoacao" element={
+                            <ProtectedRoute requiredPermissions={['VIEW_DOACAO']}>
+                                <DetalhesDoacao />
+                            </ProtectedRoute>} />
+
+                        <Route path="/doe-medicamentos/formulario/listaDoacoes" element={
+                            <ProtectedRoute requiredPermissions={['VIEW_DOACAO']}>
+                                <ListaDoacoes />
+                            </ProtectedRoute>} />
+
                         <Route path="/administrativo/aprovar" element={<Aprovar />} />
                         <Route path="/administrativo/usuarios" element={<Usuarios />} />
                         <Route path="editarUsuario/:id" element={<Editar />} />
@@ -93,6 +108,6 @@ export default function RoutesApp() {
                     </Route>
                 </Route>
             </Routes>
-        </BrowserRouter >
+        </BrowserRouter>
     )
 }

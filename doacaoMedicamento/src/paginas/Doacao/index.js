@@ -1,7 +1,6 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useRef } from 'react'
 import './doacao.css'
-import Header from '../../componentes/Header';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import medicamentos from '../../imagens/medicamentos.jpeg';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { AiOutlineCheckCircle } from 'react-icons/ai';
@@ -9,29 +8,11 @@ import { LuAlertCircle } from 'react-icons/lu';
 import Footer from "../../componentes/Footer";
 import farmacia from '../../imagens/farmacia.jpg';
 import { FiCheckCircle } from 'react-icons/fi';
-import api from '../../services/api';;
 
 export default function Doacao() {
-
-    const carousel = useRef();
-    const [width, setWidth] = useState(0)
     const navigate = useNavigate();
 
-    // useEffect(() => {
-    //     if (window.localStorage.getItem('usr_token') == null)
-    //         navigate("/login");
-    //     if (window.localStorage.getItem('usr_codigo') == null)
-    //         navigate("/login");
-    //     if (window.localStorage.getItem('usr_tipo') == null)
-    //         navigate("/login");
-    //     if (window.localStorage.getItem('usr_nome') == null)
-    //         navigate("/login");
-
-    //     api.get("Autenticacao");
-    //     setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth)
-    // }, [])
-
-    function handleToMedicamentos(){
+    function handleToMedicamentos() {
         navigate("/doe-medicamentos/formulario")
     }
 
@@ -47,11 +28,15 @@ export default function Doacao() {
                     </div>
                 </div>
             </div>
-            <h1 className="qualRemedioH1"><b>Quais remédios</b> você pode <br /> doar?</h1> <br /><br />
-            <p className="paragrafoRemedio">Não existem restrições. Todas as doações de medicamentos e Equipamentos de Proteção Individual dentro do prazo de validade e armazenados corretamente são bem-vindas. Estamos agradecidos por qualquer ajuda oferecida para apoiar aqueles que precisam.</p>
-            <div className="containerAnimado">
-                <div className="box">
-                    <img src={medicamentos} className="fotoRemedio" />
+            <div className='qualidade-de-vida-conteuto-texto'>
+                <div className='qualidade-de-vida-doacao-texto'>
+                    <h1 className="qualRemedioH1"><b>Quais remédios</b> você pode doar?</h1> <br /><br />
+                    <p className="paragrafoRemedio">Não existem restrições. Todas as doações de medicamentos e Equipamentos de Proteção Individual dentro do prazo de validade e armazenados corretamente são bem-vindas. Estamos agradecidos por qualquer ajuda oferecida para apoiar aqueles que precisam.</p>
+                </div>
+                <div className="containerAnimado">
+                    <div className="box">
+                        <img src={medicamentos} className="fotoRemedio" alt='' />
+                    </div>
                 </div>
             </div>
 
@@ -83,11 +68,11 @@ export default function Doacao() {
                         <li> <AiOutlineCheckCircle style={{ marginRight: '15px', color: '#009000', fontSize: '20px' }} />Preserve as embalagens originais para checar a validade.</li>
                         <li> <AiOutlineCheckCircle style={{ marginRight: '15px', color: '#009000', fontSize: '20px' }} />Siga a orientação médica para remédios termolábeis.</li>
                     </ul>
-                    <div className="containerAnimado3">
+                    {/* <div className="containerAnimado3">
                         <div className="box3">
-                            <img src={farmacia} className="fotoRemedio3" />
+                            <img src={farmacia} className="fotoRemedio3" alt='' />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
                 <div className="divSaibaOqDoar">
                     <h1 className="h1OqueDoar">O que <b>doar?</b></h1>

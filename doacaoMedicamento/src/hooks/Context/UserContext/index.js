@@ -10,6 +10,7 @@ export const UserProvider = ({ children }) => {
         const handleBuscar = async () => {
             if (user.nome === '' && user.avatar === '' && user.codigo === '') {
                 const response = await api.get('Usuario/BuscarPorCodigo');
+                console.log('UserContext => ', response)
                 const responseData = response.data;
                 setUser({ nome: responseData.nome, avatar: responseData.foto, codigo: responseData.codigo })
             }

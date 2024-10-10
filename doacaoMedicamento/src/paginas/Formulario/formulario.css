@@ -1,19 +1,23 @@
-    .body-formulario{
+.body-formulario {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 15vh;
 }
-.body-formulario h1{
+
+.body-formulario h1 {
     font-size: 45px;
     margin-bottom: 25px;
     margin-top: 30px;
     font-weight: bold
 }
-.body-formulario h1 span{
+
+.body-formulario h1 span {
     color: var(--purple-color);
 }
-.body-formulario p,.body-formulario div p{
+
+.body-formulario p,
+.body-formulario div p {
     font-size: 18px;
 }
 
@@ -24,67 +28,64 @@
 
 
 
-.checks{
+.checks {
     width: 58%;
     margin-left: 14%;
 }
-.checks p svg{
+
+.checks p svg {
     font-size: 22px;
     margin-right: 0.6vw;
 }
-.body-formulario h3{
+
+.body-formulario h3 {
     font-size: 23px;
 }
-.body-formulario h6{
+
+.body-formulario h6 {
     color: rgb(146, 146, 146);
     font-size: 16px;
     margin-bottom: 0;
     margin-top: 4%;
 }
-.body-formulario label{
+
+.body-formulario label {
     font-weight: 500;
 }
-.body-formulario select{
-    background-color: transparent;
+
+.body-formulario select {
+    background-color: #202020;
     border: 1px solid #fff;
     width: 40vw;
     color: var(--white-color);
     outline: none;
     border-radius: 4px;
-    height: 6.7vh;
+    height: 8vh;
     padding-left: 1%;
-    color: #8b8b8b;
     margin-bottom: 3%;
     font-size: 15px;
 }
-.body-formulario input{
-    background-color: transparent;
-    border: 1px solid #fff;
-    width: 40vw;
-    color: var(--white-color);
-    outline: none;
-}
-.body-formulario input::placeholder{
-    color: #8b8b8b;
-    font-weight: 500;
-    font-size: 16px;
-}
-.box-campo section{
+
+.box-campo section {
     display: flex;
     justify-content: space-between;
 }
-.box-campo section input, .box-campo section select{
+
+.box-campo section input,
+.box-campo section select {
     width: 20.2vw;
 }
-.box-campo section input{
+
+.box-campo section input {
     width: 18.7vw;
 }
-.box-campo p{
+
+.box-campo p {
     width: 40vw;
     font-size: 15px !important;
 }
 
-.body-formulario .confirmar{
+.body-formulario .confirmar {
     background-color: var(--purple-color);
     border-radius: 10px;
     font-size: 17px;
@@ -97,42 +98,64 @@
     margin-top: 2.5%;
     font-weight: 600;
 }
-.body-formulario .confirmar:hover{
+
+.body-formulario .confirmar:hover {
     color: var(--white-color);
     background-color: #920092;
 }
-.check{
+
+.check {
     width: 40vw;
     display: flex;
     align-items: center;
     margin-top: 5%;
 }
-.check input{
+
+.check input {
     width: 5vw;
     height: 2.5vh;
 }
 
-.body-formulario input::placeholder {
-    font-family: -bs-font-sans-serif system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    color: white;
+
+input[type="date"] {
+    color: var(--white-color);
 }
 
-.custom-select {
-    background-color: #f9f9f9; /* Cor de fundo personalizada */
-    color: #333; /* Cor do texto personalizada */
-  }
-  
-  /* Estilos para as opções do Select */
-  .custom-select .react-select__option {
-    background-color: #ffffff; /* Cor de fundo das opções */
-    color: #333; /* Cor do texto das opções */
-  }
+.textarea {
+    background-color: transparent;
+    border: 1px solid #fff;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px;
+    color: var(--white-color);
+
+}
+
+.body-formulario-row{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.body-formulario-row input{
+    background-color: transparent;
+    border: 1px solid #fff;
+    width: 40vw;
+    color: var(--white-color);
+    outline: none;
+}
+
+.body-formulario-colunas{
+    display: flex;
+    flex-direction: column;
+}
+
 
 @media (max-width: 1080px) {
-
     .body-formulario h1 {
-        font-size: 32px;  
-        margin-left: 8%;
+        font-size: 32px;
+        width: 82%;
     }
 
     .body-formulario .paragrafoF {
@@ -160,12 +183,12 @@
     .box-campos section input {
         width: 100%;
     }
-    
-    
+
+
     .body-formulario input {
         width: 100%;
     }
-    
+
     .box-campo p {
         width: 80vw;
     }
@@ -226,6 +249,7 @@
         outline: none;
         font-size: 27px;
     }
+
     .botaoFormulario {
         font-size: 20px;
         margin-bottom: 15%;

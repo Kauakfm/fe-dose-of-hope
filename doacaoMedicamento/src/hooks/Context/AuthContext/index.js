@@ -8,16 +8,15 @@ export const AuthContext = createContext()
 export const AuthProvider = ({ children }) => {
 
     const handleLogin = async (email, password) => {
+
         try {
             const response = await api.post('Login', { email: email, password: password })
-            const decodeToken = parseJwt(response.data.accesstoken)
             if (response.status === 200) {
+                const decodeToken = parseJwt(response.data.accesstoken)
                 window.localStorage.setItem('role', decodeToken.role);
-
                 return response;
             }
             return response;
-
         } catch (error) {
 
         }
