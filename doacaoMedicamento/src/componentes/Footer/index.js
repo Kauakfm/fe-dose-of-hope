@@ -20,9 +20,9 @@ export default function Footer(){
                 </div>
                 <div className="contato">
                     <h1>Contato</h1>
-                   <img src={Wpp}/> <p>Whatsapp</p>
-                   <img src={Email}/> <p>dosedeesperanca@gmail.com</p>
-                   <img src={Insta}/> <p>Instagram</p>
+                   <img src={Wpp} className="ima"/> <p>Whatsapp</p>
+                   <img src={Email} className="ima"/> <p>dosedeesperanca@gmail.com</p>
+                   <img src={Insta} className="ima"/> <p>Instagram</p>
                 </div>
             </main>
             <section>

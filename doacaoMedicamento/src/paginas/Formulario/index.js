@@ -27,76 +27,6 @@ export default function Formulario() {
         const selectedValue = e.target.value;
         setTipoItem(selectedValue);
     };
-
-    const renderizarCampos = (tipoItem) => {
-        if (tipoItem == "1") {
-            return (
-                <div>
-                    <label>Nome do medicamento*</label>
-                    <input type="text" placeholder="Nome comercial ou princípio ativo" value={nomeComercial} onChange={handleNome} />
-                    <section>
-                        <div>
-                            <label>Concentração do medicamento*</label>
-                            <Select className="custom-select" value={optionsDosagem.find((option) => option.value === dosagemSelecionada)} onChange={handleDosagem} options={optionsDosagem} placeholder="Selecione uma dosagem" isSearchable />
-                        </div>
-                        <div>
-                            <label>Forma farmacêutica</label>
-                            <select value={formaSelecionada} onChange={handleForma}>
-                                <option key={0} value={0}>Selecione uma opção</option>
-                                {forma.map(op => (
-                                    <option key={op.codigo} value={op.codigo}>{op.descricao}</option>
-                                ))}
-                            </select>
-                        </div>
-                    </section>
-                    <section>
-                        <div>
-                            <label>Quantidade disponível*</label>
-                            <input type="number" placeholder="N° de unidades" value={quantidadeDisponivel} onChange={handlequantidade} />
-                        </div>
-                        <div>
-                            <label>Prazo de validade*</label>
-                            <input type="date" placeholder="mm/aa" value={validade} onChange={handleValidade} />
-                        </div>
-                    </section>
-                </div>
-            );
-        } else if (tipoItem === "2") {
-            return (
-                <div>
-                    <label>Nome do suplemento*</label>
-                    <input type="text" placeholder="Nome do suplemento" value={nomeComercial} onChange={handleNome} />
-                    <label>Quantidade disponível*</label>
-                    <input type="number" placeholder="N° de unidades" value={quantidadeDisponivel} onChange={handlequantidade} />
-                    <label>Prazo de validade*</label>
-                    <input type="date" placeholder="mm/aa" value={validade} onChange={handleValidade} />
-                </div>
-            );
-        } else if (tipoItem === "3") {
-            return (
-                <div>
-                    <label>Nome do item de primeiros socorros*</label>
-                    <input type="text" placeholder="Nome do item" value={nomeComercial} onChange={handleNome} />
-                    <label>Quantidade disponível*</label>
-                    <input type="number" placeholder="N° de unidades" value={quantidadeDisponivel} onChange={handlequantidade} />
-                    <label>Prazo de validade*</label>
-                    <input type="date" placeholder="mm/aa" value={validade} onChange={handleValidade} />
-                </div>
-            );
-        } else if (tipoItem === "4") {
-            return (
-                <div>
-                    <label>Nome do item*</label>
-                    <input type="text" placeholder="Nome do item" value={nomeComercial} onChange={handleNome} />
-                    <label>Quantidade disponível*</label>
-                    <input type="number" placeholder="N° de unidades" value={quantidadeDisponivel} onChange={handlequantidade} />
-                    <label>Prazo de validade*</label>
-                    <input type="date" placeholder="mm/aa" value={validade} onChange={handleValidade} />
-                </div>
-            );
-        }
-        return null;
-    };
     const handleNome = (e) => {
         setNomeComercial(e.target.value);
     }
@@ -138,112 +68,11 @@ export default function Formulario() {
         value: op.codigo,
         label: op.descricao,
     }));
-    
-    const handleDoar = async () => {
-        try {
-            if (tipoItem == "0" || tipoItem == "" || tipoItem == null) {
-                toast.warn("Selecione um item para realizar a doação");
-                return;
-            }
-
-            if (tipoItem == "1" && (nomeComercial == "" || nomeComercial == null)) {
-                toast.warn("Digite o nome do medicamento");
-                return;
-            }
-
-            if (tipoItem == "1" && (dosagemSelecionada === 0 || dosagem == null || dosagemSelecionada == "0")) {
-                toast.warn("Por favor, escolha a dosagem do medicamento.");
-                return;
-            }
-
-            if (tipoItem == "1" && (formaSelecionada === 0 || forma == null || formaSelecionada == "0")) {
-                toast.warn("Por favor, escolha a forma farmacêutica.");
-                return;
-            }
-
-            if (tipoItem == "1" && (quantidadeDisponivel == 0 || quantidadeDisponivel == "")) {
-                toast.warn("Por favor, digite a quantidade de medicamentos.");
-                return;
-            }
-
-            if (tipoItem == "1" && (validade == null || validade == "")) {
-                toast.warn("Por favor, digite a validade do medicamento.");
-                return;
-            }
-
-            if (tipoItem == "2" && (nomeComercial == "" || nomeComercial == null)) {
-                toast.warn("Por favor, digite o nome do medicamento");
-                return;
-            }
-
-            if (tipoItem == "2" && (quantidadeDisponivel == 0 || quantidadeDisponivel == "")) {
-                toast.warn("Por favor, digite a quantidade de medicamentos.");
-                return;
-            }
-
-            if (tipoItem == "2" && (validade == null || validade == "")) {
-                toast.warn("Por favor, digite a validade do medicamento.");
-                return;
-            }
-
-            if (tipoItem == "3" && (nomeComercial == "" || nomeComercial == null)) {
-                toast.warn("Por favor, digite o nome do medicamento");
-                return;
-            }
-
-            if (tipoItem == "3" && (quantidadeDisponivel == 0 || quantidadeDisponivel == "")) {
-                toast.warn("Por favor, digite a quantidade de medicamentos.");
-                return;
-            }
-
-            if (tipoItem == "3" && (validade == null || validade == "")) {
-                toast.warn("Digite a validade do medicamento.");
-                return;
-            }
-
-            if (tipoItem == "4" && (nomeComercial == "" || nomeComercial == null)) {
-                toast.warn("Digite o nome do medicamento");
-                return;
-            }
-
-            if (tipoItem == "4" && (quantidadeDisponivel == 0 || quantidadeDisponivel == "")) {
-                toast.warn("Digite a quantidade de medicamentos.");
-                return;
-            }
-
-            if (tipoItem == "4" && (validade == null || validade == "")) {
-                toast.warn("Digite a validade do medicamento.");
-                return;
-            }
-            if (!isCheckboxChecked) {
-                toast.warn("Você deve concordar com os termos para continuar.");
-                return;
-            }
-            setLoadingAuth(true);
-            const resposne = await api.post(url, {
-                tipoProdutoCodigo: tipoItem, status: false, nome: nomeComercial, dosagem: dosagemSelecionada, forma: formaSelecionada, qntd: quantidadeDisponivel, validade: validade
-            })
-            if (resposne.data.mensagem === "doação realizada com sucesso") {
-                setLoadingAuth(false);
-                setTipoItem('')
-                setNomeComercial('')
-                setDosagem([])
-                setForma('')
-                setFormaSelecionada()
-                setDosagemSelecionada()
-                setQuantidadeDisponivel()
-                setValidade()
-                toast.success("Doação realizada com sucesso! Por favor, verifique a caixa de entrada do seu e-mail.")
-            }
-        } catch (error) {
-
-        }
-    }
 
     return (
         <div>
             <div className="body-formulario">
-                <h1>Quero doar <span>qualidade de vida</span></h1>
+                <h1>Formulário de Doação de <span><br />Medicamentos e Itens</span></h1>
                 <p className="paragrafoF">Veja como é fácil registrar a sua doação de remédios:</p>
                 <div className="checks">
                     <p className="checkp"><FiCheckCircle />Informe abaixo quais <strong>medicamentos dentro da validade</strong> você irá doar.</p>
@@ -262,24 +91,75 @@ export default function Formulario() {
                             <option value="3">Item primeiro socorros</option>
                             <option value="4">Outros</option>
                         </select>
-                    </div>
-                    {renderizarCampos(tipoItem)} {/* Chame a função renderizarCampos com tipoItem como argumento */}
+                        <label>Nome do Item*</label>
+                        <input type="text" ></input>
 
-                    <section>
-                        <div>
-                            <label></label>
-                        </div>
-                    </section>
+                        <label>Descrição Detalhada*</label>
+                        <textarea className="textarea" placeholder="Descreva o item, incluindo características como marca, modelo, e outras informações "></textarea>
+
+                        <section>
+                            <div>
+                                <label>Forma do Item*</label>
+                                <select value={tipoItem} onChange={handleChange} className="selecao">
+                                    <option value="0">Selecione uma opção</option>
+                                    <option value="1">Líquido</option>
+                                    <option value="2">Capsula</option>
+                                    <option value="3">Comprimido</option>
+                                    <option value="4">Pomada</option>
+                                    <option value="4">Outros</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label>Dosagem*</label>
+                                <input type="text" placeholder="Informe a dosagem ou concentração, se aplicável."></input>
+                            </div>
+                        </section>
+
+                        <label>Data de Validade* (se aplicável)</label>
+                        <input type="date" className="input" />
+
+                        <section>
+                            <div>
+                                <label>Quantidade*</label>
+                                <input type="number" />
+                            </div>
+                            <div>
+                                <label>Necessidade de Armazenamento*</label>
+                                <select >
+                                    <option value="">Selecione...</option>
+                                    <option value="temperatura ambiente">Temperatura Ambiente</option>
+                                    <option value="refrigerado">Refrigerado</option>
+                                    <option value="congelado">Congelado</option>
+                                </select>
+                            </div>
+                        </section>
+
+                        <section>
+                            <div>
+                                <label>Foto do Item*</label>
+                                <input type="file" accept="image/*" />
+                            </div>
+
+                            <div>
+                                <label>Condição do Item*</label>
+                                <select >
+                                    <option value="">Selecione...</option>
+                                    <option value="novo">Novo</option>
+                                    <option value="usado">Usado</option>
+                                </select>
+                            </div>
+                        </section>
+                    </div>
                 </div>
                 <label className="check">
                     <input type="checkbox" onChange={(e) => setIsCheckboxChecked(e.target.checked)} />Confirmo que os medicamentos citados foram armazenados corretamente e estão dentro do prazo de validade.
                 </label>
-                {<button className="confirmar" onClick={handleDoar} disabled={loadingAuth}>
+                {<button className="confirmar" disabled={loadingAuth}>
                     {loadingAuth ? <div className="spinner-border-sm spinner-border" role="status"></div> : "Confirmar minha doação"}
                 </button>}
 
             </div>
-            {renderizarCampos()}
             <Footer />
         </div>
     )

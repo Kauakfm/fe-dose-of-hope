@@ -69,9 +69,6 @@
     margin-right: 710px;
 }
 
-
-
-
 .containerAnimado {
     display: flex;
     width: 100vh;
@@ -79,7 +76,7 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 440px;
+    top: 490px;
     margin-left: 640px;
 }
 
@@ -203,8 +200,8 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 400px;
-    margin-left: 640px;
+    top: 440px;
+    margin-left: 660px;
 }
 
 
