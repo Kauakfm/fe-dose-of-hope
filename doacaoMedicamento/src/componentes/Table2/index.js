@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Columns from "./Columns";
+import './table2.css'
 
 export default function Tabela2({ botoesDeAcao = [], dados = [], colunasVisiveis = [], numeroDePagina, children }) {
     const [filtros, setFiltros] = useState({});
@@ -49,12 +50,15 @@ export default function Tabela2({ botoesDeAcao = [], dados = [], colunasVisiveis
                             <th key={index}>
                                 {coluna.title}
                                 <br />
-                                <input
-                                    type="text"
-                                    placeholder={`Filtrar ${coluna.title}`}
-                                    value={filtros[coluna.header] || ""}
-                                    onChange={(e) => handleAlterarFiltro(e, coluna.header)}
-                                />
+                                <div className="input-compacto-container">
+                                    <input
+                                        type="text"
+                                        style={{backgroundColor: "transparent", color: "#FFF" }}
+                                        placeholder={`Filtrar ${coluna.title}`}
+                                        value={filtros[coluna.header] || ""}
+                                        onChange={(e) => handleAlterarFiltro(e, coluna.header)}
+                                    />
+                                </div>
                             </th>
                         ))}
                         {botoesDeAcao.length > 0 && <th>Ações</th>}
@@ -82,14 +86,20 @@ export default function Tabela2({ botoesDeAcao = [], dados = [], colunasVisiveis
                         </tr>
                     ))}
                 </tbody>
-                <div className="paginacao">
-                    {Array.from({ length: totalPaginas }, (_, index) => (
-                        <button key={index + 1} onClick={() => handleAlterarPagina(index + 1)} className={paginaAtual === index + 1 ? "ativo" : ""} >
-                            {index + 1}
-                        </button>
-                    ))}
-                </div>
             </table>
+            <div className="tabela2-paginacao">
+                {Array.from({ length: totalPaginas }, (_, index) => (
+                    <button
+                        key={index + 1}
+                        onClick={() => handleAlterarPagina(index + 1)}
+                        className={`tabela2-botao-pagina ${paginaAtual === index + 1 ? 'ativo' : ''}`}
+                        aria-label={`Página ${index + 1}`}
+                        aria-current={paginaAtual === index + 1 ? 'page' : undefined}
+                    >
+                        {index + 1}
+                    </button>
+                ))}
+            </div>
         </div>
     );
 }

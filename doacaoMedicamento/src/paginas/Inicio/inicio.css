@@ -1,310 +1,314 @@
 .inicio-container {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-}
-
-.main-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 50px;
-}
-
-
-.content h1 {
-  color: var(--white-color);
-  font-size: 3.75rem;
-  margin: 20px 0;
-  text-align: left;
-  margin-left: 5%;
-}
-
-.content h1 b {
-  color: var(--purple-color);
-
-}
-
-.content p {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  color: var(--white-color);
-  text-align: left;
-  margin-right: 20%;
-  margin-left: 5%;
-}
-
-.button-group {
-  margin-top: 20px;
-}
-
-.donate-btn,
-.request-btn {
-  padding: 12px 24px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  margin-right: 73%;
-  transition: 0.5s; 
-  border-radius: 5px;
-  margin-left: 5%;
-}
-
-.donate-btn:hover {
-  background-color: var(--color-purple-hover);
-}
-
-.request-btn:hover {
-  background-color: var(--color-purple-hover);
-
-}
-
-.donate-btn {
-  background-color: var(--purple-color);
-  color: var(--white-color);
-}
-
-.request-btn {
-  background-color: var(--purple-color);
-  color: var(--white-color);
-}
-
-.image-container {
-  width: 50%;
-}
-
-.main-image {
-  max-width: 100%;
-  height: auto;
-}
-
-.info-section {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 50px;
-}
-
-.info-item {
-  width: 22%;
-  background-color: var(--background-color);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  color: white;
-  text-align: center;
-}
-
-.icon2 {
-  font-size: 36px;
-  display: block;
-  margin-bottom: 10px;
-}
-
-.missao-visao-valores {
-  text-align: center;
-  padding: 40px;
-}
-
-.missao-visao-valores h2 {
-  color: var(--purple-color);
-  margin-bottom: 10px;
-  font-size: 34px;
-  margin-top: 5%;
-}
-
-.missao-visao-valores p {
-  font-size: 20px;
-  color: var(--white-color);
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.missao-visao-valores .pa {
-  color: var(--white-color);
-  text-align: center;
-}
-
-.mvv-container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.mvv-item {
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  width: 30%;
-  text-align: center;
-  color: var(--white-color);
-  background-color: var(--background-color);
-}
-
-.mvv-item h3 {
-  color: var(--purple-color);
-  margin: 10px 0;
-  font-size: 18px;
-}
-
-.mvv-item p {
-  font-size: 16px;
-}
-
-.icon2 {
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-
-
-.faq-container {
-  width: 150%;
-  max-width: 750px;
-  margin: 0 auto;
-}
-
-.faq-container h2 {
-  text-align: center;
-  margin-bottom: 10%;
-  margin-top: 15%;
-}
-
-.faq-list {
-  list-style: none;
-  padding: 0;
-}
-
-.faq-item {
-  margin-bottom: 10px;
-}
-
-.faq-question {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  cursor: pointer;
-  font-size: 18px;
-  border-bottom: 1px solid #ddd;
-  transition: color 0.3s ease;
-  color: var(--purple-h1-home);
-}
-
-.faq-question:hover {
-  --purple-h1-home: rgb(221, 7, 221);
-}
-
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease, padding 0.5s ease;
-  padding: 0 15px;
-  border-bottom: 1px solid #ddd;
-  color: var(--white-color);
-  text-align: left;
-}
-
-.faq-item.active .faq-answer {
-  max-height: 300px;
-  padding: 15px;
-}
-
-.faq-arrow {
-  font-size: 20px;
-}
-
-.active {
-  color: var(--purple-color);
-}
-
-
-@media (max-width: 768px) {
-  .inicio-container {
-    padding: 10px;
-  }
-
-  .main-section {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-  }
-
-  .content {
-    text-align: center;
-  }
-
-  .content h1 {
-    font-size: 28px;
-    margin: 10px 0;
-    margin-left: 15px;
-  }
-
-  .content p {
-    font-size: 16px;
-  }
-
-  .button-group {
-    margin-top: 15px;
-  }
-
-  .image-container {
-    width: 100%;
-    margin-top: 20px;
-  }
-
-  .main-image {
-    width: 100%;
-    height: auto;
-  }
-
-  .info-section {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .info-item {
-    width: 90%;
-    margin-bottom: 15px;
-  }
-
-  .missao-visao-valores {
+    font-family: Arial, sans-serif;
     padding: 20px;
   }
-
-  .missao-visao-valores h2 {
-    font-size: 28px;
+   
+  .main-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
   }
-
+   
+   
+  .content h1 {
+    color: var(--white-color);
+    font-size: 3.75rem;
+    margin: 20px 0;
+    text-align: left;
+    margin-left: 5%;
+  }
+   
+  .content h1 b {
+    color: var(--purple-color);
+   
+  }
+   
+  .content p {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    color: var(--white-color);
+    text-align: left;
+    margin-right: 20%;
+    margin-left: 5%;
+  }
+   
+  .button-group {
+    margin-top: 20px;
+  }
+   
+  .donate-btn,
+  .request-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-right: 73%;
+    transition: 0.5s;
+    border-radius: 5px;
+    margin-left: 5%;
+  }
+   
+  .donate-btn:hover {
+    background-color: var(--color-purple-hover);
+  }
+   
+  .request-btn:hover {
+    background-color: var(--color-purple-hover);
+   
+  }
+   
+  .donate-btn {
+    background-color: var(--purple-color);
+    color: var(--white-color);
+  }
+   
+  .request-btn {
+    background-color: var(--purple-color);
+    color: var(--white-color);
+  }
+   
+  .image-container {
+    width: 50%;
+  }
+   
+  .main-image {
+    max-width: 100%;
+    height: auto;
+  }
+   
+  .info-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+   
+  .info-item {
+    width: 22%;
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    color: white;
+    text-align: center;
+  }
+   
+  .icon2 {
+    font-size: 36px;
+    display: block;
+    margin-bottom: 10px;
+  }
+   
+  .missao-visao-valores {
+    text-align: center;
+    padding: 40px;
+  }
+   
+  .missao-visao-valores h2 {
+    color: var(--purple-color);
+    margin-bottom: 10px;
+    font-size: 34px;
+    margin-top: 5%;
+  }
+   
   .missao-visao-valores p {
+    font-size: 20px;
+    color: var(--white-color);
+    margin-bottom: 30px;
+    text-align: center;
+  }
+   
+  .missao-visao-valores .pa {
+    color: var(--white-color);
+    text-align: center;
+  }
+   
+  .mvv-container {
+    display: flex;
+    justify-content: space-between;
+  }
+   
+  .mvv-item {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+    color: var(--white-color);
+    background-color: var(--background-color);
+  }
+   
+  .mvv-item h3 {
+    color: var(--purple-color);
+    margin: 10px 0;
     font-size: 18px;
   }
-
-  .mvv-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .mvv-item {
-    width: 90%;
-    margin-bottom: 20px;
-  }
-
-  .faq-container {
-    width: 90%;
-    max-width: 100%;
-  }
-
-  .faq-container h2 {
-    font-size: 24px;
-  }
-
-  .faq-question {
+   
+  .mvv-item p {
     font-size: 16px;
+  }
+   
+  .icon2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+   
+   
+  .faq-container {
+    width: 150%;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+   
+  .faq-container h2 {
+    text-align: center;
+    margin-bottom: 10%;
+    margin-top: 15%;
+  }
+   
+  .faq-list {
+    list-style: none;
+    padding: 0;
+  }
+   
+  .faq-item {
+    margin-bottom: 10px;
+  }
+   
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-bottom: 1px solid #ddd;
+    transition: color 0.3s ease;
+    color: var(--purple-h1-home);
+  }
+   
+  .faq-question:hover {
+    --purple-h1-home: rgb(221, 7, 221);
+  }
+   
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    padding: 0 15px;
+    border-bottom: 1px solid #ddd;
+    color: var(--white-color);
     text-align: left;
   }
-
-  .faq-answer {
-    font-size: 14px;
+   
+  .faq-item.active .faq-answer {
+    max-height: 300px;
+    padding: 15px;
   }
-
+   
   .faq-arrow {
-    font-size: 18px;
+    font-size: 20px;
   }
-}
+   
+  .active {
+    color: var(--purple-color);
+  }
+   
+   
+  @media (max-width: 768px) {
+    .inicio-container {
+      padding: 10px;
+    }
+
+    .donate-btn {
+      width: 45%;
+    }
+   
+    .main-section {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+    }
+   
+    .content {
+      text-align: center;
+    }
+   
+    .content h1 {
+      font-size: 28px;
+      margin: 10px 0;
+      margin-left: 15px;
+    }
+   
+    .content p {
+      font-size: 16px;
+    }
+   
+    .button-group {
+      margin-top: 15px;
+    }
+   
+    .image-container {
+      width: 100%;
+      margin-top: 20px;
+    }
+   
+    .main-image {
+      width: 100%;
+      height: auto;
+    }
+   
+    .info-section {
+      flex-direction: column;
+      align-items: center;
+    }
+   
+    .info-item {
+      width: 90%;
+      margin-bottom: 15px;
+    }
+   
+    .missao-visao-valores {
+      padding: 20px;
+    }
+   
+    .missao-visao-valores h2 {
+      font-size: 28px;
+    }
+   
+    .missao-visao-valores p {
+      font-size: 18px;
+    }
+   
+    .mvv-container {
+      flex-direction: column;
+      align-items: center;
+    }
+   
+    .mvv-item {
+      width: 90%;
+      margin-bottom: 20px;
+    }
+   
+    .faq-container {
+      width: 90%;
+      max-width: 100%;
+    }
+   
+    .faq-container h2 {
+      font-size: 24px;
+    }
+   
+    .faq-question {
+      font-size: 16px;
+      text-align: left;
+    }
+   
+    .faq-answer {
+      font-size: 14px;
+    }
+   
+    .faq-arrow {
+      font-size: 18px;
+    }
+  }

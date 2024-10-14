@@ -5,6 +5,7 @@ import Header from "../../../componentes/Header";
 import { formatarData } from "../../../utils/utils";
 import Columns from "../../../componentes/Table2/Columns";
 import './aprovar.css'
+import { style } from "@mui/system";
 
 export default function Aprovar() {
     const [data, setData] = useState([]);
@@ -39,8 +40,8 @@ export default function Aprovar() {
     };
 
     const actionButtons = [
-        { label: "Editar", action: handleEdit, className: "btn btn-warning" },
-        { label: "Excluir", action: handleDelete, className: "btn btn-danger" }
+        { label: "Editar", action: handleEdit, className: "btn btn-customEditar" },
+        { label: "Excluir", action: handleDelete, className: "btn btn-customDelete" }
     ];
 
     return (

@@ -5,16 +5,16 @@ import HeaderMobile from '../../componentes/HeaderMobile';
 import { useState } from 'react';
 import medicamento from '../../imagens/medicamentos.jpeg';
 import { useNavigate } from 'react-router-dom';
-
+ 
 export default function Inicio() {
-
+ 
   const [activeIndex, setActiveIndex] = useState(null);
   const navigate = useNavigate();
-
+ 
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
-
+ 
   const faqs = [
     { question: 'Como faço para doar medicamento?', answer: 'Você pode doar medicamentos indo até o local X...' },
     { question: 'Como faço para entregar o medicamento doado?', answer: 'Você receberá um e-mail com as informações...' },
@@ -24,12 +24,12 @@ export default function Inicio() {
     { question: 'Existe algum custo?', answer: 'Não há nenhum custo envolvido...' },
     { question: 'Como serei avisado sobre a doação?', answer: 'Você receberá um e-mail com as informações...' },
   ];
-
+ 
   function handleToMedicamentos() {
     navigate("/doe-medicamentos/formulario")
   }
-
-
+ 
+ 
   return (
     <div className="inicio-container">
       <HeaderMobile />
@@ -46,7 +46,7 @@ export default function Inicio() {
           <img src="https://www.ceder.med.br/_next/image?url=%2Fimg-hero-ceder-light.webp&w=640&q=70" alt="Heart Image" className="main-image" />
         </div>
       </section>
-
+ 
       <section className="info-section">
         <div className="info-item">
           <span className="icon2">🌱</span>
@@ -65,7 +65,7 @@ export default function Inicio() {
           <p>Disponibilizar acesso ao tratamento veterinário de qualidade através de medicamentos de qualidade.</p>
         </div>
       </section>
-
+ 
       <section className="missao-visao-valores">
         <h2>Sobre nós</h2>
         <p className='pa'>Promovemos a conexão de pessoas compartilhando empatia</p>
@@ -87,7 +87,7 @@ export default function Inicio() {
           </div>
         </div>
       </section>
-
+ 
       <div className="faq-container">
         <h2>Perguntas Frequentes</h2>
         <ul className="faq-list">
@@ -104,7 +104,6 @@ export default function Inicio() {
           ))}
         </ul>
       </div>
-
       <Footer />
     </div>
   );

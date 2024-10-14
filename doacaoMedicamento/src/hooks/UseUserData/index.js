@@ -13,6 +13,7 @@ const useUserData = () => {
   const fetchUserData = useCallback(async () => {
     try {
       const response = await api.get('Usuario/BuscarPorCodigo');
+      console.log('UserData => ', response)
       const responseData = response.data;
       setUserData({
         avatar: responseData.foto,

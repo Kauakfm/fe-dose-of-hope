@@ -19,3 +19,17 @@ export const RotasSignalR = {
     1: "https://localhost:7277/chat",
     2: "https://www.webapiesperanca.online/webApiNet8/chat"
 }
+
+export function createFormDataMedicamentos(tipoItem, nomeItem, formaItem, condicaoItem, dosagem, quantidade, dataValidade, necessidadeArmazenamento, descricaoDetalhada) {
+    return {
+        tipoItem,
+        nomeItem,
+        formaItem,
+        condicaoItem,
+        dosagem,
+        quantidade,
+        dataValidade,
+        necessidadeArmazenamento,
+        descricaoDetalhada
+    };
+}

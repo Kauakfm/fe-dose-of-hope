@@ -1,0 +1,65 @@
+.lista-doacoes {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: transparent;
+    color: white;
+}
+
+.lista-doacoes h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.lista-doacoes ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.lista-doacoes li {
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
+    opacity: 0.9;
+}
+
+.lista-doacoes li:hover {
+    opacity: 1;
+}
+
+.lista-doacoes h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.status {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.lista-doacoes-titulo {
+    display: flex;
+    flex-direction: row;
+    text-wrap: nowrap;
+    gap: 7px;
+    justify-content: center;
+}
+
+.lista-doacoes-titulo h1 {
+    font-size: 44px;
+    margin-bottom: 25px;
+    margin-top: 30px;
+    font-weight: bold
+}
+
+.lista-doacoes-titulo h1 span {
+    color: var(--purple-color);
+}
+
+.lista-doacoes-caixa:hover{
+    transition: 1s;
+    transform: scale(1.03);
+    z-index: 1;
+    cursor: pointer;
+}

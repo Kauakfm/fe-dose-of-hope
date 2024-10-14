@@ -6,7 +6,7 @@
 // import { UserContext } from '../../hooks/Context/UserContext';
 // import { IoMdHome } from "react-icons/io";
 // import { BiSolidDonateHeart } from "react-icons/bi";
-// import { GiRemedy } from "react-icons/gi";
+// e
 // import { IoChatbubbles } from "react-icons/io5";
 // import { RiAdminFill } from "react-icons/ri";
 // import DoseLogo from '../../imagens/doselogo.png';
@@ -150,20 +150,22 @@
 
 
 import "./header.css";
-import React, { useState, useEffect, useRef, useContext, Fragment } from 'react';
-import { UserContext } from '../../hooks/Context/UserContext';
+import React, { useState, useEffect, Fragment } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { IoMdHome } from "react-icons/io";
+import { BiSolidDonateHeart } from "react-icons/bi";
+import { GiRemedy } from "react-icons/gi";
+import { IoChatbubbles } from "react-icons/io5";
+import { FaCheckCircle } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
+import { BiMenu } from "react-icons/bi";
+import { GiMedicines } from "react-icons/gi";
 
 
-export default function YouTubeSidebar({ OnByMenu }) {
+export default function YouTubeSidebar({ OnByMenu, OnByMenuSet }) {
     const [isOpen, setIsOpen] = useState(false);
+    const [isAdminstrativo, setAdministrativo] = useState(false)
     const location = useLocation();
-    const dropdownRef = useRef(null);
-    const menuRef = useRef(null);
-    const contaRef = useRef(null);
-    const { user } = useContext(UserContext);
-
 
     const hasPermission = (permission) => {
         const permissions = localStorage.getItem("role");
@@ -174,25 +176,21 @@ export default function YouTubeSidebar({ OnByMenu }) {
         setIsOpen(OnByMenu);
     }, [OnByMenu])
 
+    const toggleSidebar = () => {
+        if (!OnByMenu)
+            OnByMenuSet(true);
+        else
+            OnByMenuSet(false);
+    }
+
     return (
         <div className="youtube-sidebar-container">
             <aside className={`sidebar ${isOpen ? "open" : ""}`}>
-                <div className="sidebar-header">
-                    <img
-                        src="/placeholder.svg?height=30&width=90&text=YouTube"
-                        alt="YouTube Logo"
-                        className="logo"
-                    />
-                    <button className="close-button" onClick={OnByMenu}>
-                        <span className="sr-only">Close sidebar</span>
-                    </button>
-                </div>
-
                 <nav className="sidebar-nav">
                     <button className="nav-button">
                         {hasPermission('VIEW_INICIO') && (
                             <Fragment>
-                                <IoMdHome style={{ marginRight: '5px', fontSize: '30px' }} />
+                                <IoMdHome style={{ marginRight: '10px', fontSize: '20px' }} color="#FFF" />
                                 <Link to={`/inicio`} className={location.pathname === '/inicio' ? "active" : ""}>
                                     Início
                                 </Link>
@@ -200,43 +198,57 @@ export default function YouTubeSidebar({ OnByMenu }) {
                         )}
                     </button>
                     <button className="nav-button">
-                        Shorts
+                        {hasPermission('VIEW_CONTRIBUIR') && (
+                            <Fragment>
+                                <BiSolidDonateHeart style={{ marginRight: '10px', fontSize: '20px' }} color="#FFF" />
+                                <Link to={`/contribuir`} className={location.pathname === '/contribuir' ? "active" : ""}>
+                                    Contribuir
+                                </Link>
+                            </Fragment>
+                        )}
                     </button>
                     <button className="nav-button">
-                        Inscrições
+                        {hasPermission('VIEW_DOACAO') && (
+                            <Fragment>
+                                <GiRemedy style={{ marginRight: '10px', fontSize: '20px' }} color="#FFF" />
+                                <Link to={`/doacao`} className={location.pathname === '/doacao' ? "active" : ""}>
+                                    Doações
+                                </Link>
+                            </Fragment>
+                        )}
                     </button>
                     <button className="nav-button">
-                        YouTube Music
+                        {hasPermission('VIEW_CHAT') && (
+                            <Fragment>
+                                <IoChatbubbles style={{ marginRight: '10px', fontSize: '20px' }} color="#FFF" />
+                                <Link to={`/chat`} className={location.pathname === '/chat' ? "active" : ""}>
+                                    Bate-Papo
+                                </Link>
+                            </Fragment>
+                        )}
+                    </button>
+                    <button className="nav-button">
+                        <Fragment>
+                            <GiMedicines style={{ marginRight: '10px', fontSize: '20px' }} color="#FFF" />
+                            <Link to={"/doe-medicamentos/formulario/listaDoacoes"} >
+                                Lista de doações
+                            </Link>
+                        </Fragment>
                     </button>
 
                     <hr className="divider" />
-
-                    <button className="nav-button">
-                        Seu canal
-                    </button>
-                    <button className="nav-button">
-                        Histórico
-                    </button>
-                    <button className="nav-button">
-                        Seus vídeos
-                    </button>
-                    <button className="nav-button">
-                        Assistir mais tarde
-                    </button>
-                    <button className="nav-button">
-                        Vídeos com "Gostei"
-                    </button>
-
-                    <hr className="divider" />
-
-                    <h3 className="subscriptions-header">Inscrições</h3>
-                    {["MrBeast", "BlackoutZ", "Cortes do blacko...", "Rocketseat", "Rafa & Luiz", "Patriota", "Ciência Todo Dia"].map((channel) => (
-                        <button key={channel} className="nav-button">
-                            {channel}
-                        </button>
-                    ))}
+                    <h3 className="subscriptions-header">Administrativo</h3>
+                    <Link className="nav-button" to={`/administrativo/aprovar`}>
+                        <FaCheckCircle style={{ marginRight: '10px', fontSize: '20px' }} color="#FFF" />
+                        Aprovar Medicamento
+                    </Link>
+                    <Link className="nav-button" to={`/administrativo/usuarios`}>
+                        <FaUser style={{ marginRight: '10px', fontSize: '20px' }} color="#FFF" />
+                        Usuários
+                    </Link>
                 </nav>
             </aside>
         </div>
+
     );
 }
