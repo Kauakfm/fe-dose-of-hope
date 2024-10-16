@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Radio from '../../componentes/Radio'
 import { BsArrowLeftCircleFill } from 'react-icons/bs';
+import api from '../../services/api';
 import './detalhesDoacao.css'
+import { toast } from 'react-toastify';
 
 export default function DetalhesDoacao() {
     const [tipoItem, setTipoItem] = useState('')
@@ -40,14 +42,46 @@ export default function DetalhesDoacao() {
 
     }, []);
 
-    const handleConfirmaMedicamento = () => {
-        setLoadingAuth(true)
-        setTimeout(() => {
-            navigate('/doe-medicamentos/formulario/listaDoacoes')
-            setLoadingAuth(false)
-            sessionStorage.clear()
-        }, 5000);
-    }
+    const handleConfirmaMedicamento = async () => {
+        setLoadingAuth(true);
+
+        const formularioMedicamento = JSON.parse(sessionStorage.getItem('formularioMedicamento'));
+        const formularioMedicamentoPhotos = JSON.parse(sessionStorage.getItem('formularioMedicamentoPhotos'));
+
+        const formData = new FormData();
+
+        formData.append('tipoItem', formularioMedicamento.tipoItem);
+        formData.append('nomeDoItem', formularioMedicamento.nomeItem);
+        formData.append('formaFarmaceutica', formularioMedicamento.formaItem);
+        formData.append('tipoCondicao', formularioMedicamento.condicaoItem);
+        formData.append('Dosagem', formularioMedicamento.dosagem);
+        formData.append('quantidade', formularioMedicamento.quantidade);
+        formData.append('dataValidade', formularioMedicamento.dataValidade);
+        formData.append('necessidadeArmazenamento', formularioMedicamento.necessidadeArmazenamento);
+        formData.append('descricaoDetalhada', formularioMedicamento.descricaoDetalhada);
+
+        if (formularioMedicamentoPhotos && formularioMedicamentoPhotos.photo) {
+            await Promise.all(formularioMedicamentoPhotos.photo.map(async (photoUrl, index) => {
+                const blob = await fetch(photoUrl).then(res => res.blob());
+                formData.append('fotos', blob, `photo-${index}.jpg`);
+            }));
+        }
+
+        try {
+            const response = await api.post('/Produto', formData, { headers: { 'Content-Type': 'multipart/form-data' }});
+            
+            if (response.data && response.status === 201) {
+                navigate('/doe-medicamentos/formulario/listaDoacoes');
+                toast.success('Parabens doação realizada com sucesso! Leve o medicamento para uma UBS mais proxíma para aprovação de medicamento')
+            }
+        } catch (error) {
+            toast.error(`Erro contate o administrador com essa chave => ${error}`)
+        } finally {
+            setLoadingAuth(false);
+            sessionStorage.clear();
+        }
+    };
+
 
     const handleVoltarParaUplodFoto = () => navigate('/doe-medicamentos/formulario/uploadMedicamento')
 

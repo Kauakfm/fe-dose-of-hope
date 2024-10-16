@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import { Upload, X } from 'lucide-react'
 import Radio from '../../componentes/Radio'
 import './uploadMedicamento.css'
@@ -12,7 +12,14 @@ export default function MedicinePhotoUpload() {
     const location = useLocation();
     const navigate = useNavigate();
 
-    const objMed = location.state?.medicamento
+
+    useEffect(() => {
+        const dadosSalvos = sessionStorage.getItem('formularioMedicamento');
+        if (!dadosSalvos) {
+            navigate('/doe-medicamentos/formulario')
+            toast.warn("Preencha o formulário de doação")
+        }
+    }, [])
 
     const handleFileChange = useCallback((event) => {
         if (event.target.files) {
@@ -36,7 +43,7 @@ export default function MedicinePhotoUpload() {
         navigate('/doe-medicamentos/formulario/detalhesDoacao')
     }
 
-    function createObjectPhotos(photo){
+    function createObjectPhotos(photo) {
         return {
             photo
         }
