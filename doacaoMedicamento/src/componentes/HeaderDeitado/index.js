@@ -53,7 +53,7 @@ export default function HeaderDeitado() {
         <>
             <div id='header-web' className='header'>
                 <button variant="ghost" size="icon" className="menu-button" onClick={toggleSidebar}>
-                    <BiMenu className="icon" style={{ color: '#FFF' }} />
+                    <BiMenu className="icon" style={{ color: '#FFF', fontSize: '26px' }} />
                 </button>
                 <img className='logo' src={Logo} alt='LogoDose' />
                 <div className='header-avatar'>

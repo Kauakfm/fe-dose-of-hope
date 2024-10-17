@@ -210,18 +210,20 @@
     font-size: 20px;
   }
    
-  .active {
+  /* .active {
     color: var(--purple-color);
   }
-   
+    */
    
   @media (max-width: 768px) {
+    
     .inicio-container {
       padding: 10px;
+      margin-right: 0%;
     }
 
     .donate-btn {
-      width: 45%;
+      width: 65%;
     }
    
     .main-section {

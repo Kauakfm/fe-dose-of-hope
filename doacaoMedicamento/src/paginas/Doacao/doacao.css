@@ -201,7 +201,8 @@
     justify-content: center;
     align-items: center;
     top: 0px;
-    margin-left: 660px;
+    margin-left: 50%;
+    margin-top: -40%;
 }
 
 
@@ -215,8 +216,8 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    left: 60px;
-    top: 0%;
+    left: 60%;
+    top: -30%;
 }
 
 .box3::before {
@@ -253,11 +254,12 @@
 
 
 .divSaibaOqDoar .h1OqueDoar {
-    text-align: center;
+    text-align: left;
     margin-top: 190px;
     font-size: 40px;
     margin-bottom: 60px;
     font-weight: 500;
+    margin-left: 6%;
 }
 
 .divSaibaOqDoar .h1OqueDoar b {
@@ -265,9 +267,8 @@
 }
 
 .divSaibaOqDoar li {
-    font-size: 22px;
+    font-size: 20px;
     margin-top: 30px;
-    margin-left: 4%;
 }
 
 .news-container {  
@@ -276,7 +277,7 @@
 
   .news-container h2 {
     margin: 5%;
-    color: var(--purple-h1-home);
+    color: var(--white-color);
   }
   
   .news-grid {  
