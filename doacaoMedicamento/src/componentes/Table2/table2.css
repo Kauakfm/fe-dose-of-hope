@@ -24,7 +24,7 @@
 
 
 .btn-customEditar{
-    background-color: var(--purple-color);
+    background-color: #28a745 ;
     color: #FFF;
     transition: background-color 0.3s ease;
 }
@@ -36,7 +36,7 @@
 }
 
 .btn-customEditar:hover {
-    background-color: var(--2-purple-color); 
+    background-color: #1d8a36 ;
     opacity: 1; 
 }
 
