@@ -1,7 +1,7 @@
 import React from 'react';
 import './inicio.css';
 import Footer from '../../componentes/Footer';
-import HeaderMobile from '../../componentes/HeaderMobile';
+// import HeaderMobile from '../../componentes/HeaderMobile';
 import { useState } from 'react';
 import medicamento from '../../imagens/medicamentos.jpeg';
 import { useNavigate } from 'react-router-dom';
@@ -32,7 +32,7 @@ export default function Inicio() {
  
   return (
     <div className="inicio-container">
-      <HeaderMobile />
+      {/* <HeaderMobile /> */}
       <section className="main-section">
         <div className="content">
           {/* <h3>Medicamentos para Humanos e Pets</h3> */}

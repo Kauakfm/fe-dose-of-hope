@@ -24,24 +24,24 @@
 
 
 .btn-customEditar{
-    background-color: #8257E5;
+    background-color: var(--purple-color);
     color: #FFF;
     transition: background-color 0.3s ease;
 }
 
 .btn-customDelete{
-    background-color: #FE6E78;
+    background-color: #C70039;
     color: #FFF;
     transition: background-color 0.3s ease;
 }
 
 .btn-customEditar:hover {
-    background-color: rgb(99, 0, 165); 
+    background-color: var(--2-purple-color); 
     opacity: 1; 
 }
 
 .btn-customDelete:hover {
-    background-color: #C70039; 
+    background-color: #cb033c; 
     opacity: 1;
 }
 

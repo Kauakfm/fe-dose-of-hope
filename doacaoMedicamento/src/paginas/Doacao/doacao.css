@@ -5,11 +5,11 @@
     color: white;
     font-size: 45px;
     text-align: center;
-    padding-top: 10% ;
+    padding-top: 10%;
     font-family: 'Poppins', 'Courier New', Courier, monospace;
     font-weight: bold;
     margin-bottom: 2%;
-    
+
 }
 
 .divPrincipal h1 b {
@@ -33,11 +33,11 @@
     border: none;
     border-radius: 17px;
     padding: 10px 20px;
-    margin: 40px auto; 
+    margin: 40px auto;
     cursor: pointer;
     font-family: 'Poppins', 'Courier New', Courier, monospace;
-    transition: 0.5s; 
-    display: block; 
+    transition: 0.5s;
+    display: block;
 }
 
 .botaoDoar:hover {
@@ -66,11 +66,11 @@
 }
 
 
-.qualidade-de-vida-conteuto-texto{
+.qualidade-de-vida-conteuto-texto {
     display: flex;
 }
 
-.qualidade-de-vida-doacao-texto{
+.qualidade-de-vida-doacao-texto {
     width: 60vw;
 }
 
@@ -125,7 +125,7 @@
 }
 
 @keyframes animate {
-    100%{
+    100% {
         transform: rotate(360deg);
     }
 }
@@ -182,7 +182,7 @@
     margin-right: 100px;
 }
 
-.armazeneRemedios .title{
+.armazeneRemedios .title {
     font-size: 42px;
     margin-bottom: 2%;
     font-weight: 500;
@@ -196,12 +196,13 @@
     margin-bottom: 2%;
 }
 
-.containerAnimado3{
+.containerAnimado3 {
     display: flex;
     justify-content: center;
     align-items: center;
     top: 0px;
-    margin-left: 660px;
+    margin-left: 50%;
+    margin-top: -40%;
 }
 
 
@@ -215,8 +216,8 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    left: 60px;
-    top: 0%;
+    left: 60%;
+    top: -30%;
 }
 
 .box3::before {
@@ -229,7 +230,7 @@
 }
 
 @keyframes animacao {
-    100%{
+    100% {
         transform: rotate(360deg);
     }
 }
@@ -253,11 +254,12 @@
 
 
 .divSaibaOqDoar .h1OqueDoar {
-    text-align: center;
+    text-align: left;
     margin-top: 190px;
     font-size: 40px;
     margin-bottom: 60px;
     font-weight: 500;
+    margin-left: 6%;
 }
 
 .divSaibaOqDoar .h1OqueDoar b {
@@ -265,206 +267,218 @@
 }
 
 .divSaibaOqDoar li {
-    font-size: 22px;
+    font-size: 20px;
     margin-top: 30px;
-    margin-left: 4%;
 }
 
-.news-container {  
-    padding: 20px;  
-  }  
+.news-container {
+    padding: 20px;
+}
 
-  .news-container h2 {
+.news-container h2 {
     margin: 5%;
+    color: var(--white-color);
+}
+
+.news-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.news-card {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 30%;
+}
+
+.news-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.news-card h3 {
+    font-size: 1.2em;
     color: var(--purple-h1-home);
-  }
-  
-  .news-grid {  
-    display: flex;  
-    justify-content: space-between;  
-    gap: 20px;  
-  }  
-  
-  .news-card {  
-    border-radius: 8px;  
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
-    padding: 15px;  
-    width: 30%;  
-  }  
-  
-  .news-card img {  
-    width: 100%;  
-    border-radius: 8px;  
-  }  
-  
-  .news-card h3 {  
-    font-size: 1.2em;  
-    color: var(--purple-h1-home);  
     margin-top: 3%;
-  }  
-  
-  .news-card p {  
-    color: white;  
-  }  
-  
-  .news-card span {  
-    display: block;  
-    margin-top: 10px;  
-    font-size: 0.9em;  
-    color: #999;  
-  }  
-  
-  .read-more {  
-    display: inline-block;  
-    margin-top: 10px;  
-    color: var(--purple-color);  
-    text-decoration: none;  
-  }  
-  
-  .whatsapp-button {  
-    margin-top: 20px;  
-    text-align: right;  
-  }  
-  
-  .whatsapp-button img {  
-    width: 50px; /* Adjust size as needed */  
-  }
+}
+
+.news-card p {
+    color: white;
+}
+
+.news-card span {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #999;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--purple-color);
+    text-decoration: none;
+}
+
+.whatsapp-button {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.whatsapp-button img {
+    width: 50px;
+    /* Adjust size as needed */
+}
 
 @media (max-width: 1080px) {
-    
+
     .divPrincipal .doe {
-        padding-top: 30%;
+        padding-top: 15%;
         font-size: 32px;
 
     }
 
-   .divPrincipal p {
-    margin-left: 5px;
-    display: flex;
-    margin-right: 0px;
-    padding-top: 7%;
-    font-size: 18px;
-   }
+    .divPrincipal p {
+        margin-left: 5px;
+        display: flex;
+        margin-right: 0px;
+        padding-top: 7%;
+        font-size: 18px;
+    }
 
-   .botaoDoar {
-    margin-left: 6%; /* Ajuste para telas menores */
-    margin-top: 3%;
-} 
+    .botaoDoar {
+        margin-left: 6%;
+        /* Ajuste para telas menores */
+        margin-top: 3%;
+    }
 
-   .qualRemedioH1 {
-    font-size: 26px;
-    margin-left: 5%;
-    margin-right: 0px;
-    margin-top: 19%;
+    .qualRemedioH1 {
+        font-size: 26px;
+        margin-left: 5%;
+        margin-right: 0px;
+        margin-top: 19%;
 
-   }
+    }
 
-   .paragrafoRemedio {
-    font-size: 1rem;
-    display: flex;
-    margin-right: 0;
-    margin-left: 5%;
-    margin-top: 29%;
-   }
+    .paragrafoRemedio {
+        font-size: 1rem;
+        display: flex;
+        margin-right: 0;
+        margin-left: 5%;
+        margin-top: 29%;
+    }
 
-   .divOk .title {
-    margin-left: 5%;
-    font-size: 26px;
-    margin-top: 127%;
-   }
+    .divOk .title {
+        margin-left: 5%;
+        font-size: 26px;
+        margin-top: 127%;
+    }
 
-   .box .fotoRemedio {
-    margin-left: 0%;
-   }
+    .box .fotoRemedio {
+        margin-left: 0%;
+    }
 
-   .containerAnimado {
-    margin-left: -78%;
-    margin-top: 16%;
-    display: none;
-   }
+    .containerAnimado {
+        margin-left: -78%;
+        margin-top: 16%;
+        display: none;
+    }
 
-   .box {
-    width: 250px;
-    height: 300%;
-   }
+    .box {
+        width: 250px;
+        height: 300%;
+    }
 
-   .divOk .title {
-    font-size: 26px;
-    margin-left: 5%;
-    margin-top: 12%;
-   }
+    .divOk .title {
+        font-size: 26px;
+        margin-left: 5%;
+        margin-top: 12%;
+    }
 
-   .divOk .uele {
-    margin-left: -25%;
-   }
+    .divOk .uele {
+        margin-left: -25%;
+    }
 
-   .uele li {
-    font-size: 1rem;
-   }
+    .uele li {
+        font-size: 1rem;
+    }
 
-   .divOk .title2 {
-    margin-left: 5%;
-    margin-top: 15%;
-    font-size: 26px;
+    .divOk .title2 {
+        margin-left: 5%;
+        margin-top: 15%;
+        font-size: 26px;
 
-   }
+    }
 
-   .divNaoOk .uele2 {
-    margin-left: -33%;
+    .divNaoOk .uele2 {
+        margin-left: -33%;
 
-   }
+    }
 
-   .uele2 li {
-    font-size: 1rem;
-    margin-right: 0px;
-   }
+    .uele2 li {
+        font-size: 1rem;
+        margin-right: 0px;
+    }
 
-   .box3 .fotoRemedio3 {
-    margin-left: 0%;
-   }
+    .box3 .fotoRemedio3 {
+        margin-left: 0%;
+    }
 
-   .containerAnimado3 {
-    margin-left: -73%;
-    margin-top: 0%;
-    margin-right: 0px;
-    display: none;
-   }
+    .containerAnimado3 {
+        margin-left: -73%;
+        margin-top: 0%;
+        margin-right: 0px;
+        display: none;
+    }
 
-   .box3 {
-    width: 40%;
-    height: 50%;
-    display: none;
+    .box3 {
+        width: 40%;
+        height: 50%;
+        display: none;
 
-   }
+    }
 
-   .armazeneRemedios .title {
-    margin-top: 15%;
+    .armazeneRemedios .title {
+        margin-top: 15%;
 
-    font-size: 26px;
+        font-size: 26px;
 
-   }
+    }
 
-   .armazeneRemedios p {
-    font-size: 1rem;
-    margin-left: 5%;
-    margin-right: 15px;
-    margin-top: 9%;
-   }
+    .armazeneRemedios p {
+        font-size: 1rem;
+        margin-left: 5%;
+        margin-right: 15px;
+        margin-top: 9%;
+    }
 
-   .armazeneRemedios .uele {
-    margin-left: -27%;
-    margin-right: 2%;
-   }
-   
-   .divSaibaOqDoar .h1OqueDoar {
-    font-size: 26px;
-    margin-top: 20%;
-   }
+    .armazeneRemedios .uele {
+        margin-left: -27%;
+        margin-right: 2%;
+    }
 
-   .divSaibaOqDoar li {
-    margin-left: 0%;
-    font-size: 1rem;
-   }
+    .divSaibaOqDoar .h1OqueDoar {
+        font-size: 26px;
+        margin-top: 20%;
+    }
+
+    .divSaibaOqDoar li {
+        margin-left: 0%;
+        font-size: 1rem;
+    }
+
+    .news-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .news-card {
+        margin: 10px 0;
+        max-width: none;
+        width: 100%;
+    }
 
 }
 
@@ -518,7 +532,7 @@
         margin-left: 45%;
     }
 
-    .divNaoOk .title2{
+    .divNaoOk .title2 {
         margin-left: 53%;
         margin-top: -375px;
     }
@@ -543,4 +557,6 @@
         font-size: 23px;
         margin-left: 17%;
     }
+
+
 }

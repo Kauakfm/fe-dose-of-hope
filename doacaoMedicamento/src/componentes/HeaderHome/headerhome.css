@@ -33,7 +33,7 @@
 
 .headerHome .container-header {
     width: 10%;
-    margin-right: 10%;
+    margin-right: 35%;
 }
 
 .headerHome div a:hover {
@@ -82,6 +82,10 @@
     font-size: 34px;
     height: 10vh;
     margin-left: 15%;
+}
+
+.logo2 {
+    width: 40%;
 }
 
 .dropdown-overlay section {

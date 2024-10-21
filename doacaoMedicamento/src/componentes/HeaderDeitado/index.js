@@ -53,7 +53,7 @@ export default function HeaderDeitado() {
         <>
             <div id='header-web' className='header'>
                 <button variant="ghost" size="icon" className="menu-button" onClick={toggleSidebar}>
-                    <BiMenu className="icon" style={{ color: '#FFF' }} />
+                    <BiMenu className="icon" style={{ color: '#FFF', fontSize: '26px' }} />
                 </button>
                 <img className='logo' src={Logo} alt='LogoDose' />
                 <div className='header-avatar'>
@@ -64,7 +64,11 @@ export default function HeaderDeitado() {
                             <div className='dropdown-avatar-menu'>
                                 <img className='dropdown-avatar-image' src={user.avatar} alt='Dashboard' onClick={toggleDropdownImage} />
                                 <span className='dropdown-perfil-nome'>{truncateName(user.nome)}</span>
-                                <button className='dropdown-perfil-button'>VER PERFIL</button>
+                                <button className='dropdown-perfil-button'>
+                                    <Link style={{ fontSize: '15px' }} to='/conta'>
+                                        VER PERFIL
+                                    </Link>
+                                </button>
                             </div>
                             <div className='dropdown-conteudo-header'>
                                 <CiSettings style={{ color: '#8257E5', fontSize: '35px' }} />

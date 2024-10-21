@@ -36,6 +36,8 @@ import React, { useState, useEffect } from 'react'
 import './listaMedicamento.css'
 import api from '../../services/api'
 import Spinner from '../../componentes/Spinner'
+import Radio from '../../componentes/Radio'
+
 
 export default function DonationList() {
   const [currentImageIndex, setCurrentImageIndex] = useState({})
@@ -115,6 +117,7 @@ export default function DonationList() {
                       alt="Sem imagem disponível"
                       className="supernova-image"
                     />}
+                    <Radio />
                   {donation.urlImages.length > 1 && (
                     <div className="wormhole-navigation">
                       <button onClick={() => prevImage(donation.codigo)} className="quasar-button quasar-prev">
