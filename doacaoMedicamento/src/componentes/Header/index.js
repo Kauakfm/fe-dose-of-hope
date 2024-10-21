@@ -80,7 +80,7 @@ export default function YouTubeSidebar({ OnByMenu, OnByMenuSet }) {
                     <button className="nav-button">
                         <Fragment>
                             <GiMedicines style={{ marginRight: '10px', fontSize: '20px' }} color="#FFF" />
-                            <Link to={"/doe-medicamentos/formulario/listaDoacoes"} >
+                            <Link to={"/doe-medicamentos/formulario/listaDoacoes"} className={location.pathname === '/doe-medicamentos/formulario/listaDoacoes' ? "active" : ""}>
                                 Lista de doações
                             </Link>
                         </Fragment>

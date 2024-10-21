@@ -117,7 +117,7 @@
 
 .wormhole-navigation {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 0;
     right: 0;
     display: flex;
@@ -137,8 +137,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: opacity 0.3s;
-}
+    transition: opacity 0.3s;}
 
 .quasar-button:hover {
     opacity: 1;

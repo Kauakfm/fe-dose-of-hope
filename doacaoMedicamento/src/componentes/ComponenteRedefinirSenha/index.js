@@ -37,7 +37,7 @@ export default function ComponenteRedefinirSenha() {
     };
     return (
         <div>
-            <div className="body-login">
+            <div className="body-senha">
                 <BiUserCircle style={{ fontSize: '50px', marginTop: '-105px', marginBottom: '5px' }} />
                 <h3>Redefinir senha!</h3>
                 <p className='p-redefinir'>Digite seu e-mail que <b>enviaremos</b><br />  um link para definir uma nova senha.</p>

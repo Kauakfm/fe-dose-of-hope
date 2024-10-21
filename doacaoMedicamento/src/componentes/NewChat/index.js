@@ -43,7 +43,7 @@ export default function NewChat({ Visible, MessageList, CodConversa, destinatari
     useEffect(() => {
         if (visible) {
             const connection = new signalR.HubConnectionBuilder()
-                .withUrl(RotasSignalR[1])
+                .withUrl(RotasSignalR[2])
                 .build();
 
             connection.start()

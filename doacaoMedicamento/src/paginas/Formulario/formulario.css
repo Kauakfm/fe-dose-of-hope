@@ -252,7 +252,6 @@ input[type="date"] {
 
     .body-formulario label {
         font-weight: 500;
-        display: block;
         margin-bottom: 5px;
     }
 
@@ -336,6 +335,7 @@ input[type="date"] {
             font-size: 15px;
             margin-left: -27%;
             margin-right: 0px;
+            text-align: left;
         }
 
         .body-formulario div p {
@@ -421,5 +421,72 @@ input[type="date"] {
         }
 
 
+    }
+}
+
+@media (max-width: 600px) {
+    .body-formulario {
+        padding: 10vh 5%;
+    }
+
+    .body-formulario h1 {
+        font-size: 28px;
+        text-align: center;
+        width: 110%;
+        margin-top: 0%;
+    }
+
+    .body-formulario p,
+    .body-formulario div p {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .checks {
+        width: 75%;
+        text-align: left;
+    }
+
+    .body-formulario h3 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .body-formulario h6 {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .body-formulario .box-campo {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .body-formulario-row {
+        flex-direction: column;
+    }
+
+    .body-formulario-colunas {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .body-formulario select,
+    .body-formulario input {
+        width: 100%;
+        box-sizing: border-box; /* Inclui padding e border na largura total */
+    }
+
+    .body-formulario .confirmar {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .body-formulario .textarea {
+        height: 100px; /* Ajusta a altura da textarea */
+    }
+
+    .check {
+        margin-top: 20%;
     }
 }

@@ -34,6 +34,7 @@
 // }
 import React, { useState } from 'react'
 import './listaMedicamento.css'
+import Radio from '../../componentes/Radio'
 
 const mockDonations = [
   {
@@ -97,6 +98,7 @@ export default function DonationList() {
                   alt={`${donation.itemName} - Imagem ${currentImageIndex[donation.id] || 1}`}
                   className="supernova-image"
                 />
+                <Radio />
                 {donation.images.length > 1 && (
                   <div className="wormhole-navigation">
                     <button onClick={() => prevImage(donation.id)} className="quasar-button quasar-prev">
@@ -106,6 +108,7 @@ export default function DonationList() {
                       &#8250;
                     </button>
                   </div>
+                  
                 )}
               </div>
               <div className="pulsar-details">
@@ -146,7 +149,7 @@ export default function DonationList() {
                 </div>
               </div>
             </div>
-          </div>))}
+          </div>))}   
       </div >
     </div >
   )
