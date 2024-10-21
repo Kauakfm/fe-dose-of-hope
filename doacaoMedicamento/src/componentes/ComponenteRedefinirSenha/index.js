@@ -41,12 +41,12 @@ export default function ComponenteRedefinirSenha() {
                 <BiUserCircle style={{ fontSize: '50px', marginTop: '-105px', marginBottom: '5px' }} />
                 <h3>Redefinir senha!</h3>
                 <p className='p-redefinir'>Digite seu e-mail que <b>enviaremos</b><br />  um link para definir uma nova senha.</p>
-                <div className="box-label">
+                <div className="box-senha">
                     <div>
                         <label>E-mail:</label>
                         <input type="email" placeholder="Digite seu e-mail" value={email} onChange={handleChange} />
                     </div>
-                    <button type="submit" className="botaoLogin" disabled={loadingAuth} onClick={handleRecuperar}>
+                    <button type="submit" className="botaoLogin2" disabled={loadingAuth} onClick={handleRecuperar}>
                         {loadingAuth ? <div className="spinner-border-sm spinner-border" role="status" ></div> : "Redefinir"}
                     </button>
                     <BsArrowLeftCircleFill /><span onClick={handleVoltar}> voltar</span>
