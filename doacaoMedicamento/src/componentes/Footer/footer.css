@@ -23,6 +23,7 @@
 
 p {
     font-size: 15px;
+    text-align: left;
 }
 
 .footer .contato {
@@ -36,11 +37,14 @@ p {
 
 .footer h1{
     font-size: 25px;
+    text-align: left;
+
 }
 
-.contato img {
+.contato .ima {
     color: white;
     position: absolute;
+    margin-left: 0%;
 }
 
 .contato p {
@@ -102,6 +106,10 @@ p {
     }
 
     .footer section p {
-        margin-left: 15%;
+        margin-left: 2%;
+    }
+
+    .contato .ima {
+        margin-left: 5%;
     }
 }

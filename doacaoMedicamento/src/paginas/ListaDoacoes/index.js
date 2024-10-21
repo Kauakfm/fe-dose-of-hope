@@ -32,54 +32,61 @@
 //     </div >
 //   )
 // }
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './listaMedicamento.css'
-
-const mockDonations = [
-  {
-    id: 1,
-    itemType: 'Medicamento',
-    itemName: 'Paracetamol',
-    pharmaceuticalForm: 'Comprimido',
-    adPed: 'Adulto',
-    dosage: '500mg',
-    quantity: 100,
-    expirationDate: '2024-12-31',
-    storageRequirements: 'Temperatura ambiente',
-    description: 'Analgésico e antitérmico de uso comum',
-    images: ['https://ascoferj.com.br/wp-content/uploads/2023/02/AdobeStock_377142156_Preview_Editorial_Use_Only.jpeg', 'https://www.cirurgicabezerra.com.br/wp-content/uploads/2022/12/BEZ-08122022-temperatura-medicamento-post-blog-imagem.jpg', '/placeholder.svg?height=300&width=400']
-  },
-  {
-    id: 2,
-    itemType: 'Equipamento',
-    itemName: 'Termômetro Digital',
-    pharmaceuticalForm: 'N/A',
-    adPed: 'Ambos',
-    dosage: 'N/A',
-    quantity: 10,
-    expirationDate: 'N/A',
-    storageRequirements: 'Local seco',
-    description: 'Termômetro digital de alta precisão',
-    images: ['https://www.cirurgicabezerra.com.br/wp-content/uploads/2022/12/BEZ-08122022-temperatura-medicamento-post-blog-imagem.jpg', 'https://ascoferj.com.br/wp-content/uploads/2023/02/AdobeStock_377142156_Preview_Editorial_Use_Only.jpeg']
-  },
-]
+import api from '../../services/api'
+import Spinner from '../../componentes/Spinner'
 
 export default function DonationList() {
   const [currentImageIndex, setCurrentImageIndex] = useState({})
+  const [lstDoacoes, setLstDoacoes] = useState([])
+  const [loadingAuth, setLoadingAuth] = useState(false);
+
 
   const nextImage = (donationId) => {
     setCurrentImageIndex(prev => ({
       ...prev,
-      [donationId]: ((prev[donationId] || 0) + 1) % mockDonations.find(d => d.id === donationId).images.length
+      [donationId]: ((prev[donationId] || 0) + 1) % lstDoacoes.find(d => d.codigo === donationId).urlImages.length
     }))
   }
 
   const prevImage = (donationId) => {
     setCurrentImageIndex(prev => ({
       ...prev,
-      [donationId]: ((prev[donationId] || 0) - 1 + mockDonations.find(d => d.id === donationId).images.length) % mockDonations.find(d => d.id === donationId).images.length
+      [donationId]: ((prev[donationId] || 0) - 1 + lstDoacoes.find(d => d.codigo === donationId).urlImages.length) % lstDoacoes.find(d => d.codigo === donationId).urlImages.length
     }))
   }
+
+  useEffect(() => {
+    setLoadingAuth(true);
+    api.get('/Produto/ListarTodasDoacoes')
+      .then((response) => {
+        console.log(response)
+        if (response.status === 200) {
+          setLstDoacoes(response.data.produtos);
+          console.log('Produtos => ', response.data.produtos);
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      }).finally(() => {
+        setLoadingAuth(false);
+      });
+  }, []);
+
+  useEffect(() => {
+    lstDoacoes.forEach((donation) => {
+      const currentIndex = currentImageIndex[donation.codigo] || 0;
+      const nextIndex = (currentIndex + 1) % donation.urlImages.length;
+      const prevIndex = (currentIndex - 1 + donation.urlImages.length) % donation.urlImages.length;
+
+      const nextImage = new Image();
+      nextImage.src = donation.urlImages[nextIndex];
+
+      const prevImage = new Image();
+      prevImage.src = donation.urlImages[prevIndex];
+    });
+  }, [currentImageIndex, lstDoacoes]);
 
   return (
     <div className="galaxy-container">
@@ -87,67 +94,78 @@ export default function DonationList() {
         <h1>Lista De</h1>
         <h1><span>Doações</span></h1>
       </div>
-      <div className="stardust-grid">
-        {mockDonations.map(donation => (
-          <div key={donation.id} className="comet-card">
-            <div className="asteroid-content">
-              <div className="blackhole-image-container">
-                <img
-                  src={donation.images[currentImageIndex[donation.id] || 0]}
-                  alt={`${donation.itemName} - Imagem ${currentImageIndex[donation.id] || 1}`}
-                  className="supernova-image"
-                />
-                {donation.images.length > 1 && (
-                  <div className="wormhole-navigation">
-                    <button onClick={() => prevImage(donation.id)} className="quasar-button quasar-prev">
-                      &#8249;
-                    </button>
-                    <button onClick={() => nextImage(donation.id)} className="quasar-button quasar-next">
-                      &#8250;
-                    </button>
+      {loadingAuth ?
+        <div className="d-flex justify-content-center align-items-center vh-100">
+          <div className="spinner-grow" role="status" style={{ color: '#8257E5' }}></div>
+        </div>
+        :
+        <div className="stardust-grid">
+          {lstDoacoes.map((donation) => (
+            <div key={donation.codigo} className="comet-card">
+              <div className="asteroid-content">
+                <div className="blackhole-image-container">
+                  {donation.urlImages.length > 0 ?
+                    <img
+                      src={donation.urlImages[currentImageIndex[donation.codigo] || 0]}
+                      alt={`${donation.nomeDoItem} - Imagem ${currentImageIndex[donation.codigo] || 1}`}
+                      className="supernova-image"
+                    /> :
+                    <img
+                      src="/placeholder.svg"
+                      alt="Sem imagem disponível"
+                      className="supernova-image"
+                    />}
+                  {donation.urlImages.length > 1 && (
+                    <div className="wormhole-navigation">
+                      <button onClick={() => prevImage(donation.codigo)} className="quasar-button quasar-prev">
+                        &#8249;
+                      </button>
+                      <button onClick={() => nextImage(donation.codigo)} className="quasar-button quasar-next">
+                        &#8250;
+                      </button>
+                    </div>
+                  )}
+                </div>
+                <div className="pulsar-details">
+                  <h2 className="nova-title">{donation.nomeDoItem}</h2>
+                  <div className="constellation-grid">
+                    <div className="star-info">
+                      <p className="meteor-label">Tipo de Item:</p>
+                      <p className="comet-data">{donation.tipoProdutoDescricao}</p>
+                    </div>
+                    <div className="star-info">
+                      <p className="meteor-label">Forma Farmacêutica:</p>
+                      <p className="comet-data">{donation.formaFarmaceuticaDescricao}</p>
+                    </div>
+                    <div className="star-info">
+                      <p className="meteor-label">Ad/Ped:</p>
+                      <p className="comet-data"></p>
+                    </div>
+                    <div className="star-info">
+                      <p className="meteor-label">Dosagem:</p>
+                      <p className="comet-data">{donation.dosagemEscrita}</p>
+                    </div>
+                    <div className="star-info">
+                      <p className="meteor-label">Quantidade:</p>
+                      <p className="comet-data">{donation.quantidade}</p>
+                    </div>
+                    <div className="star-info">
+                      <p className="meteor-label">Data de Validade:</p>
+                      <p className="comet-data">{donation.validadeEscrita}</p>
+                    </div>
+                    <div className="star-info">
+                      <p className="meteor-label">Armazenamento:</p>
+                      <p className="comet-data">{donation.tipoNecessidadeArmazenamentoDescricao}</p>
+                    </div>
                   </div>
-                )}
-              </div>
-              <div className="pulsar-details">
-                <h2 className="nova-title">{donation.itemName}</h2>
-                <div className="constellation-grid">
-                  <div className="star-info">
-                    <p className="meteor-label">Tipo de Item:</p>
-                    <p className="comet-data">{donation.itemType}</p>
-                  </div>
-                  <div className="star-info">
-                    <p className="meteor-label">Forma Farmacêutica:</p>
-                    <p className="comet-data">{donation.pharmaceuticalForm}</p>
-                  </div>
-                  <div className="star-info">
-                    <p className="meteor-label">Ad/Ped:</p>
-                    <p className="comet-data">{donation.adPed}</p>
-                  </div>
-                  <div className="star-info">
-                    <p className="meteor-label">Dosagem:</p>
-                    <p className="comet-data">{donation.dosage}</p>
-                  </div>
-                  <div className="star-info">
-                    <p className="meteor-label">Quantidade:</p>
-                    <p className="comet-data">{donation.quantity}</p>
-                  </div>
-                  <div className="star-info">
-                    <p className="meteor-label">Data de Validade:</p>
-                    <p className="comet-data">{donation.expirationDate}</p>
-                  </div>
-                  <div className="star-info">
-                    <p className="meteor-label">Armazenamento:</p>
-                    <p className="comet-data">{donation.storageRequirements}</p>
+                  <div className="galaxy-description">
+                    <p className="meteor-label">Descrição:</p>
+                    <p className="comet-data">{donation.descricaoDetalhada}</p>
                   </div>
                 </div>
-                <div className="galaxy-description">
-                  <p className="meteor-label">Descrição:</p>
-                  <p className="comet-data">{donation.description}</p>
-                </div>
               </div>
-            </div>
-          </div>))}
-      </div >
+            </div>))}
+        </div >}
     </div >
   )
 }

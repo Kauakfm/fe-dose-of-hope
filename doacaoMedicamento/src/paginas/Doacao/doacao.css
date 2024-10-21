@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-
-
 .divPrincipal .doe {
     color: white;
     font-size: 45px;
@@ -13,7 +11,6 @@
     margin-bottom: 2%;
     
 }
-
 
 .divPrincipal h1 b {
     color: var(--purple-color);
@@ -83,9 +80,9 @@
     height: 100vh;
     justify-content: center;
     align-items: center;
-    /* position: absolute;
-    top: 440px;
-    margin-left: 640px; */
+    position: absolute;
+    top: 470px;
+    margin-left: 0px;
 }
 
 .box {
@@ -142,7 +139,7 @@
 .divOk .title {
     font-size: 40px;
     margin-top: 190px;
-    margin-left: 120px;
+    margin-left: 5%;
     font-weight: 500;
 }
 
@@ -153,13 +150,13 @@
 .divOk li {
     font-size: 18px;
     margin-top: 10px;
-    margin-left: 120px;
+    margin-left: 5%;
     margin-top: 30px;
 
 }
 
 .divOk .title2 {
-    margin-left: 780px;
+    margin-left: 47%;
     margin-top: -320px;
     font-size: 40px;
     font-weight: 500;
@@ -180,7 +177,7 @@
 .divNaoOk li {
     font-size: 18px;
     margin-top: 10px;
-    margin-left: 120px;
+    margin-left: 5%;
     margin-top: 30px;
     margin-right: 100px;
 }
@@ -194,8 +191,8 @@
 .armazeneRemedios p {
     font-weight: 400;
     font-size: 22px;
-    margin-left: 120px;
-    margin-right: 810px;
+    margin-left: 5%;
+    margin-right: 545px;
     margin-bottom: 2%;
 }
 
@@ -203,16 +200,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 400px;
-    margin-left: 640px;
+    top: 0px;
+    margin-left: 660px;
 }
 
 
 .box3 {
     position: relative;
-    width: 250px;
-    height: 300px;
+    width: 350px;
+    height: 450px;
     background-color: rgb(32, 32, 32);
     border-radius: 30px;
     display: flex;
@@ -220,7 +216,7 @@
     align-items: center;
     overflow: hidden;
     left: 60px;
-    top: 1090px;
+    top: 0%;
 }
 
 .box3::before {
@@ -252,6 +248,7 @@
     width: 97%;
     height: 97%;
     border-radius: 30px;
+    top: 0%;
 }
 
 
@@ -270,8 +267,68 @@
 .divSaibaOqDoar li {
     font-size: 22px;
     margin-top: 30px;
-    margin-left: 150px;
+    margin-left: 4%;
 }
+
+.news-container {  
+    padding: 20px;  
+  }  
+
+  .news-container h2 {
+    margin: 5%;
+    color: var(--purple-h1-home);
+  }
+  
+  .news-grid {  
+    display: flex;  
+    justify-content: space-between;  
+    gap: 20px;  
+  }  
+  
+  .news-card {  
+    border-radius: 8px;  
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
+    padding: 15px;  
+    width: 30%;  
+  }  
+  
+  .news-card img {  
+    width: 100%;  
+    border-radius: 8px;  
+  }  
+  
+  .news-card h3 {  
+    font-size: 1.2em;  
+    color: var(--purple-h1-home);  
+    margin-top: 3%;
+  }  
+  
+  .news-card p {  
+    color: white;  
+  }  
+  
+  .news-card span {  
+    display: block;  
+    margin-top: 10px;  
+    font-size: 0.9em;  
+    color: #999;  
+  }  
+  
+  .read-more {  
+    display: inline-block;  
+    margin-top: 10px;  
+    color: var(--purple-color);  
+    text-decoration: none;  
+  }  
+  
+  .whatsapp-button {  
+    margin-top: 20px;  
+    text-align: right;  
+  }  
+  
+  .whatsapp-button img {  
+    width: 50px; /* Adjust size as needed */  
+  }
 
 @media (max-width: 1080px) {
     
@@ -368,7 +425,7 @@
 
    .containerAnimado3 {
     margin-left: -73%;
-    margin-top: 43%;
+    margin-top: 0%;
     margin-right: 0px;
     display: none;
    }

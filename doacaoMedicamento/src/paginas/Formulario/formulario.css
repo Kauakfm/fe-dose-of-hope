@@ -9,7 +9,8 @@
     font-size: 45px;
     margin-bottom: 25px;
     margin-top: 30px;
-    font-weight: bold
+    font-weight: bold;
+    margin-right: 5%;
 }
 
 .body-formulario h1 span {
@@ -23,7 +24,7 @@
 
 
 .body-formulario .paragrafoF {
-    margin-left: -12%;
+    margin-right: 11%;
 }
 
 
@@ -40,6 +41,7 @@
 
 .body-formulario h3 {
     font-size: 23px;
+    margin-top: 4%;
 }
 
 .body-formulario h6 {
@@ -56,11 +58,11 @@
 .body-formulario select {
     background-color: #202020;
     border: 1px solid #fff;
-    width: 40vw;
+    width: 23vw;
     color: var(--white-color);
     outline: none;
     border-radius: 4px;
-    height: 8vh;
+    height: 6vh;
     padding-left: 1%;
     margin-bottom: 3%;
     font-size: 15px;
@@ -141,7 +143,7 @@ input[type="date"] {
 .body-formulario-row input{
     background-color: transparent;
     border: 1px solid #fff;
-    width: 40vw;
+    width: 23vw;
     color: var(--white-color);
     outline: none;
 }
@@ -200,45 +202,71 @@ input[type="date"] {
     .box-campo section {
         display: flex;
         flex-direction: column;
-        /* Coloca os itens um abaixo do outro */
+        align-items: center;
+        padding-top: 15vh;
     }
 
-    .box-campo section input {
-        width: 100%;
+    .body-formulario h1 {
+        font-size: 45px;
+        margin-bottom: 25px;
+        margin-top: 30px;
+        font-weight: bold
     }
 
-    .box-campo section select {
-        width: 100%;
+    .body-formulario h1 span {
+        color: var(--purple-color);
     }
 
-    .check {
-        width: 95vw;
-        margin-bottom: 5%;
-        margin-right: 40px;
-    }
-}
-
-@media (min-width: 1700px) {
-    .body-formulario h3 {
-        font-size: 28px;
+    .body-formulario p,
+    .body-formulario div p {
+        font-size: 18px;
     }
 
-    .body-formulario p {
-        width: 40vw;
-        font-size: 20px !important;
-    }
 
     .body-formulario .paragrafoF {
-        margin-left: 5%;
+        margin-left: -12%;
     }
 
+
+
     .checks {
-        margin-left: 22.5%;
+        width: 58%;
+        margin-left: 14%;
+    }
+
+    .checks p svg {
+        font-size: 22px;
+        margin-right: 0.6vw;
+    }
+
+    .body-formulario h3 {
+        font-size: 23px;
+    }
+
+    .body-formulario h6 {
+        color: rgb(146, 146, 146);
+        font-size: 16px;
+        margin-bottom: 0;
+        margin-top: 4%;
     }
 
     .body-formulario label {
         font-weight: 500;
-        font-size: 19px;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .body-formulario select {
+        background-color: transparent;
+        border: 1px solid #fff;
+        width: 40vw;
+        color: var(--white-color);
+        outline: none;
+        border-radius: 4px;
+        height: 6.7vh;
+        padding-left: 1%;
+        margin-bottom: 3%;
+        font-size: 15px;
     }
 
     .body-formulario input {
@@ -247,7 +275,6 @@ input[type="date"] {
         width: 40vw;
         color: var(--white-color);
         outline: none;
-        font-size: 27px;
     }
 
     .botaoFormulario {
@@ -257,4 +284,142 @@ input[type="date"] {
     }
 
 
+    input[type="date"] {
+        color: var(--white-color);
+    }
+
+    .textarea {
+        background-color: transparent;
+        border: 1px solid #fff;
+        width: 100%;
+        border-radius: 5px;
+        padding: 10px;
+        color: var(--white-color);
+
+    }
+    
+
+    .box-campo section {
+        display: flex;
+        justify-content: space-between;
+        width: 89%;
+    }
+    
+    .box-campo section input,
+    .box-campo section select {
+        width: 146%;
+    }
+    
+    .box-campo section input {
+        width: 130%;
+        color: gray;
+    }
+
+    @media (max-width: 1080px) {
+
+        .body-formulario h1 {
+            font-size: 32px;
+            width: 82%;
+        }
+
+        .body-formulario .paragrafoF {
+            margin-left: 9%;
+            margin-bottom: 10%;
+        }
+
+        .body-formulario p {
+            font-size: 15px;
+            margin-left: 8%;
+        }
+
+        .body-formulario .checkp {
+            font-size: 15px;
+            margin-left: -27%;
+            margin-right: 0px;
+        }
+
+        .body-formulario div p {
+            font-size: 15px;
+            margin-left: 0%;
+            margin-bottom: 10%;
+        }
+
+        .box-campos section input {
+            width: 100%;
+        }
+
+
+        .body-formulario input {
+            width: 100%;
+        }
+
+        .box-campo p {
+            width: 80vw;
+        }
+
+        .body-formulario select {
+            width: 100%;
+        }
+
+        .box-campo section {
+            display: flex;
+            flex-direction: column;
+            /* Coloca os itens um abaixo do outro */
+        }
+
+        .box-campo section input {
+            width: 100%;
+        }
+
+        .box-campo section select {
+            width: 100%;
+        }
+
+        .check {
+            width: 95vw;
+            margin-bottom: 5%;
+            margin-right: 40px;
+        }
+    }
+
+    @media (min-width: 1700px) {
+        .body-formulario h3 {
+            font-size: 28px;
+        }
+
+        .body-formulario p {
+            width: 40vw;
+            font-size: 20px !important;
+        }
+
+        .body-formulario .paragrafoF {
+            margin-left: 5%;
+        }
+
+        .checks {
+            margin-left: 22.5%;
+        }
+
+        .body-formulario label {
+            font-weight: 500;
+            font-size: 19px;
+        }
+
+        .body-formulario input {
+            background-color: transparent;
+            border: 1px solid #fff;
+            width: 40vw;
+            color: var(--white-color);
+            outline: none;
+            font-size: 27px;
+        }
+
+        .botaoFormulario {
+            font-size: 20px;
+            margin-bottom: 15%;
+            margin-top: 10px;
+        }
+
+
+    }
 }

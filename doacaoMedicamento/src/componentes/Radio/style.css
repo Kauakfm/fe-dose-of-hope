@@ -23,13 +23,14 @@
   }
 
   .iconRange.active-range {
-    color: #800080;
+    color: white;
   }
 
   .iconRange svg {
     width: 24px;
     height: 24px;
     margin-bottom: 5px;
+    color: var(--purple-h1-home);
   }
 
   .iconRange span {

@@ -4,7 +4,7 @@ import './formulario.css';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Footer from "../../componentes/Footer";
 import Radio from "../../componentes/Radio";
-import { createFormDataMedicamentos } from "../../Auth/permissions";
+import { createFormDataMedicamentos, mapTipoItem , mapFormaItem, mapCondicaoItem, mapNecessidadeArmazenamento} from "../../Auth/permissions";
 import { object } from "zod";
 import { toast } from "react-toastify";
 
@@ -25,11 +25,11 @@ export default function Formulario() {
     const location = useLocation()
 
     const handleFormPreenchido = () => {
-        if (!isCheckBoxChecked)
-            return toast.warn('Preencha o campo de confirmação indicando que o medicamento não está vencido!');
-
         if (!validateFields())
             return
+
+        if (!isCheckBoxChecked)
+            return toast.warn('Preencha o campo de confirmação indicando que o medicamento não está vencido!');
 
         const objMed = createFormDataMedicamentos(
             tipoItem,
@@ -42,6 +42,12 @@ export default function Formulario() {
             necessidadeArmazenamento,
             descricaoDetalhada
         );
+
+        objMed.tipoItemText = mapTipoItem(tipoItem);
+        objMed.formaItemText = mapFormaItem(formaItem);
+        objMed.condicaoItemText = mapCondicaoItem(condicaoItem);
+        objMed.necessidadeArmazenamentoText = mapNecessidadeArmazenamento(necessidadeArmazenamento);
+    
         const objMedSerizalizado = JSON.stringify(objMed)
         sessionStorage.setItem('formularioMedicamento', objMedSerizalizado);
 
@@ -79,11 +85,6 @@ export default function Formulario() {
             newErrors.nomeItem = "Nome do item é obrigatório.";
         }
 
-        if (tipoItem !== '2' && !dosagem) {
-            isValid = false;
-            newErrors.dosagem = "Dosagem é obrigatória para medicamentos.";
-        }
-
         if (!quantidade || quantidade <= 0) {
             isValid = false;
             newErrors.quantidade = "Quantidade é obrigatória.";
@@ -99,9 +100,13 @@ export default function Formulario() {
             newErrors.condicaoItem = "Selecione se o item é para adulto ou pediátrico.";
         }
 
-        if (tipoItem !== '2' && !dataValidade) {
+        if (!dataValidade) {
             isValid = false;
             newErrors.dataValidade = "Data de validade é obrigatória.";
+        }
+        if (!dosagem) {
+            isValid = false;
+            newErrors.dosagem = "Dosagem é obrigatória.";
         }
 
         if (!necessidadeArmazenamento) {
@@ -203,7 +208,7 @@ export default function Formulario() {
                         <div className="body-formulario-row">
                             <div className="body-formulario-colunas">
                                 <label>Dosagem*</label>
-                                <input type="text" placeholder="Informe a dosagem ou concentração, se aplicável." value={dosagem} disabled={tipoItem === '2'} onChange={(e) => setDosagem(e.target.value)} onBlur={handleValidaDosagemBlur} />
+                                <input type="text" placeholder="Informe a dosagem ou concentração, se aplicável." value={dosagem} onChange={(e) => setDosagem(e.target.value)} onBlur={handleValidaDosagemBlur} />
                                 {errors.dosagem && <span style={{ color: '#FE6E78' }}>{errors.dosagem}</span>}
                             </div>
                             <div className="body-formulario-colunas">

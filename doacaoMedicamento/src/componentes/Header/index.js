@@ -158,7 +158,7 @@ import { GiRemedy } from "react-icons/gi";
 import { IoChatbubbles } from "react-icons/io5";
 import { FaCheckCircle } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
-import { BiMenu } from "react-icons/bi";
+import { GiMedicines } from "react-icons/gi";
 
 
 export default function YouTubeSidebar({ OnByMenu, OnByMenuSet }) {
@@ -226,17 +226,28 @@ export default function YouTubeSidebar({ OnByMenu, OnByMenuSet }) {
                             </Fragment>
                         )}
                     </button>
-
-                    <hr className="divider" />
-                    <h3 className="subscriptions-header">Administrativo</h3>
-                    <Link className="nav-button" to={`/administrativo/aprovar`}>
-                        <FaCheckCircle style={{ marginRight: '10px', fontSize: '20px' }} color="#FFF" />
-                        Aprovar Medicamento
-                    </Link>
-                    <Link className="nav-button" to={`/administrativo/usuarios`}>
-                        <FaUser style={{ marginRight: '10px', fontSize: '20px' }} color="#FFF" />
-                        Usuários
-                    </Link>
+                    <button className="nav-button">
+                        <Fragment>
+                            <GiMedicines style={{ marginRight: '10px', fontSize: '20px' }} color="#FFF" />
+                            <Link to={"/doe-medicamentos/formulario/listaDoacoes"} className={location.pathname === '/doe-medicamentos/formulario/listaDoacoes' ? "active" : ""}>
+                                Lista de doações
+                            </Link>
+                        </Fragment>
+                    </button>
+                    {hasPermission('VIEW_ADMINISTRATIVO') && (
+                        <Fragment>
+                            <hr className="divider" />
+                            <h3 className="subscriptions-header">Administrativo</h3>
+                            <Link className="nav-button" to={`/administrativo/aprovar`}>
+                                <FaCheckCircle style={{ marginRight: '10px', fontSize: '20px' }} color="#FFF" />
+                                Aprovar Medicamento
+                            </Link>
+                            <Link className="nav-button" to={`/administrativo/usuarios`}>
+                                <FaUser style={{ marginRight: '10px', fontSize: '20px' }} color="#FFF" />
+                                Usuários
+                            </Link>
+                        </Fragment>
+                    )}
                 </nav>
             </aside>
         </div>

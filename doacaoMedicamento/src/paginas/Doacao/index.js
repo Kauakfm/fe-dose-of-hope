@@ -16,6 +16,27 @@ export default function Doacao() {
         navigate("/doe-medicamentos/formulario")
     }
 
+    const newsArticles = [
+        {
+            title: "A importância do descarte correto de remédios",
+            description: "Sabe aquele medicamento que te salva nos seus piores momentos, quando você...",
+            date: "04/06/2024",
+            image: "https://www.ceder.med.br/_next/image?url=https%3A%2F%2Fcdn-images-1.medium.com%2Fmax%2F700%2F1*2FGT119BEqqhzKVcg_xc9A.png&w=640&q=75", // Replace with your image path  
+        },
+        {
+            title: "A grave falta de remédios nas farmácias em 2023",
+            description: "A princípio, não é novidade que dês do início da pandemia a procura por...",
+            date: "04/06/2024",
+            image: "https://www.ceder.med.br/_next/image?url=https%3A%2F%2Fcdn-images-1.medium.com%2Fmax%2F700%2F1*LYFtKb4_xqybLO78-PKt9Q.png&w=640&q=75", // Replace with your image path  
+        },
+        {
+            title: "Doação de remédios, a verdadeira importância",
+            description: "De antemão, venho lhe dizer que este é um artigo que literalmente pode (e vai)...",
+            date: "04/06/2024",
+            image: "https://www.ceder.med.br/_next/image?url=https%3A%2F%2Fcdn-images-1.medium.com%2Fmax%2F720%2F1*9W_9mJvALTlkB5dgyCUYIw.jpeg&w=640&q=75", // Replace with your image path  
+        },
+    ];
+
     return (
         <div>
             <div className="divPrincipal">
@@ -28,21 +49,22 @@ export default function Doacao() {
                     </div>
                 </div>
             </div>
+
             <div className='qualidade-de-vida-conteuto-texto'>
                 <div className='qualidade-de-vida-doacao-texto'>
                     <h1 className="qualRemedioH1"><b>Quais remédios</b> você pode doar?</h1> <br /><br />
                     <p className="paragrafoRemedio">Não existem restrições. Todas as doações de medicamentos e Equipamentos de Proteção Individual dentro do prazo de validade e armazenados corretamente são bem-vindas. Estamos agradecidos por qualquer ajuda oferecida para apoiar aqueles que precisam.</p>
                 </div>
-                <div className="containerAnimado">
+                {/* <div className="containerAnimado">
                     <div className="box">
                         <img src={medicamentos} className="fotoRemedio" alt='' />
                     </div>
-                </div>
+                </div> */}
             </div>
 
             <div className="divOk">
 
-                <h1 className="title"><b>Medicamentos impróprios</b> <br />para doação</h1>
+                {/* <h1 className="title"><b>Medicamentos impróprios</b> <br />para doação</h1>
                 <ul className="uele">
                     <li> <AiOutlineCloseCircle style={{ marginRight: '20px', color: '#FF6961', fontSize: '20px' }} />Remédios fora do prazo de validade.</li>
                     <li> <AiOutlineCloseCircle style={{ marginRight: '20px', color: '#FF6961', fontSize: '20px' }} />Quando não for possível verificar a validade.</li>
@@ -57,7 +79,7 @@ export default function Doacao() {
                         <li> <LuAlertCircle style={{ marginRight: '20px', color: '#FFD700', fontSize: '20px' }} />Contate a Vigilância Sanitária da sua região.</li>
                         <li> <LuAlertCircle style={{ marginRight: '20px', color: '#FFD700', fontSize: '20px' }} />Confira no site da Anvisa algum ponto de descarte.</li>
                     </ul>
-                </div>
+                </div> */}
                 <div className="armazeneRemedios">
                     <h1 className="title"><b>Armazene corretamente</b> <br /> seus medicamentos</h1>
                     <p>Você sabe como guardar remédios de forma correta? Leia as dicas abaixo:</p>
@@ -68,11 +90,11 @@ export default function Doacao() {
                         <li> <AiOutlineCheckCircle style={{ marginRight: '15px', color: '#009000', fontSize: '20px' }} />Preserve as embalagens originais para checar a validade.</li>
                         <li> <AiOutlineCheckCircle style={{ marginRight: '15px', color: '#009000', fontSize: '20px' }} />Siga a orientação médica para remédios termolábeis.</li>
                     </ul>
-                    {/* <div className="containerAnimado3">
+                    <div className="containerAnimado3">
                         <div className="box3">
                             <img src={farmacia} className="fotoRemedio3" alt='' />
                         </div>
-                    </div> */}
+                    </div>
                 </div>
                 <div className="divSaibaOqDoar">
                     <h1 className="h1OqueDoar">O que <b>doar?</b></h1>
@@ -83,6 +105,20 @@ export default function Doacao() {
                         <li><b>Suplementos:</b> Inclua vitaminas e suplementos nutricionais. <FiCheckCircle style={{ fontSize: '25px', marginLeft: '10px' }} /></li>
                         <li><b>Material de Primeiros Socorros:</b> Curativos, pomadas e produtos para cuidados de feridas. <FiCheckCircle style={{ fontSize: '25px', marginLeft: '10px' }} /></li>
                     </ul>
+                </div>
+            </div>
+            <div className="news-container">
+                <h2>Notícias</h2>
+                <div className="news-grid">
+                    {newsArticles.map((article, index) => (
+                        <div className="news-card" key={index}>
+                            <img src={article.image} alt={article.title} />
+                            <h3>{article.title}</h3>
+                            <p>{article.description}</p>
+                            <span>{article.date}</span>
+                            <a href="#" className="read-more">Leia mais</a>
+                        </div>
+                    ))}
                 </div>
             </div>
             <Footer />

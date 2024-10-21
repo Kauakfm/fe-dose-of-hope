@@ -63,9 +63,7 @@ api.interceptors.response.use(
                 }
             } catch (fetchError) {
                 toast.warn("Sessão expirada. Por favor, faça login novamente.");
-                setTimeout(() => {
-                    window.location.href = '/login';
-                }, 3000);
+                window.location.href = '/login';
             }
         }
         if (error.response && error.response.status === 403) {

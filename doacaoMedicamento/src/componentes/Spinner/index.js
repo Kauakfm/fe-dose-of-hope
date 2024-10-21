@@ -6,7 +6,7 @@ export default function Spinner() {
             <div className='chat-container'>
                 <div className='chat-body'>
                     <div className="d-flex justify-content-center align-items-center vh-100">
-                        <div className="spinner-grow text-primary" role="status"></div>
+                        <div className="spinner-grow" role="status" style={{ color: '#8257E5' }}></div>
                     </div>
                 </div>
             </div>

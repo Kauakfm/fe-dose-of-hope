@@ -11,7 +11,7 @@ body {
 }
 
 .div-chat {
-  width: 30%;
+  width: 45%;
   padding: 20px;
   background-color: var(--div-chat-color);
   border-radius: 8px;

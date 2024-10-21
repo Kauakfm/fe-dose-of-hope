@@ -351,3 +351,37 @@
     font-weight: bold;
     margin-bottom: 16px;
 }
+
+@media (max-width: 768px) {
+    .menu-button {
+        position: fixed;
+        top: 16px;
+        left: 16px;
+        z-index: 10; 
+    }
+
+    .menu-button .icon {
+        width: 40px; 
+        height: 40px;
+        color: white; 
+    }
+
+    .sidebar {
+        width: 200px; 
+        padding: 8px;
+    }
+
+    .sidebar-nav {
+        padding-top: 10vh; 
+    }
+
+    .nav-button {
+        padding: 6px;
+    }
+
+    .close-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+}

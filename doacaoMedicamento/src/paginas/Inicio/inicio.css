@@ -219,6 +219,10 @@
     .inicio-container {
       padding: 10px;
     }
+
+    .donate-btn {
+      width: 45%;
+    }
    
     .main-section {
       flex-direction: column;
