@@ -61,7 +61,32 @@ td {
     transition: background-color 0.3s ease;  
 }  
 
-/* Mobile Styles */  
+.modal-body {
+    text-align: center; 
+}
+
+.modal-body h5 {
+    margin-bottom: 10%;
+}
+
+.modal-body .mb-7 {
+    margin-left: 40%;
+}
+
+.form-group {
+    margin-bottom: 15px; 
+}
+
+.btn {
+    margin: 5px; 
+}
+
+.logo3 {
+    width: 50%; 
+    margin-bottom: 10px;
+}
+
+
 @media (max-width: 768px) {  
     main {  
         padding: 10px;  

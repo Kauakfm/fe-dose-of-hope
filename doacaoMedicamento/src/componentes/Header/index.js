@@ -90,7 +90,7 @@ export default function YouTubeSidebar({ OnByMenu, OnByMenuSet }) {
                         <Fragment>
                             <hr className="divider" />
                             <h3 className="subscriptions-header">Administrativo</h3>
-                            <Link className="nav-button" to={`/administrativo/aprovar`}>
+                            <Link className="nav-button" to={`/administrativo/aprovar`} >
                                 <FaCheckCircle style={{ marginRight: '10px', fontSize: '20px' }} color="#FFF" />
                                 Aprovar Medicamento
                             </Link>

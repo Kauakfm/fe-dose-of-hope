@@ -117,7 +117,7 @@ export default function DonationList() {
                       alt="Sem imagem disponível"
                       className="supernova-image"
                     />}
-                    <Radio />
+                    <Radio currentStep={donation.codigoStatus === 1 ? 3 : donation.codigoStatus === 2 ? 2 : donation.codigoStatus === 3 ? 4 : 0} />
                   {donation.urlImages.length > 1 && (
                     <div className="wormhole-navigation">
                       <button onClick={() => prevImage(donation.codigo)} className="quasar-button quasar-prev">
@@ -142,7 +142,7 @@ export default function DonationList() {
                     </div>
                     <div className="star-info">
                       <p className="meteor-label">Ad/Ped:</p>
-                      <p className="comet-data"></p>
+                      <p className="comet-data">{donation.tipoCondicaoDescricao}</p>
                     </div>
                     <div className="star-info">
                       <p className="meteor-label">Dosagem:</p>

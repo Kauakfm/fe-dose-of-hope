@@ -75,10 +75,10 @@ export default function Tabela2({ botoesDeAcao = [], dados = [], colunasVisiveis
                                     {botoesDeAcao.map((botao, btnIndex) => (
                                         <button
                                             key={btnIndex}
-                                            className={botao.className || "btn"}
+                                            className={typeof botao.className === "function" ? botao.className(item) : botao.className}
                                             onClick={() => botao.action(item)}
                                         >
-                                            {botao.label}
+                                            {typeof botao.label === "function" ? botao.label(item) : botao.label}
                                         </button>
                                     ))}
                                 </td>
