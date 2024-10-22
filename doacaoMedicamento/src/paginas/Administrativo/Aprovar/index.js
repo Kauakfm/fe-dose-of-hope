@@ -67,7 +67,7 @@ export default function Aprovar() {
                 {isModalVisible && (
                     <div className="modal-incricao-presencial modal fade show" style={{ display: 'block' }} id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div className="modal-dialog">
-                            <div className="modal-content" style={{ backgroundColor: 'transparent', padding: '20px', marginTop: '-20%'}}>
+                            <div className="modal-content" style={{ backgroundColor: 'transparent', padding: '20px', marginTop: '-20%', border: 'none'}}>
                                 <div className="modal-body">
                                     <img className="logo3" src={Logo} alt="LogoDose" style={{ width: '50%', marginBottom: '10%' }} />
                                     <h5 style={{ textAlign: "center" }}>Preencha os campos para aprovar/reprovar!</h5>
