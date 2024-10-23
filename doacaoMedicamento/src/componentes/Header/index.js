@@ -1,97 +1,110 @@
-import './header.css';
+import "./header.css";
+import React, { useState, useEffect, Fragment } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import React, { useState, useEffect, useRef, useContext } from 'react';
-import { CiLogout } from "react-icons/ci";
-import { CiSettings } from "react-icons/ci";
-import { UserContext } from '../../hooks/Context/UserContext';
+import { IoMdHome } from "react-icons/io";
+import { BiSolidDonateHeart } from "react-icons/bi";
+import { GiRemedy } from "react-icons/gi";
+import { IoChatbubbles } from "react-icons/io5";
+import { FaCheckCircle } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
+import { GiMedicines } from "react-icons/gi";
+import { BiMenu } from "react-icons/bi";
 
 
-export default function Header() {
+export default function YouTubeSidebar({ OnByMenu, OnByMenuSet }) {
+    const [isOpen, setIsOpen] = useState(false);
     const location = useLocation();
-    const [dropdownOpen, setDropdownOpen] = useState(false);
-    const [dropdownOpenImagem, setDropdownOpenImagem] = useState(false);
-    const dropdownRef = useRef(null);
-    const { user } = useContext(UserContext);
-
-    useEffect(() => {
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => document.removeEventListener("mousedown", handleClickOutside);
-    }, []);
-
-    const handleClickOutside = (event) => {
-        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-            setDropdownOpen(false);
-        }
-    };
-
-    const toggleDropdown = () => {
-        setDropdownOpen(prev => !prev);
-        setDropdownOpenImagem(false);
-    };
-
-    const toggleDropdownImage = () => {
-        setDropdownOpenImagem(prev => !prev);
-        setDropdownOpen(false);
-    };
 
     const hasPermission = (permission) => {
         const permissions = localStorage.getItem("role");
         return permissions?.includes(permission);
     };
 
+    useEffect(() => {
+        setIsOpen(OnByMenu);
+    }, [OnByMenu]);
+
+    const toggleSidebar = () => {
+        if (!isOpen)
+            OnByMenuSet(true);
+        else
+            OnByMenuSet(false);
+    };
+
     return (
-        <div className='header'>
-            <Link to={`/inicio`}><h1>Dose de Esperança</h1></Link>
-            <div id='header-web' className='header-web'>
-                {hasPermission('VIEW_INICIO') && (
-                    <Link to={`/inicio`} className={location.pathname === '/inicio'}>
-                        Início
-                    </Link>
-                )}
-                {hasPermission('VIEW_CONTRIBUIR') && (
-                    <Link to={`/contribuir`} className={location.pathname === '/contribuir'}>
-                        Contribuir
-                    </Link>
-                )}
-                {hasPermission('VIEW_DOACAO') && (
-                    <Link to={`/doacao`} className={location.pathname === '/doacao'}>
-                        Doações
-                    </Link>
-                )}
-                {hasPermission('VIEW_CHAT') && (
-                    <Link to={`/chat`} className={location.pathname === '/chat'}>
-                        Chat
-                    </Link>
-                )}
-                {hasPermission('VIEW_ADMINISTRATIVO') && (
-                    <div id='header-web' className="btn-adm dropdown">
-                        <div className='div-dashboard' onClick={toggleDropdown}>
-                            <button className="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Administrativo
-                            </button>
-                            <ul className="dropdown-menu">
-                                <li><Link to={`/administrativo/aprovar`} >Aprovar medicamento</Link></li>
-                                <li><Link to={`/administrativo/usuarios`} >Usuarios</Link></li>
-                                <li>Aprovar CPF</li>
-                            </ul>
-                        </div>
-                    </div>
-                )}
-                <div>
-                    <span>{user.nome}</span>
-                    <img src={user.avatar} className='img' alt='Dashboard' onClick={toggleDropdownImage} />
-                    {dropdownOpenImagem && (
-                        <div className='dropdown-menu'>
-                            <div className='menu-conta'>
-                                <ul>
-                                    <li><Link to='/conta'><CiSettings style={{ color: 'purple', fontSize: '25px', marginRight: '20px' }} />Minha Conta</Link></li>
-                                    <li><Link to='/login'><CiLogout style={{ color: 'purple', fontSize: '25px', marginRight: '20px' }} />Sair</Link></li>
-                                </ul>
-                            </div>
-                        </div>
+        <div className={`youtube-sidebar-container ${isOpen ? "overlay-open" : ""}`}>
+            <aside className={`sidebar ${isOpen ? "open" : ""}`}>
+                <button className="close-button" onClick={toggleSidebar}>
+                    {/* <BiMenu style={{ fontSize: '24px', color: '#FFF' }} /> */}
+                </button>
+                <nav className="sidebar-nav">
+                    <button className="nav-button">
+                        {hasPermission('VIEW_INICIO') && (
+                            <Fragment>
+                                <IoMdHome style={{ marginRight: '10px', fontSize: '20px' }} color="#FFF" />
+                                <Link to={`/inicio`} className={location.pathname === '/inicio' ? "active" : ""}>
+                                    Início
+                                </Link>
+                            </Fragment>
+                        )}
+                    </button>
+                    <button className="nav-button">
+                        {hasPermission('VIEW_CONTRIBUIR') && (
+                            <Fragment>
+                                <BiSolidDonateHeart style={{ marginRight: '10px', fontSize: '20px' }} color="#FFF" />
+                                <Link to={`/contribuir`} className={location.pathname === '/contribuir' ? "active" : ""}>
+                                    Contribuir
+                                </Link>
+                            </Fragment>
+                        )}
+                    </button>
+                    <button className="nav-button">
+                        {hasPermission('VIEW_DOACAO') && (
+                            <Fragment>
+                                <GiRemedy style={{ marginRight: '10px', fontSize: '20px' }} color="#FFF" />
+                                <Link to={`/doacao`} className={location.pathname === '/doacao' ? "active" : ""}>
+                                    Doações
+                                </Link>
+                            </Fragment>
+                        )}
+                    </button>
+                    <button className="nav-button">
+                        {hasPermission('VIEW_CHAT') && (
+                            <Fragment>
+                                <IoChatbubbles style={{ marginRight: '10px', fontSize: '20px' }} color="#FFF" />
+                                <Link to={`/chat`} className={location.pathname === '/chat' ? "active" : ""}>
+                                    Bate-Papo
+                                </Link>
+                            </Fragment>
+                        )}
+                    </button>
+                    <button className="nav-button">
+                        <Fragment>
+                            <GiMedicines style={{ marginRight: '10px', fontSize: '20px' }} color="#FFF" />
+                            <Link to={"/doe-medicamentos/formulario/listaDoacoes"} className={location.pathname === '/doe-medicamentos/formulario/listaDoacoes' ? "active" : ""}>
+                                Lista de doações
+                            </Link>
+                        </Fragment>
+                    </button>
+                    {hasPermission('VIEW_ADMINISTRATIVO') && (
+                        <Fragment>
+                            <hr className="divider" />
+                            <h3 className="subscriptions-header">Administrativo</h3>
+                            <Link className="nav-button" to={`/administrativo/aprovar`} >
+                                <FaCheckCircle style={{ marginRight: '10px', fontSize: '20px' }} color="#FFF" />
+                                Aprovar Medicamento
+                            </Link>
+                            <Link className="nav-button" to={`/administrativo/usuarios`}>
+                                <FaUser style={{ marginRight: '10px', fontSize: '20px' }} color="#FFF" />
+                                Usuários
+                            </Link>
+                        </Fragment>
                     )}
-                </div>
-            </div>
+                </nav>
+            </aside>
+            <button className="menu-button" >
+                <BiMenu className="icon" style={{ color: '#FFF' }} onClick={toggleSidebar} />
+            </button>
         </div>
-    )
+    );
 }

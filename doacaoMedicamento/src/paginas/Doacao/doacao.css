@@ -1,19 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-
-
 .divPrincipal .doe {
     color: white;
     font-size: 45px;
     text-align: center;
-    padding-top: 10% ;
+    padding-top: 10%;
     font-family: 'Poppins', 'Courier New', Courier, monospace;
     font-weight: bold;
     margin-bottom: 2%;
-    
-}
 
+}
 
 .divPrincipal h1 b {
     color: var(--purple-color);
@@ -36,11 +33,11 @@
     border: none;
     border-radius: 17px;
     padding: 10px 20px;
-    margin: 40px auto; 
+    margin: 40px auto;
     cursor: pointer;
     font-family: 'Poppins', 'Courier New', Courier, monospace;
-    transition: 0.5s; 
-    display: block; 
+    transition: 0.5s;
+    display: block;
 }
 
 .botaoDoar:hover {
@@ -50,8 +47,7 @@
 
 .qualRemedioH1 {
     margin-top: 170px;
-    position: absolute;
-    margin-left: 120px;
+    margin-left: 70px;
     font-size: 40px;
     font-weight: bold;
 }
@@ -62,15 +58,21 @@
 }
 
 .paragrafoRemedio {
-    margin-top: 270px;
+    /* margin-top: 270px; */
     font-weight: 400;
     font-size: 22px;
-    margin-left: 120px;
-    margin-right: 710px;
+    margin-left: 70px;
+    /* margin-right: 710px; */
 }
 
 
+.qualidade-de-vida-conteuto-texto {
+    display: flex;
+}
 
+.qualidade-de-vida-doacao-texto {
+    width: 60vw;
+}
 
 .containerAnimado {
     display: flex;
@@ -79,22 +81,21 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 440px;
-    margin-left: 640px;
+    top: 470px;
+    margin-left: 0px;
 }
-
 
 .box {
     position: relative;
-    width: 450px;
-    height: 300px;
+    width: 400px;
+    height: 250px;
     background-color: rgb(32, 32, 32);
     border-radius: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    left: 80px;
+    left: 130px;
     top: -80px;
 }
 
@@ -105,12 +106,6 @@
     height: 300%;
     background: linear-gradient(180deg, var(--purple-color), rgb(165, 27, 165));
     animation: animate 9s linear infinite;
-}
-
-@keyframes animate {
-    100%{
-        transform: rotate(360deg);
-    }
 }
 
 .box::after {
@@ -129,6 +124,11 @@
     border-radius: 30px;
 }
 
+@keyframes animate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 .uele {
     list-style-type: none;
@@ -139,7 +139,7 @@
 .divOk .title {
     font-size: 40px;
     margin-top: 190px;
-    margin-left: 120px;
+    margin-left: 5%;
     font-weight: 500;
 }
 
@@ -150,13 +150,13 @@
 .divOk li {
     font-size: 18px;
     margin-top: 10px;
-    margin-left: 120px;
+    margin-left: 5%;
     margin-top: 30px;
 
 }
 
 .divOk .title2 {
-    margin-left: 780px;
+    margin-left: 47%;
     margin-top: -320px;
     font-size: 40px;
     font-weight: 500;
@@ -177,12 +177,12 @@
 .divNaoOk li {
     font-size: 18px;
     margin-top: 10px;
-    margin-left: 120px;
+    margin-left: 5%;
     margin-top: 30px;
     margin-right: 100px;
 }
 
-.armazeneRemedios .title{
+.armazeneRemedios .title {
     font-size: 42px;
     margin-bottom: 2%;
     font-weight: 500;
@@ -191,35 +191,33 @@
 .armazeneRemedios p {
     font-weight: 400;
     font-size: 22px;
-    margin-left: 120px;
-    margin-right: 810px;
+    margin-left: 5%;
+    margin-right: 545px;
     margin-bottom: 2%;
 }
 
-.containerAnimado3{
+.containerAnimado3 {
     display: flex;
-    width: 100vh;
-    height: 100vh;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 400px;
-    margin-left: 640px;
+    top: 0px;
+    margin-left: 50%;
+    margin-top: -40%;
 }
 
 
 .box3 {
     position: relative;
-    width: 450px;
-    height: 500px;
+    width: 350px;
+    height: 450px;
     background-color: rgb(32, 32, 32);
     border-radius: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    left: 60px;
-    top: 1090px;
+    left: 60%;
+    top: -30%;
 }
 
 .box3::before {
@@ -232,7 +230,7 @@
 }
 
 @keyframes animacao {
-    100%{
+    100% {
         transform: rotate(360deg);
     }
 }
@@ -249,18 +247,19 @@
     position: relative;
     z-index: 1;
     width: 97%;
-    /* margin-left: 7%; */
     height: 97%;
     border-radius: 30px;
+    top: 0%;
 }
 
 
 .divSaibaOqDoar .h1OqueDoar {
-    text-align: center;
+    text-align: left;
     margin-top: 190px;
     font-size: 40px;
     margin-bottom: 60px;
     font-weight: 500;
+    margin-left: 6%;
 }
 
 .divSaibaOqDoar .h1OqueDoar b {
@@ -268,146 +267,218 @@
 }
 
 .divSaibaOqDoar li {
-    font-size: 22px;
+    font-size: 20px;
     margin-top: 30px;
-    margin-left: 150px;
+}
+
+.news-container {
+    padding: 20px;
+}
+
+.news-container h2 {
+    margin: 5%;
+    color: var(--white-color);
+}
+
+.news-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.news-card {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 30%;
+}
+
+.news-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.news-card h3 {
+    font-size: 1.2em;
+    color: var(--purple-h1-home);
+    margin-top: 3%;
+}
+
+.news-card p {
+    color: white;
+}
+
+.news-card span {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #999;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--purple-color);
+    text-decoration: none;
+}
+
+.whatsapp-button {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.whatsapp-button img {
+    width: 50px;
+    /* Adjust size as needed */
 }
 
 @media (max-width: 1080px) {
-    
+
     .divPrincipal .doe {
-        padding-top: 30%;
+        padding-top: 15%;
         font-size: 32px;
 
     }
 
-   .divPrincipal p {
-    margin-left: 5px;
-    display: flex;
-    margin-right: 0px;
-    padding-top: 7%;
-    font-size: 18px;
-   }
+    .divPrincipal p {
+        margin-left: 5px;
+        display: flex;
+        margin-right: 0px;
+        padding-top: 7%;
+        font-size: 18px;
+    }
 
-   .botaoDoar {
-    margin-left: 6%; /* Ajuste para telas menores */
-    margin-top: 3%;
-} 
+    .botaoDoar {
+        margin-left: 6%;
+        /* Ajuste para telas menores */
+        margin-top: 3%;
+    }
 
-   .qualRemedioH1 {
-    font-size: 26px;
-    margin-left: 5%;
-    margin-right: 0px;
-    margin-top: 19%;
+    .qualRemedioH1 {
+        font-size: 26px;
+        margin-left: 5%;
+        margin-right: 0px;
+        margin-top: 19%;
 
-   }
+    }
 
-   .paragrafoRemedio {
-    font-size: 1rem;
-    display: flex;
-    margin-right: 0;
-    margin-left: 5%;
-    margin-top: 29%;
-   }
+    .paragrafoRemedio {
+        font-size: 1rem;
+        display: flex;
+        margin-right: 0;
+        margin-left: 5%;
+        margin-top: 29%;
+    }
 
-   .divOk .title {
-    margin-left: 5%;
-    font-size: 26px;
-    margin-top: 127%;
-   }
+    .divOk .title {
+        margin-left: 5%;
+        font-size: 26px;
+        margin-top: 127%;
+    }
 
-   .box .fotoRemedio {
-    margin-left: 0%;
-   }
+    .box .fotoRemedio {
+        margin-left: 0%;
+    }
 
-   .containerAnimado {
-    margin-left: -78%;
-    margin-top: 16%;
-    display: none;
-   }
+    .containerAnimado {
+        margin-left: -78%;
+        margin-top: 16%;
+        display: none;
+    }
 
-   .box {
-    width: 40%;
-    height: 30%;
-   }
+    .box {
+        width: 250px;
+        height: 300%;
+    }
 
-   .divOk .title {
-    font-size: 26px;
-    margin-left: 5%;
-    margin-top: 12%;
-   }
+    .divOk .title {
+        font-size: 26px;
+        margin-left: 5%;
+        margin-top: 12%;
+    }
 
-   .divOk .uele {
-    margin-left: -25%;
-   }
+    .divOk .uele {
+        margin-left: -25%;
+    }
 
-   .uele li {
-    font-size: 1rem;
-   }
+    .uele li {
+        font-size: 1rem;
+    }
 
-   .divOk .title2 {
-    margin-left: 5%;
-    margin-top: 15%;
-    font-size: 26px;
+    .divOk .title2 {
+        margin-left: 5%;
+        margin-top: 15%;
+        font-size: 26px;
 
-   }
+    }
 
-   .divNaoOk .uele2 {
-    margin-left: -33%;
+    .divNaoOk .uele2 {
+        margin-left: -33%;
 
-   }
+    }
 
-   .uele2 li {
-    font-size: 1rem;
-    margin-right: 0px;
-   }
+    .uele2 li {
+        font-size: 1rem;
+        margin-right: 0px;
+    }
 
-   .box3 .fotoRemedio3 {
-    margin-left: 0%;
-   }
+    .box3 .fotoRemedio3 {
+        margin-left: 0%;
+    }
 
-   .containerAnimado3 {
-    margin-left: -73%;
-    margin-top: 43%;
-    margin-right: 0px;
-    display: none;
-   }
+    .containerAnimado3 {
+        margin-left: -73%;
+        margin-top: 0%;
+        margin-right: 0px;
+        display: none;
+    }
 
-   .box3 {
-    width: 40%;
-    height: 50%;
-    display: none;
+    .box3 {
+        width: 40%;
+        height: 50%;
+        display: none;
 
-   }
+    }
 
-   .armazeneRemedios .title {
-    margin-top: 15%;
+    .armazeneRemedios .title {
+        margin-top: 15%;
 
-    font-size: 26px;
+        font-size: 26px;
 
-   }
+    }
 
-   .armazeneRemedios p {
-    font-size: 1rem;
-    margin-left: 5%;
-    margin-right: 15px;
-    margin-top: 9%;
-   }
+    .armazeneRemedios p {
+        font-size: 1rem;
+        margin-left: 5%;
+        margin-right: 15px;
+        margin-top: 9%;
+    }
 
-   .armazeneRemedios .uele {
-    margin-left: -27%;
-    margin-right: 2%;
-   }
-   
-   .divSaibaOqDoar .h1OqueDoar {
-    font-size: 26px;
-    margin-top: 20%;
-   }
+    .armazeneRemedios .uele {
+        margin-left: -27%;
+        margin-right: 2%;
+    }
 
-   .divSaibaOqDoar li {
-    margin-left: 0%;
-    font-size: 1rem;
-   }
+    .divSaibaOqDoar .h1OqueDoar {
+        font-size: 26px;
+        margin-top: 20%;
+    }
+
+    .divSaibaOqDoar li {
+        margin-left: 0%;
+        font-size: 1rem;
+    }
+
+    .news-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .news-card {
+        margin: 10px 0;
+        max-width: none;
+        width: 100%;
+    }
 
 }
 
@@ -461,7 +532,7 @@
         margin-left: 45%;
     }
 
-    .divNaoOk .title2{
+    .divNaoOk .title2 {
         margin-left: 53%;
         margin-top: -375px;
     }
@@ -486,4 +557,6 @@
         font-size: 23px;
         margin-left: 17%;
     }
+
+
 }

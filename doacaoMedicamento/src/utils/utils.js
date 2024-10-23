@@ -88,3 +88,11 @@ export function parseJwt(token) {
   // Retorna o payload como um objeto JavaScript
   return JSON.parse(jsonPayload);
 }
+
+export function formatDate(dateStr) {
+  if (dateStr && dateStr.length === 7 && dateStr.includes('-')) {
+      const [year, month] = dateStr.split('-');
+      return `${month}/${year}`;
+  }
+  return dateStr;
+};

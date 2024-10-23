@@ -5,12 +5,13 @@ import { BsArrowLeftCircleFill } from 'react-icons/bs'
 import { BiUserCircle } from 'react-icons/bi';
 import api from "../../services/api"
 import './redefinirSenha.css';
+import { toast } from 'react-toastify';
 
 export default function ComponenteRedefinirSenha() {
     const [email, setEmail] = useState('');
     const [loadingAuth, setLoadingAuth] = useState(false)
     const ref = useRef(null);
-    const url = 'Cadastro/EnviarEmailDeRedefinirSenha/'
+    const url = 'Usuario/EnviarEmailDeRedefinirSenha'
     const navigate = useNavigate();
 
 
@@ -20,33 +21,33 @@ export default function ComponenteRedefinirSenha() {
 
     const handleRecuperar = async () => {
         setLoadingAuth(true);
-        await api.post(url, { email: email }).then((response) => {
-            if (response.status === 204) {
-                ref.current.click();
+        await api.post(url, { Email: email }).then((response) => {
+            console.log(response)
+            if (response.status === 200) {
+                toast.success('Email enviado verifique sua caixa de entrada!')
                 setLoadingAuth(false)
             }
             else {
                 setLoadingAuth(false)
-                throw new Error('Erro de solicitação: ' + response);
             }
         })
     }
 
     const handleVoltar = () => {
-        window.location.href = '/login';   
+        window.location.href = '/login';
     };
     return (
         <div>
-            <div className="body-login">
+            <div className="body-senha">
                 <BiUserCircle style={{ fontSize: '50px', marginTop: '-105px', marginBottom: '5px' }} />
                 <h3>Redefinir senha!</h3>
                 <p className='p-redefinir'>Digite seu e-mail que <b>enviaremos</b><br />  um link para definir uma nova senha.</p>
-                <div className="box-label">
+                <div className="box-senha">
                     <div>
                         <label>E-mail:</label>
                         <input type="email" placeholder="Digite seu e-mail" value={email} onChange={handleChange} />
                     </div>
-                    <button type="submit" className="botaoLogin" disabled={loadingAuth} onClick={handleRecuperar}>
+                    <button type="submit" className="botaoLogin2" disabled={loadingAuth} onClick={handleRecuperar}>
                         {loadingAuth ? <div className="spinner-border-sm spinner-border" role="status" ></div> : "Redefinir"}
                     </button>
                     <BsArrowLeftCircleFill /><span onClick={handleVoltar}> voltar</span>

@@ -38,6 +38,7 @@ export default function Login() {
     try {
       const response = await handleLogin(email, password);
 
+      console.log(response)
       if (response.status === 200) {
         handleSetarLocalStorage(response.data)
         navigate('/inicio')

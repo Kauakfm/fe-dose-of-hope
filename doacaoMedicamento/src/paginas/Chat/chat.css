@@ -1,33 +1,29 @@
-/* chat.css */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   font-family: Arial, sans-serif;
 }
 
-.dashboard-rede {
+.dashboard-chat-primeirobloco {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  margin-top: 5%;
+  width: 100%;
+  padding: 0 2%;
 }
 
 .div-chat {
-  width: 30%;
+  width: 45%;
   padding: 20px;
   background-color: var(--div-chat-color);
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-top: 2%;
+  margin-top: 5%;
+  height: 83vh;
 }
 
 .div-chat h1 {
   font-size: 1.2rem;
   margin-bottom: 20px;
+  margin-left: 4%;
 }
 
 .div-chat p {
@@ -36,27 +32,64 @@ body {
 
 .div-chat .botaoDoacao {
   background-color: var(--purple-color);
-  color: #fff;
+  color: var(--white-color);
   border: none;
-  padding: 8px 20px;
-  font-size: 14px;
-  border-radius: 5px;
+  padding: 8px 15px;
+  font-size: 12px;
+  border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  width: 40%;
-  display: flex;
-  margin-left: 60%;
-  margin-top: -8%;
-  font-weight: bold;
-  margin-bottom: 3%;
 }
 
+.search-container {
+  width: 90%;
+  margin-left: 3%;
+  position: relative;
+
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 22%;
+}
+
+.div-chat .search {
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-left: 0%;
+  font-size: 14px;
+  color: var(--white-color);
+  padding: 8px 12px;
+  padding-left: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.2s ease;
+  box-shadow: none;
+  width: 105%;
+  height: 2.5%;
+}
+
+.div-chat .search::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.div-chat .search:focus {
+  background-color: rgba(41, 41, 41, 0.8);
+  color: var(--white-color);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
 
 .rede {
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
-  transition: 0.3s ease-in;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 
 }
 
@@ -89,20 +122,16 @@ body {
 }
 
 .chat-container {
-  width: 65%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   padding: 20px;
-  background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-top: -2.5%;
+  background-color: #1d1d1d;
 }
 
-.chat-body {
-  overflow-y: auto;
-  padding-right: 10px;
-  max-height: calc(100vh - 200px);
-
+.chat-header h2 {
+  font-size: 18px;
 }
 
 .message-container {
@@ -119,7 +148,7 @@ body {
   margin-left: 60%;
   color: white;
   font-weight: 500;
-  align-self: flex-end; 
+  align-self: flex-end;
   margin-left: auto;
 }
 
@@ -130,7 +159,7 @@ body {
   border-radius: 10px;
   max-width: 40%;
   padding: 8px 8px;
-  align-self: flex-start; 
+  align-self: flex-start;
   margin-right: auto;
 }
 
@@ -138,73 +167,54 @@ body {
   display: inline;
   font-size: 10px;
   color: var(--4-gray-color);
-  vertical-align: middle;  
+  vertical-align: middle;
   margin-left: 5px;
-}
-
-
-.chat-footer {
-  display: flex;
-  margin-top: 20px;
-}
-
-.chat-footer input {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-right: 10px;
-  margin-top: 26%;
-}
-
-.chat-footer button {
-  padding: 10px 20px;
-  background-color: #128c7e;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  margin-top: 18%;
-  cursor: pointer;
 }
 
 .layout {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 90%;
+  height: 80vh;
+  padding-top: 5vh;
 }
 
 .layout-text {
-  position: absolute;
-  margin-left: 30%;
+  text-align: center;
   top: 30%;
+  padding-top: 10%;
 }
 
 .layout-text h1 {
-  font-size: 1.5rem;
+  font-size: 15px;
   margin: 10px 0;
+  margin-bottom: 10px;
 }
 
 .layout-text p {
-  font-size: 1rem;
+  font-size: 15px;
+  margin-bottom: 0;
   color: #666;
-  margin-bottom: 50%;
 }
 
+
 .layout2 {
-  margin-top: 135px;
+  margin-top: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4%;
 }
 
 /* Icon styles */
 .layout-text svg {
   color: #128c7e;
-  margin-bottom: 10px;
-
 }
 
 .layout2 p {
-  font-size: 0.8rem;
+  font-size: 12px;
   color: #666;
-  margin-top: -25%;
 }
 
 
@@ -222,21 +232,9 @@ body {
   font-weight: bold;
 }
 
-
-
-/* chat.css */
-
-.chat-container {
-  background-color: #1d1d1d;
-  border-radius: 5px;
-  position: fixed;
-  top: 20%;
-  left: 33%;
-}
-
 .chat-body {
   overflow-y: auto;
-  max-height: calc(100vh - 200px);
+  height: 65vh;
 }
 
 .message-container {
@@ -253,10 +251,10 @@ body {
 .chat-footer {
   display: flex;
   align-items: center;
-  position: fixed;
-  bottom: 0;
-  width: 65%;
-  margin-top: 10px;
+  /* position: fixed;
+  bottom: 0; */
+  width: 100%;
+  margin-top: 6vh;
 }
 
 .chat-footer input {
@@ -268,17 +266,24 @@ body {
   border: none;
   background-color: #242424;
   color: white;
+  margin-bottom: 0;
+
+
+  /* flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-top: 26%; */
 }
 
 .chat-footer button {
-  padding: 8px 20px;
+  padding: 10px 20px;
   background-color: purple;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: -0.5%;
-
 }
 
 .chat-footer input::placeholder {
@@ -287,24 +292,7 @@ body {
 
 }
 
-.layout-text {
-  text-align: center;
 
-}
-
-.layout-text h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.layout-text p {
-  font-size: 14px;
-}
-
-.layout2 p {
-  font-size: 12px;
-  color: #666;
-}
 
 /* css do modal*/
 
@@ -319,4 +307,124 @@ body {
 .modal-body {
   border-radius: 8px;
   margin-top: 50%;
+}
+
+
+.dashboard-rede-flatList {
+  height: 65vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+
+  .dashboard-rede {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .div-chat {
+    width: 90%;
+    margin-top: 5%;
+    padding: 15px;
+  }
+
+  .div-chat h1 {
+    margin-top: 10%;
+  }
+
+  .chat-container {
+    width: 90%;
+    left: 5%;
+    top: 10%;
+    margin-top: 5%;
+  }
+
+  .layout {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .search-container {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .search-icon {
+    left: 8px;
+    top: 15%;
+  }
+
+  .search {
+    width: 100%;
+    padding-left: 35px;
+  }
+
+  .rede {
+    flex-direction: row;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .chat-footer {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  .chat-footer input {
+    width: 75%;
+  }
+
+  .chat-footer button {
+    width: 20%;
+  }
+
+  .message-text,
+  .message-text-destinatario {
+    max-width: 80%;
+  }
+
+  .chat-header h2,
+  .layout-text h1,
+  .layout-text p {
+    font-size: 1rem;
+  }
+
+  .rede img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .botaoDoacao {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .botaoMsg {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .layout2 {
+    display: none;
+  }
+
+  .layout-text {
+    display: none;
+  }
+
+  .chat-footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .chat-footer input {
+    margin-left: -7%;
+  }
+
+  .chat-footer button {
+    margin-right: 15%;
+    margin-bottom: 2.8%;
+  }
 }

@@ -1,45 +1,38 @@
-/* Ajustes para telas de celular */
 @media (max-width: 1080px) {
-    .header {
-        height: 8vh;
-        padding: 0 5%;
-    }
     #header-web{
         display: none;
     }
     #header-mobile{
         display: flex;
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        z-index: 1000;
+        position: fixed;
     }
-    .header h1 {
+    .header-mobile h1 {
         font-size: 20px;
         margin-left: 0%;
     }
-    .header div {
+    .header-mobile div {
         width: 70%;
         margin-right: 0%;
         margin-left: 15%;
     }
 
-    .header div a {
+    .header-mobile div a {
         margin-left: 15%;
         padding: 2%;
     }
 
+    .dropdown-overlay a {
+        font-size: 20px;
+        margin: 5px;
+        font-weight: 600;
+    }
+
     .btn-doar {
-        margin-top: 2%;
-    }
-}
-/* Ajustes para telas grandes de monitor */
-@media (min-width: 1700px) {
-    .header {
-        padding: 0 8%;
-    }
-
-    .header div a {
-        font-size: 22px;
-    }
-
-    .header h1 {
-        font-size: 34px;
+        margin-top: 0%;
+        
     }
 }

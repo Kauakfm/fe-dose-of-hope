@@ -6,21 +6,20 @@ import { RotasSignalR } from '../../Auth/permissions';
 import { UserContext } from '../../hooks/Context/UserContext';
 import { decrypt } from '../../utils/utils';
 
-
-export default function NewChat({ Visible, MessageList, CodConversa, destinatarioCodigo }) {
+export default function NewChat({ Visible, MessageList, CodConversa, destinatarioCodigo, usuarioChatAtivo }) {
     const [visible, setVisible] = useState(Visible);
     const [message, setMessage] = useState('');
     const [messageLst, setMessageLst] = useState([]);
     const [connectionFora, setConnectionFora] = useState(null);
-    const { user } = useContext(UserContext)
-    const codigoUsuarioLogado = decrypt(user.codigo)
+    const { user } = useContext(UserContext);
+    const codigoUsuarioLogado = decrypt(user.codigo);
 
     const bottomRef = useRef();
     const messageRef = useRef();
 
     const handleSendMessage = () => {
         if (!message.trim()) return;
-        
+
         if (connectionFora) {
             connectionFora.invoke("SendMessage", parseInt(CodConversa), parseInt(codigoUsuarioLogado), parseInt(destinatarioCodigo), message)
                 .then(() => {
@@ -38,7 +37,7 @@ export default function NewChat({ Visible, MessageList, CodConversa, destinatari
     };
 
     useEffect(() => {
-        setMessageLst(MessageList)
+        setMessageLst(MessageList);
     }, [MessageList]);
 
     useEffect(() => {
@@ -64,6 +63,12 @@ export default function NewChat({ Visible, MessageList, CodConversa, destinatari
         }
     }, [CodConversa]);
 
+    useEffect(() => {
+        if (bottomRef.current) {
+            bottomRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [messageLst]);
+
     return (
         <>
             {!visible && (
@@ -71,8 +76,8 @@ export default function NewChat({ Visible, MessageList, CodConversa, destinatari
                     <MdOutlineMessage style={{ fontSize: "40px" }} />
                     <h1>Chat ao vivo</h1>
                     <p>Conectando Corações Generosos: Onde Doadores Dialogam, Inspiram e Transformam Vidas!</p>
-                    <IoLockClosedOutline style={{ fontSize: "15px", marginLeft: "-49%" }} />
                     <div className='layout2'>
+                        <IoLockClosedOutline style={{ fontSize: "15px" }} />
                         <p>Protegido com criptografia de ponta a ponta</p>
                     </div>
                 </div>
@@ -80,6 +85,12 @@ export default function NewChat({ Visible, MessageList, CodConversa, destinatari
             {visible && (
                 <div className='layout'>
                     <div className='chat-container'>
+                        <div className='chat-header'>
+                            <h2>{user.destinatarioNome}</h2>
+                        </div>
+                        <div className='chat-header'>
+                            <h2>{usuarioChatAtivo}</h2>
+                        </div>
                         <div className='chat-body'>
                             {messageLst.map((msg, index) => (
                                 <div className='message-container' key={index}>

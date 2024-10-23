@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import '../../paginas/Login/login.css';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { BsArrowLeftCircleFill } from 'react-icons/bs'
 import { BiUserCircle } from 'react-icons/bi';
@@ -10,7 +9,7 @@ export default function RedefinirSenha() {
     const [senha2, setSenha2] = useState();
     const { id } = useParams();
     const navigate = useNavigate();
-    const url = 'Cadastro/EsqueciSenha/'
+    const url = 'Usuario/EsqueciSenha/'
 
     const handleSenha = (event) => {
         setSenha(event.target.value);
@@ -25,7 +24,7 @@ export default function RedefinirSenha() {
         if (senha !== senha2)
             return;
 
-        await api.post(url + id, { senha: senha }).then((response) => {
+        await api.put(url + id, { Senha: senha }).then((response) => {
             if (response.status === 204) {
                 navigate("/login")
             }
@@ -37,21 +36,21 @@ export default function RedefinirSenha() {
 
     return (
         <div>
-                <div className="body-login">
-                    <BiUserCircle style={{ fontSize: '50px', marginTop: '-105px', marginBottom: '5px' }} />
-                    <h3>Nova senha!</h3>
-                    <div className="box-label">
-                        <div>
-                            <label>Senha:</label>
-                            <input type="password" placeholder="Digite sua senha" onChange={handleSenha} />
-                        </div>
-                        <div>
-                            <label>Confirmar a senha:</label>
-                            <input type="password" placeholder="Confirme sua senha" onChange={handleSenha2} />
-                        </div>
-                        <button className="botaoLogin"onClick={handleRedefinirSenha}>Criar nova senha</button> 
+            <div className="body-senha">
+                <BiUserCircle style={{ fontSize: '50px', marginTop: '-105px', marginBottom: '5px' }} />
+                <h3>Nova senha!</h3>
+                <div className="box-label">
+                    <div>
+                        <label>Senha:</label>
+                        <input type="password" placeholder="Digite sua senha" onChange={handleSenha} />
                     </div>
+                    <div>
+                        <label>Confirmar a senha:</label>
+                        <input type="password" placeholder="Confirme sua senha" onChange={handleSenha2} />
+                    </div>
+                    <button className="botaoLogin" onClick={handleRedefinirSenha}>Criar nova senha</button>
                 </div>
+            </div>
         </div>
     )
 }

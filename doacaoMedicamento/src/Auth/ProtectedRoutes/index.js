@@ -8,6 +8,7 @@ const ProtectedRoute = ({ children, requiredPermissions = [] }) => {
 
     useEffect(() => {
         if (!token) {
+            console.log('Token 1')
             setIsAuthenticated(false);
         }
     }, [token]);
@@ -21,6 +22,7 @@ const ProtectedRoute = ({ children, requiredPermissions = [] }) => {
     }
 
     if (!hasPermission) {
+        console.log('HasPermission => ', hasPermission)
         return <Navigate to="/unauthorized" />;
     }
 

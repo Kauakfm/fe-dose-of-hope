@@ -1,0 +1,72 @@
+.tabela2-paginacao {
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 20px !important;
+}
+
+.tabela2-botao-pagina {
+    padding: 8px 12px !important;
+    margin: 0 4px !important;
+    background-color: #333 !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+}
+
+.tabela2-botao-pagina:hover {
+    background-color: #444 !important;
+}
+
+.tabela2-botao-pagina.ativo {
+    background-color: #8257E5 !important;
+}
+
+
+.btn-customEditar{
+    background-color: #28a745 ;
+    color: #FFF;
+    transition: background-color 0.3s ease;
+}
+
+.btn-customDelete{
+    background-color: #C70039;
+    color: #FFF;
+    transition: background-color 0.3s ease;
+}
+
+.btn-customEditar:hover {
+    background-color: #1d8a36 ;
+    opacity: 1; 
+}
+
+.btn-customDelete:hover {
+    background-color: #cb033c; 
+    opacity: 1;
+}
+
+
+@media (max-width: 768px) {
+    .tabela2-principal {
+        font-size: 14px !important;
+    }
+
+    .tabela2-celula,
+    .tabela2-cabecalho {
+        padding: 8px !important;
+    }
+
+    .tabela2-botao-acao,
+    .tabela2-botao-pagina {
+        padding: 6px 10px !important;
+        font-size: 12px !important;
+    }
+}
+
+/* Melhorar a visibilidade do foco para acessibilidade */
+.tabela2-filtro:focus,
+.tabela2-botao-acao:focus,
+.tabela2-botao-pagina:focus {
+    outline: 2px solid #FFF !important;
+    outline-offset: 2px !important;
+}

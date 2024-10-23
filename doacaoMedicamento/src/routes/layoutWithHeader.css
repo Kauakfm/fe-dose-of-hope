@@ -1,0 +1,41 @@
+.layout-container {
+  display: flex;
+}
+
+.menu-button {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 6;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+  margin-left: 0;
+}
+
+.main-content.shifted {
+  margin-left: 260px;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.sidebar-nav .nav-button {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.sidebar-nav .icon {
+  margin-right: 10px;
+}
