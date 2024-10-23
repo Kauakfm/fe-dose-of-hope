@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import HeaderInicio from '../../componentes/HeaderHome'
 import { Link } from 'react-router-dom'
 import Footer from '../../componentes/Footer'
+import HeaderMobile from '../../componentes/HeaderMobile'
 
 export default function Home() {
 
@@ -15,6 +16,7 @@ export default function Home() {
     return (
         <div className="home">
             <HeaderInicio />
+            {/* <HeaderMobile /> */}
             <div id='inicio' className='backgroundHome'>
                 <div className='backgroundImage' />
                 <h1><span>Doe</span> e ajude pessoas</h1>

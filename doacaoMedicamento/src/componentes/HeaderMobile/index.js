@@ -5,34 +5,34 @@ import { FiMenu } from 'react-icons/fi';
 import { RiCloseLine } from 'react-icons/ri';
 
 export default function HeaderMobile() {  
-    const location = useLocation();  
-    const [dropdownOpen, setDropdownOpen] = useState(false);  
-    const dropdownRef = useRef(null);  
+    // const location = useLocation();  
+    // const [dropdownOpen, setDropdownOpen] = useState(false);  
+    // const dropdownRef = useRef(null);  
 
-    useEffect(() => {  
-        function handleClickOutside(event) {  
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {  
-                setDropdownOpen(false);  
-            }  
-        }  
+    // useEffect(() => {  
+    //     function handleClickOutside(event) {  
+    //         if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {  
+    //             setDropdownOpen(false);  
+    //         }  
+    //     }  
 
-        document.addEventListener("mousedown", handleClickOutside);  
-        return () => {  
-            document.removeEventListener("mousedown", handleClickOutside);  
-        };  
-    }, []);  
+    //     document.addEventListener("mousedown", handleClickOutside);  
+    //     return () => {  
+    //         document.removeEventListener("mousedown", handleClickOutside);  
+    //     };  
+    // }, []);  
 
-    const toggleDropdown = () => {  
-        setDropdownOpen(!dropdownOpen);  
-    };  
+    // const toggleDropdown = () => {  
+    //     setDropdownOpen(!dropdownOpen);  
+    // };  
 
-    const closeDropdown = () => {  
-        setDropdownOpen(false);  
-    };  
+    // const closeDropdown = () => {  
+    //     setDropdownOpen(false);  
+    // };  
 
     return (  
         <div>  
-            <FiMenu id='header-mobile' onClick={toggleDropdown} fontSize={25} />  
+            {/* <FiMenu id='header-mobile' onClick={toggleDropdown} fontSize={25} />  
             <div ref={dropdownRef} className={`dropdown-overlay ${dropdownOpen ? 'open slide-in' : ''}`}>  
                 <div><RiCloseLine onClick={closeDropdown} /></div>  
                 <Link to={`/inicio`}>Início</Link>  
@@ -41,16 +41,14 @@ export default function HeaderMobile() {
                 <Link to={`/chat`}>Chat</Link> 
                 <Link to='/conta'>Minha Conta</Link>
                 <div className="btn-adm dropdown">  
-                    {/* <button className="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">  
-                        Administrativo  
-                    </button>   */}
+                    
                     <ul className="dropdown-menu">  
                         <li><Link to={`/administrativo/aprovar`} className="dropdown-item">Aprovar medicamento</Link></li>  
                         <li><Link to={`/administrativo/usuarios`} className="dropdown-item">Usuários</Link></li>  
                     </ul>  
                 </div>  
                 <Link className="btn-doar" to={`/login`}>Sair</Link>  
-            </div>  
+            </div>   */}
         </div>  
     );  
 }  

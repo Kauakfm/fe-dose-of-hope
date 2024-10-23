@@ -196,29 +196,6 @@
 
 
 
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column; 
-        height: auto; 
-    }
 
-    .header-avatar {
-        justify-content: space-between;
-        width: 100%; 
-        margin-top: 10px;
-    }
 
-    .header-avatar span {
-        display: block;
-        font-size: 14px; 
-    }
-
-    .dropdown-menu {
-        right: 0; 
-        left: auto;
-    }
-
-    .menu-button {
-        margin-right: 20px; 
-    }
-}
+   
