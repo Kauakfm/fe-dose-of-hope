@@ -4,7 +4,7 @@ import './formulario.css';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Footer from "../../componentes/Footer";
 import Radio from "../../componentes/Radio";
-import { createFormDataMedicamentos, mapTipoItem , mapFormaItem, mapCondicaoItem, mapNecessidadeArmazenamento} from "../../Auth/permissions";
+import { createFormDataMedicamentos, mapTipoItem, mapFormaItem, mapCondicaoItem, mapNecessidadeArmazenamento } from "../../Auth/permissions";
 import { object } from "zod";
 import { toast } from "react-toastify";
 
@@ -47,7 +47,7 @@ export default function Formulario() {
         objMed.formaItemText = mapFormaItem(formaItem);
         objMed.condicaoItemText = mapCondicaoItem(condicaoItem);
         objMed.necessidadeArmazenamentoText = mapNecessidadeArmazenamento(necessidadeArmazenamento);
-    
+
         const objMedSerizalizado = JSON.stringify(objMed)
         sessionStorage.setItem('formularioMedicamento', objMedSerizalizado);
 
@@ -104,6 +104,18 @@ export default function Formulario() {
             isValid = false;
             newErrors.dataValidade = "Data de validade é obrigatória.";
         }
+
+        if (dataValidade) {
+            const dataAtual = new Date();
+            const [ano, mes] = dataValidade ? dataValidade.split('-') : [];
+            const dataDigitada = new Date(ano, mes - 1);
+
+            if (dataDigitada < new Date(dataAtual.getFullYear(), dataAtual.getMonth())) {
+                isValid = false;
+                newErrors.dataValidade = "A data de validade não pode ser anterior ao mês atual.";
+            }
+        }
+
         if (!dosagem) {
             isValid = false;
             newErrors.dosagem = "Dosagem é obrigatória.";
@@ -117,11 +129,6 @@ export default function Formulario() {
         if (!descricaoDetalhada) {
             isValid = false;
             newErrors.descricaoDetalhada = "Descrição detalhada é obrigatória.";
-        }
-
-        if (!isCheckBoxChecked) {
-            isValid = false;
-            newErrors.checkbox = "Você precisa confirmar que os medicamentos estão dentro da validade.";
         }
 
         setErrors(newErrors);

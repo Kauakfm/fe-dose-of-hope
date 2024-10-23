@@ -38,7 +38,7 @@ export default function Radio({ currentStep }) {
         { id: 0, icon: ClipboardList, label: 'Preencha o formulário', isVisible: true },
         { id: 1, icon: Camera, label: 'Tire foto do remédio', isVisible: true },
         { id: 2, icon: Clock, label: 'Aguarde aprovação', isVisible: true },
-        { id: 3, icon: CheckCircle, label: 'Remédio aprovado', isVisible: true },
+        { id: 3, icon: CheckCircle, label: 'Remédio aprovado', isVisible: currentStep === 4 ? false : true },
         { id: 4, icon: CircleX, label: 'Remédio reprovado', isVisible: currentStep === 4 }
     ];
 

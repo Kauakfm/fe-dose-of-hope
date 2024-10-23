@@ -3,9 +3,10 @@ import React, { useEffect, useState } from 'react'
 import HeaderInicio from '../../componentes/HeaderHome'
 import { Link } from 'react-router-dom'
 import Footer from '../../componentes/Footer'
+import { useNavigate } from 'react-router-dom'
 
 export default function Home() {
-
+    const navigate = useNavigate()
     const codeString = `{`;
     const codeString2 = `}`;
 
@@ -48,7 +49,7 @@ export default function Home() {
                 </div>
                 <div className="empathy-content">
                     <p>Crie agora a sua conta e comece a doar esperança através de seus medicamentos.</p>
-                    <button className="create-account-button">Criar conta</button>
+                    <button className="create-account-button" onClick={() => navigate('/cadastro')}>Criar conta</button>
                 </div>
             </div>
             <Footer />

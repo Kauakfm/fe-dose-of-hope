@@ -101,74 +101,79 @@ export default function DonationList() {
           <div className="spinner-grow" role="status" style={{ color: '#8257E5' }}></div>
         </div>
         :
-        <div className="stardust-grid">
-          {lstDoacoes.map((donation) => (
-            <div key={donation.codigo} className="comet-card">
-              <div className="asteroid-content">
-                <div className="blackhole-image-container">
-                  {donation.urlImages.length > 0 ?
-                    <img
-                      src={donation.urlImages[currentImageIndex[donation.codigo] || 0]}
-                      alt={`${donation.nomeDoItem} - Imagem ${currentImageIndex[donation.codigo] || 1}`}
-                      className="supernova-image"
-                    /> :
-                    <img
-                      src="/placeholder.svg"
-                      alt="Sem imagem disponível"
-                      className="supernova-image"
-                    />}
+        lstDoacoes.length <= 0 ?
+          <div className='lista-doacoes-titulo'>
+            <h4>Nenhuma doação encontrada</h4>
+          </div> 
+          :
+          <div className="stardust-grid">
+            {lstDoacoes.map((donation) => (
+              <div key={donation.codigo} className="comet-card">
+                <div className="asteroid-content">
+                  <div className="blackhole-image-container">
+                    {donation.urlImages.length > 0 ?
+                      <img
+                        src={donation.urlImages[currentImageIndex[donation.codigo] || 0]}
+                        alt={`${donation.nomeDoItem} - Imagem ${currentImageIndex[donation.codigo] || 1}`}
+                        className="supernova-image"
+                      /> :
+                      <img
+                        src="/placeholder.svg"
+                        alt="Sem imagem disponível"
+                        className="supernova-image"
+                      />}
                     <Radio currentStep={donation.codigoStatus === 1 ? 3 : donation.codigoStatus === 2 ? 2 : donation.codigoStatus === 3 ? 4 : 0} />
-                  {donation.urlImages.length > 1 && (
-                    <div className="wormhole-navigation">
-                      <button onClick={() => prevImage(donation.codigo)} className="quasar-button quasar-prev">
-                        &#8249;
-                      </button>
-                      <button onClick={() => nextImage(donation.codigo)} className="quasar-button quasar-next">
-                        &#8250;
-                      </button>
+                    {donation.urlImages.length > 1 && (
+                      <div className="wormhole-navigation">
+                        <button onClick={() => prevImage(donation.codigo)} className="quasar-button quasar-prev">
+                          &#8249;
+                        </button>
+                        <button onClick={() => nextImage(donation.codigo)} className="quasar-button quasar-next">
+                          &#8250;
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                  <div className="pulsar-details">
+                    <h2 className="nova-title">{donation.nomeDoItem}</h2>
+                    <div className="constellation-grid">
+                      <div className="star-info">
+                        <p className="meteor-label">Tipo de Item:</p>
+                        <p className="comet-data">{donation.tipoProdutoDescricao}</p>
+                      </div>
+                      <div className="star-info">
+                        <p className="meteor-label">Forma Farmacêutica:</p>
+                        <p className="comet-data">{donation.formaFarmaceuticaDescricao}</p>
+                      </div>
+                      <div className="star-info">
+                        <p className="meteor-label">Ad/Ped:</p>
+                        <p className="comet-data">{donation.tipoCondicaoDescricao}</p>
+                      </div>
+                      <div className="star-info">
+                        <p className="meteor-label">Dosagem:</p>
+                        <p className="comet-data">{donation.dosagemEscrita}</p>
+                      </div>
+                      <div className="star-info">
+                        <p className="meteor-label">Quantidade:</p>
+                        <p className="comet-data">{donation.quantidade}</p>
+                      </div>
+                      <div className="star-info">
+                        <p className="meteor-label">Data de Validade:</p>
+                        <p className="comet-data">{donation.validadeEscrita}</p>
+                      </div>
+                      <div className="star-info">
+                        <p className="meteor-label">Armazenamento:</p>
+                        <p className="comet-data">{donation.tipoNecessidadeArmazenamentoDescricao}</p>
+                      </div>
                     </div>
-                  )}
-                </div>
-                <div className="pulsar-details">
-                  <h2 className="nova-title">{donation.nomeDoItem}</h2>
-                  <div className="constellation-grid">
-                    <div className="star-info">
-                      <p className="meteor-label">Tipo de Item:</p>
-                      <p className="comet-data">{donation.tipoProdutoDescricao}</p>
-                    </div>
-                    <div className="star-info">
-                      <p className="meteor-label">Forma Farmacêutica:</p>
-                      <p className="comet-data">{donation.formaFarmaceuticaDescricao}</p>
-                    </div>
-                    <div className="star-info">
-                      <p className="meteor-label">Ad/Ped:</p>
-                      <p className="comet-data">{donation.tipoCondicaoDescricao}</p>
-                    </div>
-                    <div className="star-info">
-                      <p className="meteor-label">Dosagem:</p>
-                      <p className="comet-data">{donation.dosagemEscrita}</p>
-                    </div>
-                    <div className="star-info">
-                      <p className="meteor-label">Quantidade:</p>
-                      <p className="comet-data">{donation.quantidade}</p>
-                    </div>
-                    <div className="star-info">
-                      <p className="meteor-label">Data de Validade:</p>
-                      <p className="comet-data">{donation.validadeEscrita}</p>
-                    </div>
-                    <div className="star-info">
-                      <p className="meteor-label">Armazenamento:</p>
-                      <p className="comet-data">{donation.tipoNecessidadeArmazenamentoDescricao}</p>
+                    <div className="galaxy-description">
+                      <p className="meteor-label">Descrição:</p>
+                      <p className="comet-data">{donation.descricaoDetalhada}</p>
                     </div>
                   </div>
-                  <div className="galaxy-description">
-                    <p className="meteor-label">Descrição:</p>
-                    <p className="comet-data">{donation.descricaoDetalhada}</p>
-                  </div>
                 </div>
-              </div>
-            </div>))}
-        </div >}
+              </div>))}
+          </div >}
     </div >
   )
 }

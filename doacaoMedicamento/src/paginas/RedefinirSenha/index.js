@@ -9,7 +9,7 @@ export default function RedefinirSenha() {
     const [senha2, setSenha2] = useState();
     const { id } = useParams();
     const navigate = useNavigate();
-    const url = 'Cadastro/EsqueciSenha/'
+    const url = 'Usuario/EsqueciSenha/'
 
     const handleSenha = (event) => {
         setSenha(event.target.value);
@@ -24,7 +24,7 @@ export default function RedefinirSenha() {
         if (senha !== senha2)
             return;
 
-        await api.post(url + id, { senha: senha }).then((response) => {
+        await api.put(url + id, { Senha: senha }).then((response) => {
             if (response.status === 204) {
                 navigate("/login")
             }

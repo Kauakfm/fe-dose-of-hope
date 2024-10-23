@@ -1,0 +1,174 @@
+.table2 {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .table2__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .table2__title {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .table2__legend-toggle {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .table2__legend {
+    background-color: #222;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .table2__legend-title {
+    margin-top: 0;
+    font-size: 18px;
+  }
+  
+  .table2__legend-section {
+    margin-bottom: 10px;
+  }
+  
+  .table2__legend-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .table2__legend-color {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  
+  .table2__container {
+    overflow-x: auto;
+  }
+  
+  .table2__table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+  }
+  
+  .table2__th {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #333;
+  }
+  
+  .table2__th-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .table2__sort-button {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .table2__filter-input {
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 3px;
+  }
+  
+  .table2__tr-even {
+    background-color: #222;
+  }
+  
+  .table2__tr-odd {
+    background-color: #1a1a1a;
+  }
+  
+  .table2__td {
+    padding: 10px;
+    border-bottom: 1px solid #333;
+  }
+  
+  .table2__status {
+    padding: 2px 5px;
+    border-radius: 3px;
+  }
+  
+  .table2__action-button {
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .table2__footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .table2__items-per-page {
+    display: flex;
+    align-items: center;
+  }
+  
+  .table2__select {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    margin-left: 10px;
+  }
+  
+  .table2__pagination {
+    display: flex;
+    align-items: center;
+  }
+  
+  .table2__pagination-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .table2__pagination-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .table2__page-info {
+    margin: 0 10px;
+  }
+  
+  .table2__status-approved { background-color: #2ECC40; }
+  .table2__status-pending { background-color: #FFDC00; }
+  .table2__status-rejected { background-color: #FF4136; }
+  

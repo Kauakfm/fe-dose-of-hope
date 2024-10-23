@@ -7,6 +7,7 @@ import './aprovar.css';
 import Logo from '../../../imagens/doselogo2.png'
 import { toast } from "react-toastify";
 import { AiOutlineWarning } from 'react-icons/ai';
+import { useNavigate } from "react-router-dom";
 
 
 export default function Aprovar() {
@@ -19,6 +20,7 @@ export default function Aprovar() {
     const [errors, setErrors] = useState({});
     const [loadingAuth, setLoadingAuth] = useState(false);
     const [loadingAuthTelaInteira, setloadingAuthTelaInteira] = useState(false);
+    const navigate = useNavigate()
 
 
     const handleObterDoacoes = async () => {
@@ -36,7 +38,7 @@ export default function Aprovar() {
         } catch (error) {
             console.error("Erro ao obter doações:", error);
         }
-        finally{
+        finally {
             setloadingAuthTelaInteira(false)
         }
     };
@@ -46,6 +48,7 @@ export default function Aprovar() {
     }, []);
 
     const handleEdit = (item) => {
+        console.log(item)
         setSelectedItem(item);
         setIsModalVisible(true);
     };
@@ -106,9 +109,12 @@ export default function Aprovar() {
 
     const actionButtons = [
         {
-            label: (item) => item.statusCodigo === 1 ? "APROVADO" : item.statusCodigo === 2 ? "PENDENTE" : item.statusCodigo === 3 ? "REPROVADO" : "Erro contate o administrador",
-            action: (item) => item.statusCodigo === 1 ? toast.success("Produto já foi aprovado") : item.statusCodigo === 2 ? handleEdit(item) : item.statusCodigo === 3 ? toast.error("Produto já foi reprovado") : "Erro contate o administrador",
-            className: (item) => item.statusCodigo === 1 ? "btn btn-customEditar" : item.statusCodigo === 2 ? "btn btn-warning" : item.statusCodigo === 3 ? "btn btn-danger" : "btn btn-dark"
+            label: (item) => item.codigoStatus === 1 ? "VER INFORMAÇÕES" : item.codigoStatus === 2 ? "VER INFORMAÇÕES" : item.codigoStatus === 3 ? "VER INFORMAÇÕES" : "Erro contate o administrador",
+            action: (item) => {
+                if (item.codigoStatus === 1 || item.codigoStatus === 2 || item.codigoStatus === 3)
+                    navigate('/administrativo/detalhesAprovar', { state: { item } });
+            },
+            className: (item) => item.codigoStatus === 1 ? "btn btn-customEditar" : item.codigoStatus === 2 ? "btn btn-warning" : item.codigoStatus === 3 ? "btn btn-danger" : "btn btn-dark"
         }
     ];
 
@@ -122,10 +128,10 @@ export default function Aprovar() {
                     :
                     <div className="table-container">
                         <Table2 botoesDeAcao={actionButtons} dados={data} colunasVisiveis={visibleColumns} numeroDePagina={20}>
-                            <Columns header={"nomeUsuario"} title={"Nome usuário"} />
-                            <Columns header={"tipoProdutoDescricao"} title={"Tipo produto descrição"} />
-                            <Columns header={"nome"} title={"Nome remédio"} />
-                            <Columns header={"validade"} title={"Validade"} />
+                            <Columns header={"nomeDoItem"} title={"Nome Do Produto"} />
+                            <Columns header={"tipoProdutoDescricao"} title={"Tipo Produto"} />
+                            <Columns header={"quantidade"} title={"Quantidade"} />
+                            <Columns header={"validadeEscrita"} title={"Validade"} />
                         </Table2>
                     </div>
                 }
@@ -133,7 +139,7 @@ export default function Aprovar() {
                 {isModalVisible && (
                     <div className="modal-incricao-presencial modal fade show" style={{ display: 'block' }} id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel">
                         <div className="modal-dialog">
-                            <div className="modal-content" style={{ backgroundColor: 'transparent', padding: '20px', marginTop: '-20%' }}>
+                            <div className="modal-content" style={{ backgroundColor: 'transparent', padding: '20px', marginTop: '-20%', border: 'none' }}>
                                 <div className="modal-body">
                                     <img className="logo3" src={Logo} alt="LogoDose" style={{ width: '50%', marginBottom: '10%' }} />
                                     <h5 style={{ textAlign: "center" }}>Preencha os campos para aprovar/reprovar!</h5>

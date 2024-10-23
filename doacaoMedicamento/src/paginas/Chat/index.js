@@ -77,16 +77,18 @@ export default function HomeChat() {
         </div>
         <div className='dashboard-rede-flatList'>
           {filteredObject.map(e => (
-            <div className='rede' key={e.codigo}>
-              <img src={e.avatar} alt='avatar' />
-              <div className='info-container' onClick={() => handleUserSelection(e.codigo)}>
-                <p>{e.nome}</p>
+            e.codigo !== parseInt(codigoUsuarioLogado) &&
+              <div className='rede' key={e.codigo}>
+                <img src={e.avatar} alt='avatar' />
+                <div className='info-container' onClick={() => handleUserSelection(e.codigo)}>
+                  <p>{e.nome}</p>
+                </div>
+                <button className='botaoDoacao' data-bs-toggle="modal" data-bs-target={`#modal${e.codigo}`}>
+                  Ver doações
+                </button>
               </div>
-              <button className='botaoDoacao' data-bs-toggle="modal" data-bs-target={`#modal${e.codigo}`}>
-                Ver doações
-              </button>
-            </div>
-          ))}
+            )
+          )}
         </div>
       </div>
 
@@ -108,9 +110,11 @@ export default function HomeChat() {
         )}
       </div>
 
-      {object.map(e => (
-        <ModalDoacoes key={`modal${e.codigo}`} e={e} />
-      ))}
-    </div>
+      {
+        object.map(e => (
+          <ModalDoacoes key={`modal${e.codigo}`} e={e} />
+        ))
+      }
+    </div >
   );
 }

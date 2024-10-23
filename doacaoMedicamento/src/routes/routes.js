@@ -18,6 +18,7 @@ import AprovarCpf from '../paginas/Administrativo/AprovarCpf';
 import UploadMedicamento from '../paginas/UploadMedicamento/';
 import DetalhesDoacao from '../paginas/DetalhesDoacao/';
 import ListaDoacoes from '../paginas/ListaDoacoes/';
+import DetalhesAprovacao from '../paginas/DetalhesAprovacao/';
 import ProtectedRoute from '../Auth/ProtectedRoutes';
 import Unauthorized from '../componentes/Unauthorized';
 import { Outlet } from 'react-router-dom';
@@ -89,6 +90,7 @@ export default function RoutesApp() {
                             </ProtectedRoute>} />
 
                         <Route path="/administrativo/aprovar" element={<Aprovar />} />
+                        <Route path="/administrativo/detalhesAprovar" element={<DetalhesAprovacao />} />
                         <Route path="/administrativo/usuarios" element={<Usuarios />} />
                         <Route path="editarUsuario/:id" element={<Editar />} />
                         <Route path="/administrativo/cpf" element={<AprovarCpf />} />

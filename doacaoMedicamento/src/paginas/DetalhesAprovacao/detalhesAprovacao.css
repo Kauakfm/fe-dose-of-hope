@@ -1,0 +1,166 @@
+.de-container {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.de-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.de-title {
+    font-size: 24px;
+    margin: 0;
+}
+
+.de-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.de-nav-link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.de-nav-link-active {
+    border-bottom: 2px solid #ff69b4;
+}
+
+.de-admin-button {
+    background-color: #4a4a4a;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.de-main {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.de-section-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.de-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.de-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.de-label {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.de-input {
+    background-color: #3a3a3a;
+    border: none;
+    padding: 5px;
+    color: #ffffff;
+    border-radius: 3px;
+}
+
+.de-photos {
+    margin-top: 20px;
+}
+
+.de-photos-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.de-photo-container {
+    display: flex;
+    gap: 10px;
+}
+
+.de-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.de-action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.de-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.de-approve-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.de-reject-button {
+    background-color: #f44336;
+    color: white;
+}
+
+.de-descricao-detalhada {
+    margin-bottom: 20px;
+}
+
+.de-descricao-box {
+    background-color: #3a3a3a;
+    border: 1px solid #4a4a4a;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+.de-descricao-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+}
+
+.de-descricao-content {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #afafaf;
+}
+
+.de-observacao {
+    margin-top: 20px;
+}
+
+.de-input,
+.de-textarea {
+    background-color: #3a3a3a;
+    border: 1px solid #4a4a4a;
+    padding: 8px;
+    color: #ffffff;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.de-textarea {
+    resize: vertical;
+    min-height: 100%;
+    width: 100%;
+}
